@@ -3,3 +3,15 @@
 A new field bus for micro-controller boards with little resources.
 
 OSI layer 1 (physical) is an RS-485 bus, SoC silicon resources are limited to UARTs and timers.
+
+The supported layers go up to OSI layer 7 (application), where bus participants can be managed.
+
+The major differences to other field bus specifications are:
+* The node address assignment is fully automatic
+* The bit rate is programmable, and the packet/frame size is variable
+* Assuming sufficient hardware resources, the bus can be operated with redundant cabling, connectors and nodes
+* It's open source, royalty free and operating system independent
+
+A reference implementation on ST's NUCLEO-F401RE boards is under work.
+
+For more information on the features of this bus system see the white paper in the docu folder.
