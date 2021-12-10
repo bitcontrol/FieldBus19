@@ -2,7 +2,7 @@
 
 A new field bus for micro-controller boards with little resources.
 
-OSI layer 1 (physical) is an RS-485 bus, SoC silicon resources are limited to UARTs and timers.
+OSI layer 1 (physical) is an RS-485 bus, SoC silicon resources are limited to UARTs, GPIOs and timers.
 
 The supported layers go up to OSI layer 7 (application), where bus participants can be managed.
 
