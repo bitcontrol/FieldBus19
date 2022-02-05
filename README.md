@@ -16,3 +16,5 @@ The major differences to other field bus specifications are:
 A reference implementation on ST's NUCLEO-F401RE boards is under work.
 
 For more information on the features of this bus system see the white paper in the docu folder.
+
+Have fun!
