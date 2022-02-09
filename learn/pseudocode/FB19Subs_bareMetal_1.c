@@ -8,7 +8,7 @@
  *                  subscriber. There exist 3 FB19Subs_bareMetal_<n>.c files:
  *                  - FB19Subs_bareMetal_1.c: shows no details
  *                  - FB19Subs_bareMetal_2.c: shows some details
- *                  - FB19Subs_bareMetal_3.c: shows all details
+ *                  - FB19Subs_bareMetal_3.c: shows most details
  *
  * Notes:           The initialization code for the micro-controller has been excluded for clarity.
  *                  This is a bare-metal example, but the FieldBus19 also runs on top of a RTOS.
@@ -27,7 +27,7 @@
 int main(void)
 {
     // Initialization
-    drvSysTick_start(20); // [ms]
+    drvSysTick_start(20000); // [us]
     FB19Subs_start();
     myModC_start();
     myModD_start();

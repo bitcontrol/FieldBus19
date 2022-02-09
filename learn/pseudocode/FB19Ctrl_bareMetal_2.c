@@ -8,7 +8,7 @@
  *                  controller. There exist 3 FB19Ctrl_bareMetal_<n>.c files:
  *                  - FB19Ctrl_bareMetal_1.c: shows no details
  *                  - FB19Ctrl_bareMetal_2.c: shows some details
- *                  - FB19Ctrl_bareMetal_3.c: shows all details
+ *                  - FB19Ctrl_bareMetal_3.c: shows most details
  *
  * Notes:           The initialization code for the micro-controller has been excluded for clarity.
  *                  This is a bare-metal example, but the FieldBus19 also runs on top of a RTOS.
@@ -33,7 +33,7 @@
 int main(void)
 {
     // Initialization
-    drvSysTick_start(20); // [ms]
+    drvSysTick_start(20000); // [us]
     if (FB19Ctrl_start() != R_SUCCESS)
     {
         return R_ERROR;
@@ -61,7 +61,13 @@ int main(void)
  */
 int FB19Ctrl_start(void) // Wrapper function that starts the required FieldBus19 modules.
 {
-    // The function parameters have been excluded for clarity
+    /*
+     * The function parameters have been excluded for clarity.
+     * Start the modules in the order they depend on each other:
+     * 1. Driver modules
+     * 2. Data Preparation modules
+     * 3. Application modules
+     */
     if (drvAperiTimer_start() == R_SUCCESS
         &&
         drvGPIO_start() == R_SUCCESS
@@ -70,7 +76,7 @@ int FB19Ctrl_start(void) // Wrapper function that starts the required FieldBus19
         &&
         drvFB19Ctrl_start() == R_SUCCESS
         &&
-        prpFB19Ctrl_start() == R_SUCCESS
+        dprFB19Ctrl_start() == R_SUCCESS
         &&
         appFB19Ctrl_start() == R_SUCCESS
     )

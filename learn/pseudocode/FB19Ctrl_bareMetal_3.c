@@ -8,11 +8,16 @@
  *                  controller. There exist 3 FB19Ctrl_bareMetal_<n>.c files:
  *                  - FB19Ctrl_bareMetal_1.c: shows no details
  *                  - FB19Ctrl_bareMetal_2.c: shows some details
- *                  - FB19Ctrl_bareMetal_3.c: shows all details
+ *                  - FB19Ctrl_bareMetal_3.c: shows most details
  *
  * Notes:           The initialization code for the micro-controller has been excluded for clarity.
+ *
  *                  This is a bare-metal example, but the FieldBus19 also runs on top of a RTOS.
  *                  Just call the _start() functions once and the _handlers() function periodically.
+ *
+ *                  For keeping this example as simple as possible, the console menu and the UART
+ *                  based console I/O modules aren't included in this example. Add them to the
+ *                  _start() and _handler() functions if UART based console I/O is required.
  *
  * Author:          Andreas Isenegger
  * Copyright:       2022, Bitcontrol GmbH, Switzerland.
@@ -26,7 +31,7 @@
 int main(void)
 {
     // Initialization
-    if (drvSysTick_start(20) != R_SUCCESS) // [ms]
+    if (drvSysTick_start(20000) != R_SUCCESS) // [us]
     {
         return R_ERROR;
     }
@@ -55,6 +60,7 @@ int main(void)
  * Description:     This file implements the FieldBus19 Controller wrapper functions in their
  *                  simplest form.
  */
+#include "appFB19Ctrl.h"    // FieldBus19 Controller application module
 #include "cfgFB19.h"        // FieldBus19 configuration module
 #include "cfgPlatform.h"    // Platform configuration module (e.g. platform equals STM32F401)
 #include "cfgProject.h"     // Project configuration module
@@ -68,15 +74,20 @@ int main(void)
 
 int FB19Ctrl_start(void) // Wrapper function that starts the required FieldBus19 modules.
 {
-    // The function parameters have been excluded for clarity
+    /*
+     * Start the modules in the order they depend on each other:
+     * 1. Driver modules
+     * 2. Data Preparation modules
+     * 3. Application modules
+     */
     if (drvAperiTimer_start(CFG_DRVAPERITIMER_INST_N0,
             &cfgDrvAperiTimer[CFG_DRVAPERITIMER_INST_N0],
             FB19_APERI_TIMER_PERIOD_US(CFG_FB19_BITRATE)) == R_SUCCESS
         &&
-        drvGPIO_start(cfgDrvFB19UART_SoC[CFG_DRVFB19UART_INST_N1].instIdGPIO)
+        drvGPIO_start(cfgDrvFB19UART_SoC[CFG_DRVFB19UART_INST_N0].instIdGPIO)
         &&
-        drvFB19UART_start(CFG_DRVFB19UART_INST_N1,
-            &cfgDrvFB19UART_SoC[CFG_DRVFB19UART_INST_N1],
+        drvFB19UART_start(CFG_DRVFB19UART_INST_N0,
+            &cfgDrvFB19UART_SoC[CFG_DRVFB19UART_INST_N0],
             CFG_FB19_BITRATE) == R_SUCCESS
         &&
         drvFB19Ctrl_start(&cfgDrvFB19Ctrl) == R_SUCCESS

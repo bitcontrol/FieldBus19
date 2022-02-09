@@ -8,7 +8,7 @@
  *                  controller. There exist 3 FB19Ctrl_bareMetal_<n>.c files:
  *                  - FB19Ctrl_bareMetal_1.c: shows no details
  *                  - FB19Ctrl_bareMetal_2.c: shows some details
- *                  - FB19Ctrl_bareMetal_3.c: shows all details
+ *                  - FB19Ctrl_bareMetal_3.c: shows most details
  *
  * Notes:           The initialization code for the micro-controller has been excluded for clarity.
  *                  This is a bare-metal example, but the FieldBus19 also runs on top of a RTOS.
@@ -27,7 +27,7 @@
 int main(void)
 {
     // Initialization
-    drvSysTick_start(20); // [ms]
+    drvSysTick_start(20000); // [us]
     FB19Ctrl_start();
     myModA_start();
     myModB_start();
