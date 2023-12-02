@@ -1,13 +1,15 @@
 /**
- *  Filename:       FB19Msg.h
- *  Platform(s):    All
- *  Project:        FieldBus19
- *  Created:        Apr 21, 2023
- *  Description:    This file defines FieldBus19 message specific types.
- *  Notes:          DON'T CHANGE IT!
- *  Author:         Andreas Isenegger
- *  Copyright:      2023, Bitcontrol GmbH, Switzerland.
+ *  - Filename:     FB19Msg.h
+ *  - Platform(s):  All
+ *  - Project:      FieldBus19
+ *  - Created:      Apr 21, 2023
+ *  - Description:  This file defines FieldBus19 message specific types.
+ *  - Notes:        DON'T CHANGE IT!
+ *  - Author:       Andreas Isenegger
+ *  - Copyright:    2023, Bitcontrol GmbH, Switzerland.
  *                  All rights reserved.
+ *  @file
+ *  @brief          This file defines FieldBus19 message specific types.
  */
 
 #ifndef FB19MSG_H_

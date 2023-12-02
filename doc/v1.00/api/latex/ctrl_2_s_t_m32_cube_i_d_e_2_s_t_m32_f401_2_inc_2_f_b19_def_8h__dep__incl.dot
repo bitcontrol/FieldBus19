@@ -1,0 +1,27 @@
+digraph "ctrl/STM32CubeIDE/STM32F401/Inc/FB19Def.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="ctrl/STM32CubeIDE/STM32F401\l/Inc/FB19Def.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="This file defines FieldBus19 specific symbols."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="ctrl/STM32CubeIDE/STM32F401\l/Inc/FB19Ctrl.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_f_b19_ctrl_8h.html",tooltip="This file publishes the interface of the FieldBus19 Controller library."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="ctrl/STM32CubeIDE/STM32F401\l/Inc/FB19CtrlCfg.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_f_b19_ctrl_cfg_8h.html",tooltip="This file publishes the interface of the FieldBus19 Controller configuration file."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="ctrl/STM32CubeIDE/STM32F401\l/Src/FB19CtrlCfg.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_f_b19_ctrl_cfg_8c.html",tooltip="This file implements the interface of the FieldBus19 Controller configuration module."];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="ctrl/STM32CubeIDE/STM32F401\l/Inc/FB19LibMsgQ.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_q_8h.html",tooltip="This file publishes the interface of a FieldBus19 library that encapsulates a specific type of messag..."];
+  Node5 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="ctrl/STM32CubeIDE/STM32F401\l/Inc/FB19Msg.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h.html",tooltip="This file defines FieldBus19 message specific types."];
+  Node6 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="ctrl/STM32CubeIDE/STM32F401\l/Inc/FB19LibMsg.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h.html",tooltip="This file publishes the interface of the FieldBus19 message library module."];
+  Node6 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="ctrl/STM32CubeIDE/STM32F401\l/Inc/FB19MsgQ.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_q_8h.html",tooltip="This file publishes the interface of the FieldBus19 message queue."];
+  Node8 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+}

@@ -1,16 +1,19 @@
-/*
- *  Filename:       FB19CtrlCfg.c
- *  Platform(s):    STM32F401x
- *  Project:        <Your project name>
- *  Created:        November 29, 2023
- *  Description:    This file implements the interface of the FieldBus19
+/**
+ *  - Filename:     FB19CtrlCfg.c
+ *  - Platform(s):  STM32F401x
+ *  - Project:      <Your project name>
+ *  - Created:      November 29, 2023
+ *  - Description:  This file implements the interface of the FieldBus19
  *                  Controller configuration module.
  *                  Add it to the project directory and adjust it to the
  *                  requirements of the application.
- *  Notes:
- *  Author:         Andreas Isenegger
- *  Copyright:      2023, Bitcontrol GmbH, Switzerland.
+ *  - Notes:
+ *  - Author:       Andreas Isenegger
+ *  - Copyright:    2023, Bitcontrol GmbH, Switzerland.
  *                  All rights reserved.
+ *  @file
+ *  @brief          This file implements the interface of the FieldBus19
+ *                  Controller configuration module.
  */
 
 #include <stm32f4xx.h> // For GPIOA, USART2, ...
@@ -27,10 +30,6 @@
 //------------------------------------------------------------------------------
 // Constants and Variables
 
-/*
- * FB19 Controller
- * ===============
- */
 /* FB19 Controller Data Preparation low frequency reader message queue. */
 static FB19LibMsgQ_element_t sDprCtrlLfrArray[4];
 static FB19LibMsgQ_queue_t sDprCtrlLfrMsgQ =

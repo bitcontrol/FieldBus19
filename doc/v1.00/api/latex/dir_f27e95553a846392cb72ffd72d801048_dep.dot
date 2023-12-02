@@ -1,0 +1,17 @@
+digraph "subs/STM32CubeIDE/STM32F401"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  compound=true
+  subgraph clusterdir_e2a4175760cdaf93d63220756ef15378 {
+    graph [ bgcolor="#edf0f7", pencolor="grey50", style="filled,dashed,", label="STM32CubeIDE", fontname="Helvetica", fontsize="10", URL="dir_e2a4175760cdaf93d63220756ef15378.html"]
+  subgraph clusterdir_f27e95553a846392cb72ffd72d801048 {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", style="filled,bold,", label="", fontname="Helvetica", fontsize="10", URL="dir_f27e95553a846392cb72ffd72d801048.html"]
+    dir_f27e95553a846392cb72ffd72d801048 [shape=plaintext, label="STM32F401"];
+  dir_02b15f23a56132b50f8ee339545b5c83 [shape=box, label="Inc", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_02b15f23a56132b50f8ee339545b5c83.html"];
+  dir_9d3c797e292478572b4a16cdac80635f [shape=box, label="Src", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_9d3c797e292478572b4a16cdac80635f.html"];
+  }
+  }
+  dir_9d3c797e292478572b4a16cdac80635f->dir_02b15f23a56132b50f8ee339545b5c83 [headlabel="2", labeldistance=1.5 headhref="dir_000004_000002.html"];
+}

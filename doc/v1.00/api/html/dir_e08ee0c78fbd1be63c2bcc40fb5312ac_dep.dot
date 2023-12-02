@@ -1,0 +1,15 @@
+digraph "ctrl/STM32CubeIDE"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  compound=true
+  subgraph clusterdir_263426dc267c7f7b8bc816493cda4bef {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", style="filled,dashed,", label="ctrl", fontname="Helvetica", fontsize="10", URL="dir_263426dc267c7f7b8bc816493cda4bef.html"]
+  subgraph clusterdir_e08ee0c78fbd1be63c2bcc40fb5312ac {
+    graph [ bgcolor="#edf0f7", pencolor="grey25", style="filled,bold,", label="", fontname="Helvetica", fontsize="10", URL="dir_e08ee0c78fbd1be63c2bcc40fb5312ac.html"]
+    dir_e08ee0c78fbd1be63c2bcc40fb5312ac [shape=plaintext, label="STM32CubeIDE"];
+  dir_1438c4c6edaba7be3afc30aef4e5d958 [shape=box, label="STM32F401", style="filled,", fillcolor="#a2b4d6", color="grey25", URL="dir_1438c4c6edaba7be3afc30aef4e5d958.html"];
+  }
+  }
+}

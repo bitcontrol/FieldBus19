@@ -1,10 +1,11 @@
 /**
- *  Filename:       FB19LibMsgQ.h
- *  Platform(s):    All
- *  Project:        FieldBus19
- *  Created:        May 19, 2022
- *  Description:    This file publishes the interface of a FieldBus19 library
+ *  - Filename:     FB19LibMsgQ.h
+ *  - Platform(s):  All
+ *  - Project:      FieldBus19
+ *  - Created:      May 19, 2022
+ *  - Description:  This file publishes the interface of a FieldBus19 library
  *                  that encapsulates a specific type of message queue.
+ *
  *                  It is used by:
  *                  - Bus Controllers as 'low frequency readers queue' in the
  *                    FB19DprCtrl module
@@ -23,7 +24,7 @@
  *                  identical <dstId> and <msgId> fields, the oldest of those
  *                  messages is returned on a read (and not simply the oldest
  *                  message in the queue).<br>
- *  Notes:          This module has been designed for multi-instance usage.<br>
+ *  - Notes:        This module has been designed for multi-instance usage.<br>
  *                  That scenario comes into play when a Controller and one or
  *                  more Subscribers are implemented in one single application.
  *                  Examples are test applications or connected FB19 bus systems
@@ -33,9 +34,12 @@
  *                  contain the message queue. It has to be passed at every
  *                  function call instead. That way, the module is stateless
  *                  and can be used by several clients simultaneously.
- *  Author:         Andreas Isenegger
- *  Copyright:      2022-2023, Bitcontrol GmbH, Switzerland.
+ *  - Author:       Andreas Isenegger
+ *  - Copyright:    2022-2023, Bitcontrol GmbH, Switzerland.
  *                  All rights reserved.
+ *  @file
+ *  @brief          This file publishes the interface of a FieldBus19 library
+ *                  that encapsulates a specific type of message queue.
  */
 
 #ifndef FB19LIBMSGQ_H_
@@ -88,6 +92,7 @@ typedef struct FB19LibMsgQ_queue_struct
 // Functions
 /**
  * Initializes the elements of the passed queue.
+ *
  * Call it at least once before using a queue object. It clears the memory of
  * the internal elements to \c 0.<br>
  * Don't modify the passed \c queue object outside the \c _read() or \c _write()

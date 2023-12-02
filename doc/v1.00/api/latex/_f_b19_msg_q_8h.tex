@@ -1,0 +1,51 @@
+\hypertarget{_f_b19_msg_q_8h}{}\doxysection{Inc/\+FB19\+MsgQ.h File Reference}
+\label{_f_b19_msg_q_8h}\index{Inc/FB19MsgQ.h@{Inc/FB19MsgQ.h}}
+{\ttfamily \#include \char`\"{}FB19\+Def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}FB19\+Msg.\+h\char`\"{}}\newline
+Include dependency graph for FB19\+Msg\+Q.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_f_b19_msg_q__struct}{FB19\+Msg\+Q\+\_\+struct}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_f_b19_msg_q__struct}{FB19\+Msg\+Q\+\_\+struct}} \mbox{\hyperlink{_f_b19_msg_q_8h_a7a9e53d1fd4d1a1edad1aee0841c9c1f}{FB19\+Msg\+Q\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_f_b19_msg_q_8h_a7d1deba5f8dae055a2419d0c9486dca2}{FB19\+Msg\+Q\+\_\+init}} (\mbox{\hyperlink{_f_b19_msg_q_8h_a7a9e53d1fd4d1a1edad1aee0841c9c1f}{FB19\+Msg\+Q\+\_\+t}} $\ast$queue)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_f_b19_msg_q_8h_a7a9e53d1fd4d1a1edad1aee0841c9c1f}\label{_f_b19_msg_q_8h_a7a9e53d1fd4d1a1edad1aee0841c9c1f}} 
+\index{FB19MsgQ.h@{FB19MsgQ.h}!FB19MsgQ\_t@{FB19MsgQ\_t}}
+\index{FB19MsgQ\_t@{FB19MsgQ\_t}!FB19MsgQ.h@{FB19MsgQ.h}}
+\doxysubsubsection{\texorpdfstring{FB19MsgQ\_t}{FB19MsgQ\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_f_b19_msg_q__struct}{FB19\+Msg\+Q\+\_\+struct}} \mbox{\hyperlink{_f_b19_msg_q_8h_a7a9e53d1fd4d1a1edad1aee0841c9c1f}{FB19\+Msg\+Q\+\_\+t}}}
+
+Filename\+: \mbox{\hyperlink{_f_b19_msg_q_8h}{FB19\+Msg\+Q.\+h}} Platform(s)\+: All Project\+: Field\+Bus19 Created\+: Apr 21, 2023 Description\+: This file publishes the interface of the Field\+Bus19 message queue. Notes\+: DON\textquotesingle{}T CHANGE IT! Author\+: Andreas Isenegger Copyright\+: 2023, Bitcontrol GmbH, Switzerland. All rights reserved. Field\+Bus19 message queue type. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_f_b19_msg_q_8h_a7d1deba5f8dae055a2419d0c9486dca2}\label{_f_b19_msg_q_8h_a7d1deba5f8dae055a2419d0c9486dca2}} 
+\index{FB19MsgQ.h@{FB19MsgQ.h}!FB19MsgQ\_init@{FB19MsgQ\_init}}
+\index{FB19MsgQ\_init@{FB19MsgQ\_init}!FB19MsgQ.h@{FB19MsgQ.h}}
+\doxysubsubsection{\texorpdfstring{FB19MsgQ\_init()}{FB19MsgQ\_init()}}
+{\footnotesize\ttfamily int FB19\+Msg\+Q\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_f_b19_msg_q_8h_a7a9e53d1fd4d1a1edad1aee0841c9c1f}{FB19\+Msg\+Q\+\_\+t}} $\ast$}]{queue }\end{DoxyParamCaption})}
+
+This function is used to initialize a message queue. All messages in the queue will be be initialized with {\ttfamily 0}, including ALL their internal data structures. It is no error, if the capacity of the queue is 0; in that case no operation will be performed on the queue. If the capacity is a negative number however, an error will be returned.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em msg} & points to the message queue that shall be initialized. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily R\+\_\+\+SUCCESS} if the parameter checks pass, {\ttfamily R\+\_\+\+ERROR} otherwise. 
+\end{DoxyReturn}

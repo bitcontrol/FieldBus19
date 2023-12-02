@@ -1,0 +1,52 @@
+\hypertarget{subs_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_q_8h_source}{}\doxysection{FB19\+Lib\+Msg\+Q.\+h}
+\label{subs_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_q_8h_source}\index{subs/STM32CubeIDE/STM32F401/Inc/FB19LibMsgQ.h@{subs/STM32CubeIDE/STM32F401/Inc/FB19LibMsgQ.h}}
+\mbox{\hyperlink{subs_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_q_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#ifndef FB19LIBMSGQ\_H\_}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define FB19LIBMSGQ\_H\_}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{49 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{subs_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_def_8h}{FB19Def.h}}"{}}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{subs_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h}{FB19Msg.h}}"{}}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{56 \textcolor{comment}{// Symbols and Macros}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{59 \textcolor{comment}{// Types}}
+\DoxyCodeLine{63 \textcolor{comment}{}\textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_f_b19_lib_msg_q__element__struct}{FB19LibMsgQ\_element\_struct}}}
+\DoxyCodeLine{64 \{}
+\DoxyCodeLine{70     \textcolor{keywordtype}{short} \mbox{\hyperlink{struct_f_b19_lib_msg_q__element__struct_a5b4480f9eb4a019cecf09825fc218d03}{age}};}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{73     \mbox{\hyperlink{struct_f_b19msg__struct}{FB19Msg\_t}} \mbox{\hyperlink{struct_f_b19_lib_msg_q__element__struct_a7e72b8a5e609054d1ce839c3735df040}{msg}};}
+\DoxyCodeLine{74 \} \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_q_8h_a436d6f082a491ea2d9e524fcd9b3de9b}{FB19LibMsgQ\_element\_t}};}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{79 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_f_b19_lib_msg_q__queue__struct}{FB19LibMsgQ\_queue\_struct}}}
+\DoxyCodeLine{80 \{}
+\DoxyCodeLine{82     \mbox{\hyperlink{struct_f_b19_lib_msg_q__element__struct}{FB19LibMsgQ\_element\_t}}* \mbox{\hyperlink{struct_f_b19_lib_msg_q__queue__struct_a3856dac9320846f21e3f5e387ae42bb3}{array}};}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{85     \textcolor{keyword}{const} \textcolor{keywordtype}{short} \mbox{\hyperlink{struct_f_b19_lib_msg_q__queue__struct_a4fe7e769d67fa371159b0a7f04dda17b}{capacity}};}
+\DoxyCodeLine{86 \} \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_q_8h_a824025c23dc2eece4fbb126b33a6ef08}{FB19LibMsgQ\_queue\_t}};}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{89 \textcolor{comment}{// Constants and Variables}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{92 \textcolor{comment}{// Functions}}
+\DoxyCodeLine{105 \textcolor{comment}{}\textcolor{keywordtype}{int} \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_q_8h_a994ccbaa951324a8174fea965d747b6c}{FB19LibMsgQ\_init}}(\mbox{\hyperlink{struct_f_b19_lib_msg_q__queue__struct}{FB19LibMsgQ\_queue\_t}} queue);}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{120 \textcolor{keywordtype}{int} \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_q_8h_a61f86a483d5aea2a7a2bec2b64383193}{FB19LibMsgQ\_read}}(\mbox{\hyperlink{struct_f_b19_lib_msg_q__queue__struct}{FB19LibMsgQ\_queue\_t}} queue, \mbox{\hyperlink{struct_f_b19msg__struct}{FB19Msg\_t}}* msg);}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{130 \textcolor{keywordtype}{int} \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_q_8h_a7d48bfb12b478a2616cecf362058766a}{FB19LibMsgQ\_write}}(\mbox{\hyperlink{struct_f_b19_lib_msg_q__queue__struct}{FB19LibMsgQ\_queue\_t}} queue, \textcolor{keyword}{const} \mbox{\hyperlink{struct_f_b19msg__struct}{FB19Msg\_t}}* msg);}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{133 \}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// FB19LIBMSGQ\_H\_}}
+
+\end{DoxyCode}

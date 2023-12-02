@@ -1,16 +1,19 @@
-/*
- *  Filename:       FB19SubsCfg.c
- *  Platform(s):    STM32F401x
- *  Project:        <Your project name>
- *  Created:        November 29, 2023
- *  Description:    This file implements the interface of the FieldBus19
+/**
+ *  - Filename:     FB19SubsCfg.c
+ *  - Platform(s):  STM32F401x
+ *  - Project:      <Your project name>
+ *  - Created:      November 29, 2023
+ *  - Description:  This file implements the interface of the FieldBus19
  *                  Subscriber configuration module.
  *                  Add it to the project directory and adjust it to the
  *                  requirements of the application.
- *  Notes:
- *  Author:         Andreas Isenegger
- *  Copyright:      2023, Bitcontrol GmbH, Switzerland.
+ *  - Notes:
+ *  - Author:       Andreas Isenegger
+ *  - Copyright:    2023, Bitcontrol GmbH, Switzerland.
  *                  All rights reserved.
+ *  @file
+ *  @brief          This file implements the interface of the FieldBus19
+ *                  Subscriber configuration module.
  */
 
 #include <stm32f4xx.h> // For GPIOA, USART2, ...
@@ -26,11 +29,6 @@
 
 //------------------------------------------------------------------------------
 // Constants and Variables
-
-/*
- * FB19 Subscriber
- * ===============
- */
 
 /* FB19 Subscriber Data Preparation low frequency reader message queue. */
 static FB19LibMsgQ_element_t sDprSubsLfrArray[4];

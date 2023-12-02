@@ -1,11 +1,10 @@
 /**
- *  Filename:       FB19LibMsg.h
- *  Platform(s):    All
- *  Project:        FieldBus19
- *  Created:        May 17, 2022
- *  Description:    This file publishes the interface of the FieldBus19
+ *  - Filename:     FB19LibMsg.h
+ *  - Platform(s):  All
+ *  - Project:      FieldBus19
+ *  - Created:      May 17, 2022
+ *  - Description:  This file publishes the interface of the FieldBus19
  *                  message library module.
- *
  *                  How to use the FB19LibMsg_append...() and
  *                  FB19LibMsg_remove...() functions effectively:
  *                  - Write data into the messages using the _append() functions
@@ -13,10 +12,13 @@
  *                    the messages
  *                  - That way, no indexes that keep track of the writes and
  *                    reads are required
- *  Notes:
- *  Author:         Andreas Isenegger
- *  Copyright:      2022-2023, Bitcontrol GmbH, Switzerland.
+ *  - Notes:
+ *  - Author:       Andreas Isenegger
+ *  - Copyright:    2022-2023, Bitcontrol GmbH, Switzerland.
  *                  All rights reserved.
+ *  @file
+ *  @brief          This file publishes the interface of the FieldBus19
+ *                  message library module.
  */
 
 #ifndef FB19LIBMSG_H_
@@ -44,6 +46,7 @@ extern "C" {
 /**
  * Appends an 8 bit character to the payload of the message and increments its
  * payload size by the size of the argument in bytes.
+ *
  * If the data doesn't fit into the message because its end would exceed the
  * end of the payload section, it won't be added and \c R_ERROR is returned.
 
@@ -59,6 +62,7 @@ int FB19LibMsg_appendChar(FB19Msg_t* msg, char value);
 /**
  * Appends arbitrary data stored in the passed buffer to the payload of the
  * message and increments its payload size by the size of the data in bytes.
+ *
  * If the data doesn't fit into the message because its end would exceed the
  * end of the payload section, it won't be added and \c R_ERROR is returned.
 
@@ -77,6 +81,7 @@ int FB19LibMsg_appendData(FB19Msg_t* msg, const void* buffer, size_t size);
  * Appends the passed 64 bit wide double precision floating point number to
  * the payload of the message and increments its payload size by the size of
  * the argument in bytes.
+ *
  * If the data doesn't fit into the message because its end would exceed the
  * end of the payload section, it won't be added and \c R_ERROR is returned.
 
@@ -93,6 +98,7 @@ int FB19LibMsg_appendDouble(FB19Msg_t* msg, double value);
  * Appends the passed 32 bit wide single precision floating point number to
  * the payload of the message and increments its payload size by the size of
  * the argument in bytes.
+ *
  * If the data doesn't fit into the message because its end would exceed the
  * end of the payload section, it won't be added and \c R_ERROR is returned.
 
@@ -108,6 +114,7 @@ int FB19LibMsg_appendFloat(FB19Msg_t* msg, float value);
 /**
  * Appends the passed 8 bit signed integer number to the payload of the message
  * and increments its payload size by the size of the argument in bytes.
+ *
  * If the data doesn't fit into the message because its end would exceed the
  * end of the payload section, it won't be added and \c R_ERROR is returned.
 
@@ -123,6 +130,7 @@ int FB19LibMsg_appendInt8(FB19Msg_t* msg, int8_t value);
 /**
  * Appends the passed 16 bit signed integer number to the payload of the message
  * and increments its payload size by the size of the argument in bytes.
+ *
  * If the data doesn't fit into the message because its end would exceed the
  * end of the payload section, it won't be added and \c R_ERROR is returned.
 
@@ -138,6 +146,7 @@ int FB19LibMsg_appendInt16(FB19Msg_t* msg, int16_t value);
 /**
  * Appends the passed 32 bit signed integer number to the payload of the message
  * and increments its payload size by the size of the argument in bytes.
+ *
  * If the data doesn't fit into the message because its end would exceed the
  * end of the payload section, it won't be added and \c R_ERROR is returned.
 
@@ -153,6 +162,7 @@ int FB19LibMsg_appendInt32(FB19Msg_t* msg, int32_t value);
 /**
  * Appends the passed 64 bit signed integer number to the payload of the message
  * and increments its payload size by the size of the argument in bytes.
+ *
  * If the data doesn't fit into the message because its end would exceed the
  * end of the payload section, it won't be added and \c R_ERROR is returned.
  *
@@ -169,6 +179,7 @@ int FB19LibMsg_appendInt64(FB19Msg_t* msg, int64_t value);
  * Appends the passed string terminated by a '\0' character to the payload of
  * the message including the '\0' character and increments its payload size
  * by the size of the string including its terminating '\0' character.
+ *
  * If the data doesn't fit into the message because its end would exceed the
  * end of the payload section, it won't be added and \c R_ERROR is returned.
  *
@@ -188,6 +199,7 @@ int FB19LibMsg_appendString(FB19Msg_t* msg, const char* str);
 /**
  * Removes an 8 bit character from the end of the payload and decreases its
  * size by the size of the returned value in bytes.
+ *
  * If the data couldn't be retrieved because its beginning would exceed the
  * beginning of the payload section, it won't be removed and \c R_ERROR is
  * returned.
@@ -205,6 +217,7 @@ int FB19LibMsg_removeChar(FB19Msg_t* msg, char* value);
 /**
  * Removes arbitrary data from the end of the payload and decreases its size
  * by the size of the returned data in bytes.
+ *
  * If the data couldn't be removed because its beginning would exceed the
  * beginning of the payload section, it won't be removed and \c R_ERROR is
  * returned.
@@ -229,6 +242,7 @@ int FB19LibMsg_removeData(FB19Msg_t* msg, void* buffer, size_t size);
  * Removes a 64 bit wide double precision floating point number from the end
  * of the payload and decreases its size by the size of the returned value
  * in bytes.
+ *
  * If the data couldn't be retrieved because its beginning would exceed the
  * beginning of the payload section, it won't be removed and \c R_ERROR is
  * returned.
@@ -247,6 +261,7 @@ int FB19LibMsg_removeDouble(FB19Msg_t* msg, double* value);
  * Removes a 32 bit wide single precision floating point number from the end
  * of the payload and decreases its size by the size of the returned value
  * in bytes.
+ *
  * If the data couldn't be retrieved because its beginning would exceed the
  * beginning of the payload section, it won't be removed and \c R_ERROR is
  * returned.
@@ -264,6 +279,7 @@ int FB19LibMsg_removeFloat(FB19Msg_t* msg, float* value);
 /**
  * Removes a signed 8 bit integer number from the end of the payload and
  * decreases its size by the size of the returned value in bytes.
+ *
  * If the data couldn't be removed because its beginning would exceed the
  * beginning of the payload section, it won't be removed and \c R_ERROR is
  * returned.
@@ -281,6 +297,7 @@ int FB19LibMsg_removeInt8(FB19Msg_t* msg, int8_t* value);
 /**
  * Removes a signed 16 bit integer number from the end of the payload and
  * decreases its size by the size of the returned value in bytes.
+ *
  * If the data couldn't be removed because its beginning would exceed the
  * beginning of the payload section, it won't be removed and \c R_ERROR is
  * returned.
@@ -298,6 +315,7 @@ int FB19LibMsg_removeInt16(FB19Msg_t* msg, int16_t* value);
 /**
  * Removes a signed 32 bit integer number from the end of the payload and
  * decreases its size by the size of the returned value in bytes.
+ *
  * If the data couldn't be removed because its beginning would exceed the
  * beginning of the payload section, it won't be removed and \c R_ERROR is
  * returned.
@@ -315,6 +333,7 @@ int FB19LibMsg_removeInt32(FB19Msg_t* msg, int32_t* value);
 /**
  * Removes a signed 64 bit integer number from the end of the payload and
  * decreases its size by the size of the returned value in bytes.
+ *
  * If the data couldn't be removed because its beginning would exceed the
  * beginning of the payload section, it won't be removed and \c R_ERROR is
  * returned.
@@ -333,6 +352,7 @@ int FB19LibMsg_removeInt64(FB19Msg_t* msg, int64_t* value);
  * Removes a string terminated by a '\0' character from the end of the payload
  * and decreases its size by the size of the returned string (including its '\0'
  * character) in bytes.
+ *
  * If the data couldn't be removed because its beginning would exceed the
  * beginning of the payload section, it won't be removed and \c R_ERROR is
  * returned.

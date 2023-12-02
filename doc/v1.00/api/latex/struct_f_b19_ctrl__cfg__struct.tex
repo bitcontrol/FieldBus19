@@ -1,0 +1,223 @@
+\hypertarget{struct_f_b19_ctrl__cfg__struct}{}\doxysection{FB19\+Ctrl\+\_\+cfg\+\_\+struct Struct Reference}
+\label{struct_f_b19_ctrl__cfg__struct}\index{FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}}
+
+
+{\ttfamily \#include $<$FB19\+Ctrl.\+h$>$}
+
+
+
+Collaboration diagram for FB19\+Ctrl\+\_\+cfg\+\_\+struct\+:
+% FIG 0
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_q_8h_a824025c23dc2eece4fbb126b33a6ef08}{FB19LibMsgQ\_queue\_t}} $\ast$ \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct_a07e5a2a14fe68bfdacf02e9ce9c1f79b}{lfrMsgQ}}\\
+\>\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_q_8h_a7a9e53d1fd4d1a1edad1aee0841c9c1f}{FB19MsgQ\_t}} $\ast$ \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct_a7bc1d0690f22bdc235c4b49bf54b348f}{rxMsgQ}}\\
+\>\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_q_8h_a7a9e53d1fd4d1a1edad1aee0841c9c1f}{FB19MsgQ\_t}} $\ast$ \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct_af867b7b2d367730b3ca32bf32da30cf5}{txMsgQ}}\\
+\} \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct_ac4de2239a481bc8fafaff94a82e10e26}{FB19DprCtrl}}\\
+
+\end{tabbing}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>GPIO\_TypeDef $\ast$ \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct_af5a9462282abba0d8ad1012075de0699}{GPIO}}\\
+\>uint16\_t \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct_abfe7bbf4551e8e3f71e8ff9dc3c3a3b0}{GPIO\_portBitDOE}}\\
+\>\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_q_8h_a7a9e53d1fd4d1a1edad1aee0841c9c1f}{FB19MsgQ\_t}} $\ast$ \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct_a6aa7313388717d2d164f468b5943511b}{txRxMsgQ}}\\
+\} \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct_ae7b764d170c36f98478ddbd18da1b7a9}{FB19DrvCtrl}}\\
+
+\end{tabbing}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>IRQn\_Type \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct_ad0d6b8a285f39f536bde45d9449bb874}{NVIC\_IRQ\_channel}}\\
+\>uint8\_t \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct_a9fc053d64d001e8a0023467bbdc66525}{NVIC\_IRQ\_groupPriority}}\\
+\>uint8\_t \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct_a95aae82c3420d9005f0e681a2d129b21}{NVIC\_IRQ\_subPriority}}\\
+\>uint32\_t \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct_aabcd45187abc3de0d2cff2f4bd809922}{RCC\_clockEnableBitMask}}\\
+\>volatile uint32\_t $\ast$ \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct_a68eeb6c8256487c1dc22836a73cc872a}{RCC\_clockEnableRegister}}\\
+\>uint32\_t \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct_a06777c49abe190ee8fbd9d58219137b8}{RCC\_resetBitMask}}\\
+\>volatile uint32\_t $\ast$ \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct_ad1c01ebd5cceecf8aa1317eac0e1a991}{RCC\_resetRegister}}\\
+\>int16\_t \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct_abf87a78ad833e664f6067fbe7be810d0}{registerWidth}}\\
+\>TIM\_TypeDef $\ast$ \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct_a663322e9eb0b01f9723211f3973c31ef}{TIMx}}\\
+\} \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct_a84577ce5ff843003897cb5c70798b518}{FB19DrvTimer}}\\
+
+\end{tabbing}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>GPIO\_TypeDef $\ast$ \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct_af5a9462282abba0d8ad1012075de0699}{GPIO}}\\
+\>uint16\_t \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct_a607d3a417fcfcdda351ecfea1e9293bb}{GPIO\_altFunctionSelection}}\\
+\>uint16\_t \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct_a5ac2f8f4ba3caf7097ac7f5021fe507b}{GPIO\_portBitRx}}\\
+\>uint16\_t \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct_a44b3a082941817ebcff9a581633fc41f}{GPIO\_portBitTx}}\\
+\>IRQn\_Type \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct_ad0d6b8a285f39f536bde45d9449bb874}{NVIC\_IRQ\_channel}}\\
+\>uint8\_t \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct_a9fc053d64d001e8a0023467bbdc66525}{NVIC\_IRQ\_groupPriority}}\\
+\>uint8\_t \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct_a95aae82c3420d9005f0e681a2d129b21}{NVIC\_IRQ\_subPriority}}\\
+\>uint32\_t \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct_aabcd45187abc3de0d2cff2f4bd809922}{RCC\_clockEnableBitMask}}\\
+\>volatile uint32\_t $\ast$ \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct_a68eeb6c8256487c1dc22836a73cc872a}{RCC\_clockEnableRegister}}\\
+\>USART\_TypeDef $\ast$ \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct_a6e208b36a8a5a7ff42a2117f8dcbc3eb}{USARTx}}\\
+\} \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct_adaa43786fe85cd01c4c38ddd8a34b6b6}{FB19DrvUART}}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+FB19 Controller configuration structure. 
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{struct_f_b19_ctrl__cfg__struct_ac4de2239a481bc8fafaff94a82e10e26}\label{struct_f_b19_ctrl__cfg__struct_ac4de2239a481bc8fafaff94a82e10e26}} 
+\index{FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}!FB19DprCtrl@{FB19DprCtrl}}
+\index{FB19DprCtrl@{FB19DprCtrl}!FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}}
+\doxysubsubsection{\texorpdfstring{}{}}
+{\footnotesize\ttfamily struct  \{ ... \}  FB19\+Dpr\+Ctrl}
+
+\mbox{\Hypertarget{struct_f_b19_ctrl__cfg__struct_ae7b764d170c36f98478ddbd18da1b7a9}\label{struct_f_b19_ctrl__cfg__struct_ae7b764d170c36f98478ddbd18da1b7a9}} 
+\index{FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}!FB19DrvCtrl@{FB19DrvCtrl}}
+\index{FB19DrvCtrl@{FB19DrvCtrl}!FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}}
+\doxysubsubsection{\texorpdfstring{}{}}
+{\footnotesize\ttfamily struct  \{ ... \}  FB19\+Drv\+Ctrl}
+
+\mbox{\Hypertarget{struct_f_b19_ctrl__cfg__struct_a84577ce5ff843003897cb5c70798b518}\label{struct_f_b19_ctrl__cfg__struct_a84577ce5ff843003897cb5c70798b518}} 
+\index{FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}!FB19DrvTimer@{FB19DrvTimer}}
+\index{FB19DrvTimer@{FB19DrvTimer}!FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}}
+\doxysubsubsection{\texorpdfstring{}{}}
+{\footnotesize\ttfamily struct  \{ ... \}  FB19\+Drv\+Timer}
+
+\mbox{\Hypertarget{struct_f_b19_ctrl__cfg__struct_adaa43786fe85cd01c4c38ddd8a34b6b6}\label{struct_f_b19_ctrl__cfg__struct_adaa43786fe85cd01c4c38ddd8a34b6b6}} 
+\index{FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}!FB19DrvUART@{FB19DrvUART}}
+\index{FB19DrvUART@{FB19DrvUART}!FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}}
+\doxysubsubsection{\texorpdfstring{}{}}
+{\footnotesize\ttfamily struct  \{ ... \}  FB19\+Drv\+UART}
+
+\mbox{\Hypertarget{struct_f_b19_ctrl__cfg__struct_af5a9462282abba0d8ad1012075de0699}\label{struct_f_b19_ctrl__cfg__struct_af5a9462282abba0d8ad1012075de0699}} 
+\index{FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}!GPIO@{GPIO}}
+\index{GPIO@{GPIO}!FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}}
+\doxysubsubsection{\texorpdfstring{GPIO}{GPIO}}
+{\footnotesize\ttfamily GPIO\+\_\+\+Type\+Def$\ast$ GPIO}
+
+This instance\textquotesingle{}s pointer to its related GPIO driver resource that drives the Driver Output Enable signal to the RS-\/485 transceiver.
+
+Pointer to the CMSIS GPIO structure that hosts the UART\textquotesingle{}s transmit and receive ports. \mbox{\Hypertarget{struct_f_b19_ctrl__cfg__struct_a607d3a417fcfcdda351ecfea1e9293bb}\label{struct_f_b19_ctrl__cfg__struct_a607d3a417fcfcdda351ecfea1e9293bb}} 
+\index{FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}!GPIO\_altFunctionSelection@{GPIO\_altFunctionSelection}}
+\index{GPIO\_altFunctionSelection@{GPIO\_altFunctionSelection}!FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}}
+\doxysubsubsection{\texorpdfstring{GPIO\_altFunctionSelection}{GPIO\_altFunctionSelection}}
+{\footnotesize\ttfamily uint16\+\_\+t GPIO\+\_\+alt\+Function\+Selection}
+
+Alternate function selection code for the dedicated port pins. \mbox{\Hypertarget{struct_f_b19_ctrl__cfg__struct_abfe7bbf4551e8e3f71e8ff9dc3c3a3b0}\label{struct_f_b19_ctrl__cfg__struct_abfe7bbf4551e8e3f71e8ff9dc3c3a3b0}} 
+\index{FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}!GPIO\_portBitDOE@{GPIO\_portBitDOE}}
+\index{GPIO\_portBitDOE@{GPIO\_portBitDOE}!FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}}
+\doxysubsubsection{\texorpdfstring{GPIO\_portBitDOE}{GPIO\_portBitDOE}}
+{\footnotesize\ttfamily uint16\+\_\+t GPIO\+\_\+port\+Bit\+DOE}
+
+Driver Output Enable signal\textquotesingle{}s bit number on the dedicated GPIO port that controls the driver\textquotesingle{}s output on the RS-\/485 transceiver. Its range is 0 to 15. \mbox{\Hypertarget{struct_f_b19_ctrl__cfg__struct_a5ac2f8f4ba3caf7097ac7f5021fe507b}\label{struct_f_b19_ctrl__cfg__struct_a5ac2f8f4ba3caf7097ac7f5021fe507b}} 
+\index{FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}!GPIO\_portBitRx@{GPIO\_portBitRx}}
+\index{GPIO\_portBitRx@{GPIO\_portBitRx}!FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}}
+\doxysubsubsection{\texorpdfstring{GPIO\_portBitRx}{GPIO\_portBitRx}}
+{\footnotesize\ttfamily uint16\+\_\+t GPIO\+\_\+port\+Bit\+Rx}
+
+Receiver\textquotesingle{}s bit number on the dedicated GPIO port. Its range is 0 to 15. \mbox{\Hypertarget{struct_f_b19_ctrl__cfg__struct_a44b3a082941817ebcff9a581633fc41f}\label{struct_f_b19_ctrl__cfg__struct_a44b3a082941817ebcff9a581633fc41f}} 
+\index{FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}!GPIO\_portBitTx@{GPIO\_portBitTx}}
+\index{GPIO\_portBitTx@{GPIO\_portBitTx}!FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}}
+\doxysubsubsection{\texorpdfstring{GPIO\_portBitTx}{GPIO\_portBitTx}}
+{\footnotesize\ttfamily uint16\+\_\+t GPIO\+\_\+port\+Bit\+Tx}
+
+Transmitter\textquotesingle{}s bit number on the dedicated GPIO port. Its range is 0 to 15. \mbox{\Hypertarget{struct_f_b19_ctrl__cfg__struct_a07e5a2a14fe68bfdacf02e9ce9c1f79b}\label{struct_f_b19_ctrl__cfg__struct_a07e5a2a14fe68bfdacf02e9ce9c1f79b}} 
+\index{FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}!lfrMsgQ@{lfrMsgQ}}
+\index{lfrMsgQ@{lfrMsgQ}!FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}}
+\doxysubsubsection{\texorpdfstring{lfrMsgQ}{lfrMsgQ}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_q_8h_a824025c23dc2eece4fbb126b33a6ef08}{FB19\+Lib\+Msg\+Q\+\_\+queue\+\_\+t}}$\ast$ lfr\+MsgQ}
+
+A pointer to the Low Frequency Reader message queue used by this instance.~\newline
+ Typical capacity\+: 4 messages \mbox{\Hypertarget{struct_f_b19_ctrl__cfg__struct_ad0d6b8a285f39f536bde45d9449bb874}\label{struct_f_b19_ctrl__cfg__struct_ad0d6b8a285f39f536bde45d9449bb874}} 
+\index{FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}!NVIC\_IRQ\_channel@{NVIC\_IRQ\_channel}}
+\index{NVIC\_IRQ\_channel@{NVIC\_IRQ\_channel}!FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}}
+\doxysubsubsection{\texorpdfstring{NVIC\_IRQ\_channel}{NVIC\_IRQ\_channel}}
+{\footnotesize\ttfamily IRQn\+\_\+\+Type NVIC\+\_\+\+IRQ\+\_\+channel}
+
+Interrupt channel number. \mbox{\Hypertarget{struct_f_b19_ctrl__cfg__struct_a9fc053d64d001e8a0023467bbdc66525}\label{struct_f_b19_ctrl__cfg__struct_a9fc053d64d001e8a0023467bbdc66525}} 
+\index{FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}!NVIC\_IRQ\_groupPriority@{NVIC\_IRQ\_groupPriority}}
+\index{NVIC\_IRQ\_groupPriority@{NVIC\_IRQ\_groupPriority}!FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}}
+\doxysubsubsection{\texorpdfstring{NVIC\_IRQ\_groupPriority}{NVIC\_IRQ\_groupPriority}}
+{\footnotesize\ttfamily uint8\+\_\+t NVIC\+\_\+\+IRQ\+\_\+group\+Priority}
+
+Interrupt group priority. \mbox{\Hypertarget{struct_f_b19_ctrl__cfg__struct_a95aae82c3420d9005f0e681a2d129b21}\label{struct_f_b19_ctrl__cfg__struct_a95aae82c3420d9005f0e681a2d129b21}} 
+\index{FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}!NVIC\_IRQ\_subPriority@{NVIC\_IRQ\_subPriority}}
+\index{NVIC\_IRQ\_subPriority@{NVIC\_IRQ\_subPriority}!FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}}
+\doxysubsubsection{\texorpdfstring{NVIC\_IRQ\_subPriority}{NVIC\_IRQ\_subPriority}}
+{\footnotesize\ttfamily uint8\+\_\+t NVIC\+\_\+\+IRQ\+\_\+sub\+Priority}
+
+Interrupt\textquotesingle{}s sub-\/priority in group.
+
+Interrupt\textquotesingle{}s sub-\/priority in group \mbox{\Hypertarget{struct_f_b19_ctrl__cfg__struct_aabcd45187abc3de0d2cff2f4bd809922}\label{struct_f_b19_ctrl__cfg__struct_aabcd45187abc3de0d2cff2f4bd809922}} 
+\index{FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}!RCC\_clockEnableBitMask@{RCC\_clockEnableBitMask}}
+\index{RCC\_clockEnableBitMask@{RCC\_clockEnableBitMask}!FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}}
+\doxysubsubsection{\texorpdfstring{RCC\_clockEnableBitMask}{RCC\_clockEnableBitMask}}
+{\footnotesize\ttfamily uint32\+\_\+t RCC\+\_\+clock\+Enable\+Bit\+Mask}
+
+Bit mask to enable the clock to the timer.
+
+Bit mask to enable the clock to the USART. \mbox{\Hypertarget{struct_f_b19_ctrl__cfg__struct_a68eeb6c8256487c1dc22836a73cc872a}\label{struct_f_b19_ctrl__cfg__struct_a68eeb6c8256487c1dc22836a73cc872a}} 
+\index{FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}!RCC\_clockEnableRegister@{RCC\_clockEnableRegister}}
+\index{RCC\_clockEnableRegister@{RCC\_clockEnableRegister}!FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}}
+\doxysubsubsection{\texorpdfstring{RCC\_clockEnableRegister}{RCC\_clockEnableRegister}}
+{\footnotesize\ttfamily volatile uint32\+\_\+t$\ast$ RCC\+\_\+clock\+Enable\+Register}
+
+Dedicated RCC APBx peripheral clock enable register. \mbox{\Hypertarget{struct_f_b19_ctrl__cfg__struct_a06777c49abe190ee8fbd9d58219137b8}\label{struct_f_b19_ctrl__cfg__struct_a06777c49abe190ee8fbd9d58219137b8}} 
+\index{FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}!RCC\_resetBitMask@{RCC\_resetBitMask}}
+\index{RCC\_resetBitMask@{RCC\_resetBitMask}!FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}}
+\doxysubsubsection{\texorpdfstring{RCC\_resetBitMask}{RCC\_resetBitMask}}
+{\footnotesize\ttfamily uint32\+\_\+t RCC\+\_\+reset\+Bit\+Mask}
+
+Bit mask to reset the timer. \mbox{\Hypertarget{struct_f_b19_ctrl__cfg__struct_ad1c01ebd5cceecf8aa1317eac0e1a991}\label{struct_f_b19_ctrl__cfg__struct_ad1c01ebd5cceecf8aa1317eac0e1a991}} 
+\index{FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}!RCC\_resetRegister@{RCC\_resetRegister}}
+\index{RCC\_resetRegister@{RCC\_resetRegister}!FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}}
+\doxysubsubsection{\texorpdfstring{RCC\_resetRegister}{RCC\_resetRegister}}
+{\footnotesize\ttfamily volatile uint32\+\_\+t$\ast$ RCC\+\_\+reset\+Register}
+
+Dedicated RCC APBx peripheral reset register. \mbox{\Hypertarget{struct_f_b19_ctrl__cfg__struct_abf87a78ad833e664f6067fbe7be810d0}\label{struct_f_b19_ctrl__cfg__struct_abf87a78ad833e664f6067fbe7be810d0}} 
+\index{FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}!registerWidth@{registerWidth}}
+\index{registerWidth@{registerWidth}!FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}}
+\doxysubsubsection{\texorpdfstring{registerWidth}{registerWidth}}
+{\footnotesize\ttfamily int16\+\_\+t register\+Width}
+
+Width of the ARR and CCRx registers in bits (16 or 32). \mbox{\Hypertarget{struct_f_b19_ctrl__cfg__struct_a7bc1d0690f22bdc235c4b49bf54b348f}\label{struct_f_b19_ctrl__cfg__struct_a7bc1d0690f22bdc235c4b49bf54b348f}} 
+\index{FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}!rxMsgQ@{rxMsgQ}}
+\index{rxMsgQ@{rxMsgQ}!FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}}
+\doxysubsubsection{\texorpdfstring{rxMsgQ}{rxMsgQ}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_q_8h_a7a9e53d1fd4d1a1edad1aee0841c9c1f}{FB19\+Msg\+Q\+\_\+t}}$\ast$ rx\+MsgQ}
+
+A pointer to the receive message queue used by this instance.~\newline
+ Typical capacity\+: 8 messages \mbox{\Hypertarget{struct_f_b19_ctrl__cfg__struct_a663322e9eb0b01f9723211f3973c31ef}\label{struct_f_b19_ctrl__cfg__struct_a663322e9eb0b01f9723211f3973c31ef}} 
+\index{FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}!TIMx@{TIMx}}
+\index{TIMx@{TIMx}!FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}}
+\doxysubsubsection{\texorpdfstring{TIMx}{TIMx}}
+{\footnotesize\ttfamily TIM\+\_\+\+Type\+Def$\ast$ TIMx}
+
+Pointer to the CMSIS Timer structure. \mbox{\Hypertarget{struct_f_b19_ctrl__cfg__struct_af867b7b2d367730b3ca32bf32da30cf5}\label{struct_f_b19_ctrl__cfg__struct_af867b7b2d367730b3ca32bf32da30cf5}} 
+\index{FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}!txMsgQ@{txMsgQ}}
+\index{txMsgQ@{txMsgQ}!FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}}
+\doxysubsubsection{\texorpdfstring{txMsgQ}{txMsgQ}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_q_8h_a7a9e53d1fd4d1a1edad1aee0841c9c1f}{FB19\+Msg\+Q\+\_\+t}}$\ast$ tx\+MsgQ}
+
+A pointer to the transmit message queue used by this instance.~\newline
+ Typical capacity\+: 8 messages \mbox{\Hypertarget{struct_f_b19_ctrl__cfg__struct_a6aa7313388717d2d164f468b5943511b}\label{struct_f_b19_ctrl__cfg__struct_a6aa7313388717d2d164f468b5943511b}} 
+\index{FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}!txRxMsgQ@{txRxMsgQ}}
+\index{txRxMsgQ@{txRxMsgQ}!FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}}
+\doxysubsubsection{\texorpdfstring{txRxMsgQ}{txRxMsgQ}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_q_8h_a7a9e53d1fd4d1a1edad1aee0841c9c1f}{FB19\+Msg\+Q\+\_\+t}}$\ast$ tx\+Rx\+MsgQ}
+
+A pointer to the transmit/receive message queue used by this instance.
+
+Note that in the current implementation there is only one queue for transmission and reception, since after the transmission of a frame its buffer is of no use anymore and can therefore be reused for the reception of the response frame.~\newline
+ Typical capacity\+: 8 messages \mbox{\Hypertarget{struct_f_b19_ctrl__cfg__struct_a6e208b36a8a5a7ff42a2117f8dcbc3eb}\label{struct_f_b19_ctrl__cfg__struct_a6e208b36a8a5a7ff42a2117f8dcbc3eb}} 
+\index{FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}!USARTx@{USARTx}}
+\index{USARTx@{USARTx}!FB19Ctrl\_cfg\_struct@{FB19Ctrl\_cfg\_struct}}
+\doxysubsubsection{\texorpdfstring{USARTx}{USARTx}}
+{\footnotesize\ttfamily USART\+\_\+\+Type\+Def$\ast$ USARTx}
+
+Pointer to the CMSIS USART structure. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ctrl/\+STM32\+Cube\+IDE/\+STM32\+F401/\+Inc/\mbox{\hyperlink{_f_b19_ctrl_8h}{FB19\+Ctrl.\+h}}\end{DoxyCompactItemize}

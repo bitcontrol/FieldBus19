@@ -1,0 +1,14 @@
+digraph "ctrl/STM32CubeIDE/STM32F401/Inc/FB19LibMsgQ.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="ctrl/STM32CubeIDE/STM32F401\l/Inc/FB19LibMsgQ.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="This file publishes the interface of a FieldBus19 library that encapsulates a specific type of messag..."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="FB19Def.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_def_8h.html",tooltip="This file defines FieldBus19 specific symbols."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="FB19Msg.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h.html",tooltip="This file defines FieldBus19 message specific types."];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="stdint.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node3 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+}

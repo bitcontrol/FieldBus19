@@ -1,9 +1,9 @@
 /**
- *  Filename:       FB19Subs.h
- *  Platform(s):    All
- *  Project:        FB19SubsLib
- *  Created:        May 23, 2023
- *  Description:    This file publishes the interface of the FieldBus19
+ *  - Filename:     FB19Subs.h
+ *  - Platform(s):  All
+ *  - Project:      FB19SubsLib
+ *  - Created:      May 23, 2023
+ *  - Description:  This file publishes the interface of the FieldBus19
  *                  Subscriber library.
  *
  *                  A note on the parameter \c instance:
@@ -38,10 +38,13 @@
  *                  economically. Please consult the output of your linker and
  *                  debugger for detailed and accurate information.
  *
- *  Notes:          DON'T CHANGE EXISTING CODE!
- *  Author:         Andreas Isenegger
- *  Copyright:      2023, Bitcontrol GmbH, Switzerland.
+ *  - Notes:        DON'T CHANGE EXISTING CODE!
+ *  - Author:       Andreas Isenegger
+ *  - Copyright:    2023, Bitcontrol GmbH, Switzerland.
  *                  All rights reserved.
+ *  @file
+ *  @brief          This file publishes the interface of the FieldBus19
+ *                  Subscriber library.
  */
 
 #ifndef FB19SUBS_H_
@@ -61,10 +64,10 @@ extern "C" {
 
 //------------------------------------------------------------------------------
 // Symbols and Macros
-/** Maximum bit rate in [bit/s]. */
+/** Maximum bit rate in bit/s. */
 #define FB19_SUBS_BIT_RATE_MAX          250000
 
-/** Minimum bit rate in [bit/s]. */
+/** Minimum bit rate in bit/s. */
 #define FB19_SUBS_BIT_RATE_MIN          2000
 
 /**
@@ -78,7 +81,8 @@ extern "C" {
 #define FB19_SUBS_BUS_ADDR_LOWEST       1
 
 /**
- * The size of the memory required to run an FB19 Subscriber instance.
+ * The size of the memory in bytes required to run an FB19 Subscriber instance.
+
  * Note that this number doesn't include the sizes of the five message queues
  * that have to be allocated outside this library. They are passed via pointers
  * in the \c FB19Subs_cfg_t configuration type.
@@ -227,7 +231,7 @@ typedef uint8_t FB19Subs_inst_t[FB19_SUBS_MEM_SIZE];
 //------------------------------------------------------------------------------
 // Functions
 /**
- * Starts a FB19 Subscriber instance.
+ * Starts an FB19 Subscriber instance.
  *
  * The parameter \c instance can be thought of as a 'handle' to the Subscriber
  * instance. It is the start address of the memory area, where the instance
@@ -257,7 +261,7 @@ int FB19Subs_start(FB19Subs_inst_t* instance,
     int bitRate);
 
 /**
- * Stops a FB19 Subscriber instance.
+ * Stops an FB19 Subscriber instance.
  *
  * Stopping an instance twice without starting it in between returns no error.
  *
@@ -273,7 +277,7 @@ int FB19Subs_stop(FB19Subs_inst_t* instance);
 /**
  * Executes the periodic tasks of this library.
  *
- * It essentially moves unread messages that came in since the previous
+ * It essentially moves unread messages that came in since the previous \c
  * _handler() call aside, fetches the received messages from the driver layer
  * and copies them to the next higher layer, and finally copies the messages
  * to be transmitted to the driver layer.
@@ -300,7 +304,7 @@ int FB19Subs_stop(FB19Subs_inst_t* instance);
  * compete with infrequent writer and reader objects on the available space
  * in the receive message queue. The frequent writers/readers would overwrite
  * (delete) messages of the infrequent writers/readers, since the latter may
- * pick up their response messages just every 2nd, 3rd or xth _handler()
+ * pick up their response messages just every 2nd, 3rd or xth \c _handler()
  * call.
  *
  * It does nothing if \c instance is a NULL pointer or if the library
@@ -312,9 +316,10 @@ void FB19Subs_handler(FB19Subs_inst_t* instance);
 
 /**
  * Deep copies the oldest unread message that matches the passed message
- * identifier \c msgId into the message the \c msg parameter points to. In the
- * receive message queue, the message is thereby marked as consumed. It cannot
- * be read a second time.
+ * identifier \c msgId into the message the \c msg parameter points to.
+ *
+ * In the receive message queue, the message is thereby marked as consumed.
+ * It cannot be read a second time.
  *
  * @param[in] instance points to the memory resource used by this instance.
  * @param[out] msg points to the object that will hold the fetched message
@@ -341,9 +346,11 @@ int FB19Subs_getBusAddress(FB19Subs_inst_t* instance, int16_t* addr);
 /**
  * Returns the number of noise faults since the start of this Subscriber
  * instance.
+ *
  * Every noise detection error increases the fault count by one. If more than
  * one noise spike occurred during the time of a character, it is stored as one
  * fault (not several).
+ *
  * @param[in] instance points to the memory resource used by this instance.
  * @param[out] count points to the variable that will hold the number of
  * noise faults since the start of this module. In case of an error, it won't
@@ -356,9 +363,11 @@ int FB19Subs_getNoiseFaultCount(FB19Subs_inst_t* instance,
 /**
  * Returns the number of receive faults since the start of this Subscriber
  * instance.
+ *
  * Every frame reception error increases the fault count by one. If more than
  * one error occurred during the reception of a frame, it is stored as one
  * fault (not several).
+ *
  * @param[in] instance points to the memory resource used by this instance.
  * @param[out] count points to the variable that will hold the number of
  * receive faults since the start of this module. In case of an error, it won't
@@ -370,9 +379,11 @@ int FB19Subs_getRxFaultCount(FB19Subs_inst_t* instance, uint32_t* count);
 /**
  * Returns the number of transmit faults since the start of this Subscriber
  * instance.
+ *
  * Every frame transmission error increases the fault count by one. If more than
  * one error occurred during the transmission of a frame, it is stored as one
  * fault (not several).
+ *
  * @param[in] instance points to the memory resource used by this instance.
  * @param[out] count points to the variable that will hold the number of
  * transmit faults since the start of this module. In case of an error, it won't
@@ -382,21 +393,23 @@ int FB19Subs_getRxFaultCount(FB19Subs_inst_t* instance, uint32_t* count);
 int FB19Subs_getTxFaultCount(FB19Subs_inst_t* instance, uint32_t* count);
 
 /**
- * Returns the start address of the version string. It's a null-terminated
+ * Returns the start address of the version string, which is a null-terminated
  * C-string.
  *
- * This function might be called even if the instance hasn't been started.
+ * This function may be called even if the instance hasn't been started.
  *
- * @return the version of this library as null-terminated C-string.
+ * @return The version of this library as null-terminated C-string.
  */
 const char* FB19Subs_getVersion();
 
 /**
  * Deep copies the message \c msg points to into the transmit message queue
  * of this library. After the next call to the \c _handler() function, it is
- * ready for transmission, will however only be sent when the FB19 Controller
- * sends this node a request message that matches the message identifier
- * \c msgId inside its descriptor \c dscr.
+ * ready for transmission.
+ *
+ * It will however only be sent when the FB19 Controller sends this node a
+ * request message that matches the message identifier \c msgId inside its
+ *  descriptor \c dscr.
  *
  * The messages are transmitted in the order they have been added through
  * the \c _submit() calls.
@@ -420,6 +433,7 @@ int FB19Subs_submit(FB19Subs_inst_t* instance, const FB19Msg_t* msg);
  * Handles the timer interrupts of the associated Timer SoC resource.
  *
  * Insert it into the TIM2_IRQHandler() function in the stm32fxxx_it.c file.
+ *
  * Example:<br>
  * \code
  *  void TIM2_IRQHandler(void)
@@ -436,6 +450,7 @@ void FB19Subs_timerIRQHandler(FB19Subs_inst_t* instance);
  * Handles the USART interrupts of the associated USART SoC resource.
  *
  * Insert it into the USART2_IRQHandler() function in the stm32fxxx_it.c file.
+ *
  * Example:<br>
  * \code
  *  void USART2_IRQHandler(void)

@@ -1,0 +1,144 @@
+\hypertarget{_f_b19_subs_8h_source}{}\doxysection{FB19\+Subs.\+h}
+\label{_f_b19_subs_8h_source}\index{subs/STM32CubeIDE/STM32F401/Inc/FB19Subs.h@{subs/STM32CubeIDE/STM32F401/Inc/FB19Subs.h}}
+\mbox{\hyperlink{_f_b19_subs_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#ifndef FB19SUBS\_H\_}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define FB19SUBS\_H\_}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{54 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#include <stdint.h>} \textcolor{comment}{// For uint8\_t et al}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#include <stm32f4xx.h>} \textcolor{comment}{// For TIM\_TypeDef et al}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{subs_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_def_8h}{FB19Def.h}}"{}}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{subs_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_q_8h}{FB19LibMsgQ.h}}"{}}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{subs_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h}{FB19Msg.h}}"{}}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{subs_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_q_8h}{FB19MsgQ.h}}"{}}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{66 \textcolor{comment}{// Symbols and Macros}}
+\DoxyCodeLine{68 \textcolor{comment}{}\textcolor{preprocessor}{\#define FB19\_SUBS\_BIT\_RATE\_MAX          250000}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define FB19\_SUBS\_BIT\_RATE\_MIN          2000}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define FB19\_SUBS\_BUS\_ADDR\_HIGHEST      4}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define FB19\_SUBS\_BUS\_ADDR\_LOWEST       1}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define FB19\_SUBS\_MEM\_SIZE              268}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{93 \textcolor{comment}{// Types}}
+\DoxyCodeLine{95 \textcolor{comment}{}\textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_f_b19_subs__cfg__struct}{FB19Subs\_cfg\_struct}}}
+\DoxyCodeLine{96 \{}
+\DoxyCodeLine{97     \textcolor{comment}{/* FB19 Subscriber Data Preparation Module. *******************************/}}
+\DoxyCodeLine{98     \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{104         \mbox{\hyperlink{struct_f_b19_lib_msg_q__queue__struct}{FB19LibMsgQ\_queue\_t}}* \mbox{\hyperlink{struct_f_b19_subs__cfg__struct_a07e5a2a14fe68bfdacf02e9ce9c1f79b}{lfrMsgQ}};}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{110         \mbox{\hyperlink{struct_f_b19_msg_q__struct}{FB19MsgQ\_t}}* \mbox{\hyperlink{struct_f_b19_subs__cfg__struct_a7bc1d0690f22bdc235c4b49bf54b348f}{rxMsgQ}};}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{116         \mbox{\hyperlink{struct_f_b19_msg_q__struct}{FB19MsgQ\_t}}* \mbox{\hyperlink{struct_f_b19_subs__cfg__struct_af867b7b2d367730b3ca32bf32da30cf5}{txMsgQ}};}
+\DoxyCodeLine{117     \} \mbox{\hyperlink{struct_f_b19_subs__cfg__struct_a65a6899cf72095f06aadb2773df9f841}{FB19DprSubs}};}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119     \textcolor{comment}{/* FB19 Subscriber Driver Module. *****************************************/}}
+\DoxyCodeLine{120     \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{130         int16\_t \mbox{\hyperlink{struct_f_b19_subs__cfg__struct_af7badc9ef8940b2c21c727f1a84abcfc}{busAddress}};}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{136         GPIO\_TypeDef* \mbox{\hyperlink{struct_f_b19_subs__cfg__struct_af5a9462282abba0d8ad1012075de0699}{GPIO}};}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{143         uint16\_t \mbox{\hyperlink{struct_f_b19_subs__cfg__struct_abfe7bbf4551e8e3f71e8ff9dc3c3a3b0}{GPIO\_portBitDOE}};}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{149         \mbox{\hyperlink{struct_f_b19_msg_q__struct}{FB19MsgQ\_t}}* \mbox{\hyperlink{struct_f_b19_subs__cfg__struct_a7bc1d0690f22bdc235c4b49bf54b348f}{rxMsgQ}};}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{155         \mbox{\hyperlink{struct_f_b19_lib_msg_q__queue__struct}{FB19LibMsgQ\_queue\_t}}* \mbox{\hyperlink{struct_f_b19_subs__cfg__struct_a4ed8064b55928b192b25a64dbd126a19}{txMsgQ}};}
+\DoxyCodeLine{156     \} \mbox{\hyperlink{struct_f_b19_subs__cfg__struct_a13c46b508875aebfee4ac1608df15986}{FB19DrvSubs}};}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158     \textcolor{comment}{/* Timer Driver Module. ***************************************************/}}
+\DoxyCodeLine{159     \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{161         IRQn\_Type \mbox{\hyperlink{struct_f_b19_subs__cfg__struct_ad0d6b8a285f39f536bde45d9449bb874}{NVIC\_IRQ\_channel}}; \textcolor{comment}{// 32 bits wide}}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{164         uint8\_t \mbox{\hyperlink{struct_f_b19_subs__cfg__struct_a9fc053d64d001e8a0023467bbdc66525}{NVIC\_IRQ\_groupPriority}};}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{167         uint8\_t \mbox{\hyperlink{struct_f_b19_subs__cfg__struct_a95aae82c3420d9005f0e681a2d129b21}{NVIC\_IRQ\_subPriority}};}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{170         uint32\_t \mbox{\hyperlink{struct_f_b19_subs__cfg__struct_aabcd45187abc3de0d2cff2f4bd809922}{RCC\_clockEnableBitMask}};}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{173         \textcolor{keyword}{volatile} uint32\_t* \mbox{\hyperlink{struct_f_b19_subs__cfg__struct_a68eeb6c8256487c1dc22836a73cc872a}{RCC\_clockEnableRegister}};}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{176         uint32\_t \mbox{\hyperlink{struct_f_b19_subs__cfg__struct_a06777c49abe190ee8fbd9d58219137b8}{RCC\_resetBitMask}};}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{179         \textcolor{keyword}{volatile} uint32\_t* \mbox{\hyperlink{struct_f_b19_subs__cfg__struct_ad1c01ebd5cceecf8aa1317eac0e1a991}{RCC\_resetRegister}};}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{182         int16\_t  \mbox{\hyperlink{struct_f_b19_subs__cfg__struct_abf87a78ad833e664f6067fbe7be810d0}{registerWidth}};}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{185         TIM\_TypeDef* \mbox{\hyperlink{struct_f_b19_subs__cfg__struct_a663322e9eb0b01f9723211f3973c31ef}{TIMx}};}
+\DoxyCodeLine{186     \} \mbox{\hyperlink{struct_f_b19_subs__cfg__struct_a7f747cf2e77a2d17b25a93866b8b9f51}{FB19DrvTimer}};}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188     \textcolor{comment}{/* UART Driver Module. ****************************************************/}}
+\DoxyCodeLine{189     \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{194         GPIO\_TypeDef* \mbox{\hyperlink{struct_f_b19_subs__cfg__struct_af5a9462282abba0d8ad1012075de0699}{GPIO}};}
+\DoxyCodeLine{195 }
+\DoxyCodeLine{197         uint16\_t \mbox{\hyperlink{struct_f_b19_subs__cfg__struct_a607d3a417fcfcdda351ecfea1e9293bb}{GPIO\_altFunctionSelection}};}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{200         uint16\_t \mbox{\hyperlink{struct_f_b19_subs__cfg__struct_a5ac2f8f4ba3caf7097ac7f5021fe507b}{GPIO\_portBitRx}};}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{203         uint16\_t \mbox{\hyperlink{struct_f_b19_subs__cfg__struct_a44b3a082941817ebcff9a581633fc41f}{GPIO\_portBitTx}};}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{206         IRQn\_Type \mbox{\hyperlink{struct_f_b19_subs__cfg__struct_ad0d6b8a285f39f536bde45d9449bb874}{NVIC\_IRQ\_channel}};}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{209         uint8\_t \mbox{\hyperlink{struct_f_b19_subs__cfg__struct_a9fc053d64d001e8a0023467bbdc66525}{NVIC\_IRQ\_groupPriority}};}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{212         uint8\_t \mbox{\hyperlink{struct_f_b19_subs__cfg__struct_a95aae82c3420d9005f0e681a2d129b21}{NVIC\_IRQ\_subPriority}};}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{215         uint32\_t \mbox{\hyperlink{struct_f_b19_subs__cfg__struct_aabcd45187abc3de0d2cff2f4bd809922}{RCC\_clockEnableBitMask}};}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{218         \textcolor{keyword}{volatile} uint32\_t* \mbox{\hyperlink{struct_f_b19_subs__cfg__struct_a68eeb6c8256487c1dc22836a73cc872a}{RCC\_clockEnableRegister}};}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{221         USART\_TypeDef* \mbox{\hyperlink{struct_f_b19_subs__cfg__struct_a6e208b36a8a5a7ff42a2117f8dcbc3eb}{USARTx}};}
+\DoxyCodeLine{222     \} \mbox{\hyperlink{struct_f_b19_subs__cfg__struct_a6a32ef5409460afa2ba390458cc1714f}{FB19DrvUART}};}
+\DoxyCodeLine{223 \} \mbox{\hyperlink{_f_b19_subs_8h_ab3c37fbacd25aba8f93e03f94ddcaa82}{FB19Subs\_cfg\_t}};}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{226 \textcolor{keyword}{typedef} uint8\_t \mbox{\hyperlink{_f_b19_subs_8h_a0eb072feba88985bba0ae1f65baf3cf8}{FB19Subs\_inst\_t}}[\mbox{\hyperlink{_f_b19_subs_8h_ac0dde5eecd1e38f0869165acdac9a92f}{FB19\_SUBS\_MEM\_SIZE}}];}
+\DoxyCodeLine{227 }
+\DoxyCodeLine{228 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{229 \textcolor{comment}{// Constants and Variables}}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{232 \textcolor{comment}{// Functions}}
+\DoxyCodeLine{259 \textcolor{comment}{}\textcolor{keywordtype}{int} \mbox{\hyperlink{_f_b19_subs_8h_abaa3b5c370fc792104e2c14e23e4b7d3}{FB19Subs\_start}}(\mbox{\hyperlink{_f_b19_subs_8h_a0eb072feba88985bba0ae1f65baf3cf8}{FB19Subs\_inst\_t}}* instance,}
+\DoxyCodeLine{260     \textcolor{keyword}{const} \mbox{\hyperlink{struct_f_b19_subs__cfg__struct}{FB19Subs\_cfg\_t}}* config,}
+\DoxyCodeLine{261     \textcolor{keywordtype}{int} bitRate);}
+\DoxyCodeLine{262 }
+\DoxyCodeLine{275 \textcolor{keywordtype}{int} \mbox{\hyperlink{_f_b19_subs_8h_a4b17eda87916e2e22a60004aaa377e9d}{FB19Subs\_stop}}(\mbox{\hyperlink{_f_b19_subs_8h_a0eb072feba88985bba0ae1f65baf3cf8}{FB19Subs\_inst\_t}}* instance);}
+\DoxyCodeLine{276 }
+\DoxyCodeLine{315 \textcolor{keywordtype}{void} \mbox{\hyperlink{_f_b19_subs_8h_a0dee31fc9ba75a44493cd6e8ae7c6e75}{FB19Subs\_handler}}(\mbox{\hyperlink{_f_b19_subs_8h_a0eb072feba88985bba0ae1f65baf3cf8}{FB19Subs\_inst\_t}}* instance);}
+\DoxyCodeLine{316 }
+\DoxyCodeLine{332 \textcolor{keywordtype}{int} \mbox{\hyperlink{_f_b19_subs_8h_af0e8477fe9617ba507fc0278eebad126}{FB19Subs\_fetch}}(\mbox{\hyperlink{_f_b19_subs_8h_a0eb072feba88985bba0ae1f65baf3cf8}{FB19Subs\_inst\_t}}* instance, \mbox{\hyperlink{struct_f_b19msg__struct}{FB19Msg\_t}}* msg);}
+\DoxyCodeLine{333 }
+\DoxyCodeLine{344 \textcolor{keywordtype}{int} \mbox{\hyperlink{_f_b19_subs_8h_afd6b6f1b2853c998ffab7636c1182f1e}{FB19Subs\_getBusAddress}}(\mbox{\hyperlink{_f_b19_subs_8h_a0eb072feba88985bba0ae1f65baf3cf8}{FB19Subs\_inst\_t}}* instance, int16\_t* addr);}
+\DoxyCodeLine{345 }
+\DoxyCodeLine{360 \textcolor{keywordtype}{int} \mbox{\hyperlink{_f_b19_subs_8h_ae25bd97c7408f773a168033f016399ba}{FB19Subs\_getNoiseFaultCount}}(\mbox{\hyperlink{_f_b19_subs_8h_a0eb072feba88985bba0ae1f65baf3cf8}{FB19Subs\_inst\_t}}* instance,}
+\DoxyCodeLine{361     uint32\_t* count);}
+\DoxyCodeLine{362 }
+\DoxyCodeLine{377 \textcolor{keywordtype}{int} \mbox{\hyperlink{_f_b19_subs_8h_a566d446f8e91d34a08aae7d356909a59}{FB19Subs\_getRxFaultCount}}(\mbox{\hyperlink{_f_b19_subs_8h_a0eb072feba88985bba0ae1f65baf3cf8}{FB19Subs\_inst\_t}}* instance, uint32\_t* count);}
+\DoxyCodeLine{378 }
+\DoxyCodeLine{393 \textcolor{keywordtype}{int} \mbox{\hyperlink{_f_b19_subs_8h_a4f4a523efa22c9dbdff49a67b181a478}{FB19Subs\_getTxFaultCount}}(\mbox{\hyperlink{_f_b19_subs_8h_a0eb072feba88985bba0ae1f65baf3cf8}{FB19Subs\_inst\_t}}* instance, uint32\_t* count);}
+\DoxyCodeLine{394 }
+\DoxyCodeLine{403 \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{_f_b19_subs_8h_a089309456f180d557fb62bfe9f68db81}{FB19Subs\_getVersion}}();}
+\DoxyCodeLine{404 }
+\DoxyCodeLine{430 \textcolor{keywordtype}{int} \mbox{\hyperlink{_f_b19_subs_8h_aba9f9bdf9b3651a6d4d2233670eda546}{FB19Subs\_submit}}(\mbox{\hyperlink{_f_b19_subs_8h_a0eb072feba88985bba0ae1f65baf3cf8}{FB19Subs\_inst\_t}}* instance, \textcolor{keyword}{const} \mbox{\hyperlink{struct_f_b19msg__struct}{FB19Msg\_t}}* msg);}
+\DoxyCodeLine{431 }
+\DoxyCodeLine{447 \textcolor{keywordtype}{void} \mbox{\hyperlink{_f_b19_subs_8h_a5095e2d29f0408048592057b553e7932}{FB19Subs\_timerIRQHandler}}(\mbox{\hyperlink{_f_b19_subs_8h_a0eb072feba88985bba0ae1f65baf3cf8}{FB19Subs\_inst\_t}}* instance);}
+\DoxyCodeLine{448 }
+\DoxyCodeLine{464 \textcolor{keywordtype}{void} \mbox{\hyperlink{_f_b19_subs_8h_ac39b2fe42c5319bab1efe8e0478cc77d}{FB19Subs\_UartIRQHandler}}(\mbox{\hyperlink{_f_b19_subs_8h_a0eb072feba88985bba0ae1f65baf3cf8}{FB19Subs\_inst\_t}}* instance);}
+\DoxyCodeLine{465 }
+\DoxyCodeLine{466 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{467 \}}
+\DoxyCodeLine{468 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{469 }
+\DoxyCodeLine{470 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// FB19SUBS\_H\_}}
+
+\end{DoxyCode}

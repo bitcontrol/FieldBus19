@@ -1,0 +1,27 @@
+digraph "ctrl/STM32CubeIDE/STM32F401/Inc/FB19CtrlCfg.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="ctrl/STM32CubeIDE/STM32F401\l/Inc/FB19CtrlCfg.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="This file publishes the interface of the FieldBus19 Controller configuration file."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="FB19Ctrl.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_f_b19_ctrl_8h.html",tooltip="This file publishes the interface of the FieldBus19 Controller library."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="stdint.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="stm32f4xx.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="FB19Def.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_def_8h.html",tooltip="This file defines FieldBus19 specific symbols."];
+  Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="FB19LibMsgQ.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_q_8h.html",tooltip="This file publishes the interface of a FieldBus19 library that encapsulates a specific type of messag..."];
+  Node6 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="FB19Msg.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h.html",tooltip="This file defines FieldBus19 message specific types."];
+  Node7 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="FB19MsgQ.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_q_8h.html",tooltip="This file publishes the interface of the FieldBus19 message queue."];
+  Node8 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+}

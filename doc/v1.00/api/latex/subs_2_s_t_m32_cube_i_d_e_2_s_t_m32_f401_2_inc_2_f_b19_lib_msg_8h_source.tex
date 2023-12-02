@@ -1,0 +1,72 @@
+\hypertarget{subs_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_source}{}\doxysection{FB19\+Lib\+Msg.\+h}
+\label{subs_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_source}\index{subs/STM32CubeIDE/STM32F401/Inc/FB19LibMsg.h@{subs/STM32CubeIDE/STM32F401/Inc/FB19LibMsg.h}}
+\mbox{\hyperlink{subs_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#ifndef FB19LIBMSG\_H\_}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define FB19LIBMSG\_H\_}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{29 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <stddef.h>} \textcolor{comment}{// For size\_t}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{subs_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h}{FB19Msg.h}}"{}}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{37 \textcolor{comment}{// Symbols and Macros}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{40 \textcolor{comment}{// Types}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{43 \textcolor{comment}{// Constants and Variables}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{46 \textcolor{comment}{// Functions}}
+\DoxyCodeLine{61 \textcolor{comment}{}\textcolor{keywordtype}{int} \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a14ed0f554dc07cac0d7edd88d24b8d61}{FB19LibMsg\_appendChar}}(\mbox{\hyperlink{struct_f_b19msg__struct}{FB19Msg\_t}}* msg, \textcolor{keywordtype}{char} value);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{79 \textcolor{keywordtype}{int} \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a75909964a99e2c8034abb1df7405b6a3}{FB19LibMsg\_appendData}}(\mbox{\hyperlink{struct_f_b19msg__struct}{FB19Msg\_t}}* msg, \textcolor{keyword}{const} \textcolor{keywordtype}{void}* buffer, \textcolor{keywordtype}{size\_t} size);}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{96 \textcolor{keywordtype}{int} \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_ab9cba09fc583b0ff902d08ecf835501a}{FB19LibMsg\_appendDouble}}(\mbox{\hyperlink{struct_f_b19msg__struct}{FB19Msg\_t}}* msg, \textcolor{keywordtype}{double} value);}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{113 \textcolor{keywordtype}{int} \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a90988ef14663bf940a1e493f15c88d01}{FB19LibMsg\_appendFloat}}(\mbox{\hyperlink{struct_f_b19msg__struct}{FB19Msg\_t}}* msg, \textcolor{keywordtype}{float} value);}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{129 \textcolor{keywordtype}{int} \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a3bff2cee470b253d23a3f68e7ada9852}{FB19LibMsg\_appendInt8}}(\mbox{\hyperlink{struct_f_b19msg__struct}{FB19Msg\_t}}* msg, int8\_t value);}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{145 \textcolor{keywordtype}{int} \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_ae37c6dc3ec7e2b68be6e2d262737e5f7}{FB19LibMsg\_appendInt16}}(\mbox{\hyperlink{struct_f_b19msg__struct}{FB19Msg\_t}}* msg, int16\_t value);}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{161 \textcolor{keywordtype}{int} \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a30ec7a696f5ee3d6c07b1954a66d189b}{FB19LibMsg\_appendInt32}}(\mbox{\hyperlink{struct_f_b19msg__struct}{FB19Msg\_t}}* msg, int32\_t value);}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{177 \textcolor{keywordtype}{int} \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a96c0e8a6a4b0b48e4807a8109f305a4d}{FB19LibMsg\_appendInt64}}(\mbox{\hyperlink{struct_f_b19msg__struct}{FB19Msg\_t}}* msg, int64\_t value);}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{198 \textcolor{keywordtype}{int} \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a869a3afcbedbe0d40506bbad62bccb61}{FB19LibMsg\_appendString}}(\mbox{\hyperlink{struct_f_b19msg__struct}{FB19Msg\_t}}* msg, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* str);}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{216 \textcolor{keywordtype}{int} \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a9bfffd6a16b97657bcf286b78e1b6dde}{FB19LibMsg\_removeChar}}(\mbox{\hyperlink{struct_f_b19msg__struct}{FB19Msg\_t}}* msg, \textcolor{keywordtype}{char}* value);}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{240 \textcolor{keywordtype}{int} \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a20247c9feb4a7f726822de01e6e0224c}{FB19LibMsg\_removeData}}(\mbox{\hyperlink{struct_f_b19msg__struct}{FB19Msg\_t}}* msg, \textcolor{keywordtype}{void}* buffer, \textcolor{keywordtype}{size\_t} size);}
+\DoxyCodeLine{241 }
+\DoxyCodeLine{259 \textcolor{keywordtype}{int} \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_abcc64159b035d44f5c15d62fe40463b8}{FB19LibMsg\_removeDouble}}(\mbox{\hyperlink{struct_f_b19msg__struct}{FB19Msg\_t}}* msg, \textcolor{keywordtype}{double}* value);}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{278 \textcolor{keywordtype}{int} \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a485ecbe414e9af629575ed1f3079dd4d}{FB19LibMsg\_removeFloat}}(\mbox{\hyperlink{struct_f_b19msg__struct}{FB19Msg\_t}}* msg, \textcolor{keywordtype}{float}* value);}
+\DoxyCodeLine{279 }
+\DoxyCodeLine{296 \textcolor{keywordtype}{int} \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_af0d3964d348210cef48c08278b7904b5}{FB19LibMsg\_removeInt8}}(\mbox{\hyperlink{struct_f_b19msg__struct}{FB19Msg\_t}}* msg, int8\_t* value);}
+\DoxyCodeLine{297 }
+\DoxyCodeLine{314 \textcolor{keywordtype}{int} \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_acb6cfeca5d48790f1d578d3926b1e534}{FB19LibMsg\_removeInt16}}(\mbox{\hyperlink{struct_f_b19msg__struct}{FB19Msg\_t}}* msg, int16\_t* value);}
+\DoxyCodeLine{315 }
+\DoxyCodeLine{332 \textcolor{keywordtype}{int} \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a99806f6feac1d672bbb4f9e92a67283e}{FB19LibMsg\_removeInt32}}(\mbox{\hyperlink{struct_f_b19msg__struct}{FB19Msg\_t}}* msg, int32\_t* value);}
+\DoxyCodeLine{333 }
+\DoxyCodeLine{350 \textcolor{keywordtype}{int} \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_aa31c274b313dfa5d9f3ba52846f47388}{FB19LibMsg\_removeInt64}}(\mbox{\hyperlink{struct_f_b19msg__struct}{FB19Msg\_t}}* msg, int64\_t* value);}
+\DoxyCodeLine{351 }
+\DoxyCodeLine{372 \textcolor{keywordtype}{int} \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_ada1903b766dc8e4225d0377d7711ef41}{FB19LibMsg\_removeString}}(\mbox{\hyperlink{struct_f_b19msg__struct}{FB19Msg\_t}}* msg, \textcolor{keywordtype}{char}* str, \textcolor{keywordtype}{size\_t} bufLen);}
+\DoxyCodeLine{373 }
+\DoxyCodeLine{382 \textcolor{keywordtype}{int} \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_aaf5d221e5a2da97adb5388a48713a6ef}{FB19LibMsg\_reset}}(\mbox{\hyperlink{struct_f_b19msg__struct}{FB19Msg\_t}}* msg);}
+\DoxyCodeLine{383 }
+\DoxyCodeLine{384 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{385 \}}
+\DoxyCodeLine{386 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{387 }
+\DoxyCodeLine{388 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// FB19LIBMSG\_H\_}}
+
+\end{DoxyCode}

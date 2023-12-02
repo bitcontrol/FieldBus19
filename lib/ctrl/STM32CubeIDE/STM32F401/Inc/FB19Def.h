@@ -1,14 +1,16 @@
 /**
- *  Filename:       FB19Def.h
- *  Platform(s):    All
- *  Project:        FieldBus19
- *  Created:        Apr 28, 2021
- *  Description:    This file defines FieldBus19 specific symbols.
+ *  - Filename:     FB19Def.h
+ *  - Platform(s):  All
+ *  - Project:      FieldBus19
+ *  - Created:      Apr 28, 2021
+ *  - Description:  This file defines FieldBus19 specific symbols.
  *                  DON'T CHANGE IT!
- *  Notes:
- *  Author:         Andreas Isenegger
- *  Copyright:      2021-2023, Bitcontrol GmbH, Switzerland.
+ *  - Notes:
+ *  - Author:       Andreas Isenegger
+ *  - Copyright:    2021-2023, Bitcontrol GmbH, Switzerland.
  *                  All rights reserved.
+ *  @file
+ *  @brief          This file defines FieldBus19 specific symbols.
  */
 
 #ifndef FB19DEF_H_
@@ -22,13 +24,13 @@ extern "C" {
 // Symbols and Macros
 
 /* --- Booleans and Errors------------------------------- */
-/** Since the type \c bool doesn't exist in C, it's define here as \c int. */
+/** Since the type \c bool doesn't exist in C, it's defined here as \c int. */
 #define BOOL                            int
 
-/** Since the value \c false doesn't exist in C, it's define here as \c 0. */
+/** Since the value \c false doesn't exist in C, it's defined here as \c 0. */
 #define FALSE                           0
 
-/** Since the value \c true doesn't exist in C, it's define here as \c 1. */
+/** Since the value \c true doesn't exist in C, it's defined here as \c 1. */
 #define TRUE                            1
 
 /** Return value of a function in case of an error. */

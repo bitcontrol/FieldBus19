@@ -1,0 +1,379 @@
+\hypertarget{_f_b19_ctrl_8h}{}\doxysection{ctrl/\+STM32\+Cube\+IDE/\+STM32\+F401/\+Inc/\+FB19\+Ctrl.h File Reference}
+\label{_f_b19_ctrl_8h}\index{ctrl/STM32CubeIDE/STM32F401/Inc/FB19Ctrl.h@{ctrl/STM32CubeIDE/STM32F401/Inc/FB19Ctrl.h}}
+
+
+This file publishes the interface of the Field\+Bus19 Controller library.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stm32f4xx.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}FB19\+Def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}FB19\+Lib\+Msg\+Q.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}FB19\+Msg.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}FB19\+Msg\+Q.\+h\char`\"{}}\newline
+Include dependency graph for FB19\+Ctrl.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct}{FB19\+Ctrl\+\_\+cfg\+\_\+struct}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_f_b19_ctrl_8h_a4b6bb0f7d201195d417dea2c50d53d61}{FB19\+\_\+\+CTRL\+\_\+\+BIT\+\_\+\+RATE\+\_\+\+MAX}}~250000
+\item 
+\#define \mbox{\hyperlink{_f_b19_ctrl_8h_af634b4ce6333514a5f8452d88f01c7c6}{FB19\+\_\+\+CTRL\+\_\+\+BIT\+\_\+\+RATE\+\_\+\+MIN}}~2000
+\item 
+\#define \mbox{\hyperlink{_f_b19_ctrl_8h_a1814e3e159607dbf0e6997b9daba2c5f}{FB19\+\_\+\+CTRL\+\_\+\+MEM\+\_\+\+SIZE}}~224
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct}{FB19\+Ctrl\+\_\+cfg\+\_\+struct}} \mbox{\hyperlink{_f_b19_ctrl_8h_a51308e1cc646727df81af12709b49ae1}{FB19\+Ctrl\+\_\+cfg\+\_\+t}}
+\item 
+typedef uint8\+\_\+t \mbox{\hyperlink{_f_b19_ctrl_8h_a71656cf0594ed91d50d0fa1a85d8a7d8}{FB19\+Ctrl\+\_\+inst\+\_\+t}}\mbox{[}\mbox{\hyperlink{_f_b19_ctrl_8h_a1814e3e159607dbf0e6997b9daba2c5f}{FB19\+\_\+\+CTRL\+\_\+\+MEM\+\_\+\+SIZE}}\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_f_b19_ctrl_8h_ac0c1e53f005579096fcbb5e16dbcc02c}{FB19\+Ctrl\+\_\+start}} (\mbox{\hyperlink{_f_b19_ctrl_8h_a71656cf0594ed91d50d0fa1a85d8a7d8}{FB19\+Ctrl\+\_\+inst\+\_\+t}} $\ast$instance, const \mbox{\hyperlink{_f_b19_ctrl_8h_a51308e1cc646727df81af12709b49ae1}{FB19\+Ctrl\+\_\+cfg\+\_\+t}} $\ast$config, int bit\+Rate)
+\item 
+int \mbox{\hyperlink{_f_b19_ctrl_8h_a87ad65f1d9ef791983f31e591d85f11b}{FB19\+Ctrl\+\_\+stop}} (\mbox{\hyperlink{_f_b19_ctrl_8h_a71656cf0594ed91d50d0fa1a85d8a7d8}{FB19\+Ctrl\+\_\+inst\+\_\+t}} $\ast$instance)
+\item 
+void \mbox{\hyperlink{_f_b19_ctrl_8h_afc179f38f37b720ba085f52fcef72d5e}{FB19\+Ctrl\+\_\+handler}} (\mbox{\hyperlink{_f_b19_ctrl_8h_a71656cf0594ed91d50d0fa1a85d8a7d8}{FB19\+Ctrl\+\_\+inst\+\_\+t}} $\ast$instance)
+\item 
+int \mbox{\hyperlink{_f_b19_ctrl_8h_aa8066dd07666493294651dcd495b9d95}{FB19\+Ctrl\+\_\+fetch}} (\mbox{\hyperlink{_f_b19_ctrl_8h_a71656cf0594ed91d50d0fa1a85d8a7d8}{FB19\+Ctrl\+\_\+inst\+\_\+t}} $\ast$instance, \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$msg)
+\item 
+int \mbox{\hyperlink{_f_b19_ctrl_8h_a53d83ad680bf16108ae11b70dbe7a5e1}{FB19\+Ctrl\+\_\+get\+Noise\+Fault\+Count}} (\mbox{\hyperlink{_f_b19_ctrl_8h_a71656cf0594ed91d50d0fa1a85d8a7d8}{FB19\+Ctrl\+\_\+inst\+\_\+t}} $\ast$instance, uint32\+\_\+t $\ast$count)
+\item 
+int \mbox{\hyperlink{_f_b19_ctrl_8h_adbd85b7215001c1b8093a778a319a6dc}{FB19\+Ctrl\+\_\+get\+Rx\+Fault\+Count}} (\mbox{\hyperlink{_f_b19_ctrl_8h_a71656cf0594ed91d50d0fa1a85d8a7d8}{FB19\+Ctrl\+\_\+inst\+\_\+t}} $\ast$instance, uint32\+\_\+t $\ast$count)
+\item 
+int \mbox{\hyperlink{_f_b19_ctrl_8h_a5565fb04c4b61ea517a240f7a42268ce}{FB19\+Ctrl\+\_\+get\+Tx\+Fault\+Count}} (\mbox{\hyperlink{_f_b19_ctrl_8h_a71656cf0594ed91d50d0fa1a85d8a7d8}{FB19\+Ctrl\+\_\+inst\+\_\+t}} $\ast$instance, uint32\+\_\+t $\ast$count)
+\item 
+const char $\ast$ \mbox{\hyperlink{_f_b19_ctrl_8h_a7b1240a42fc2029421fdcd6d4fdee481}{FB19\+Ctrl\+\_\+get\+Version}} ()
+\item 
+int \mbox{\hyperlink{_f_b19_ctrl_8h_a6766d81c7b44fda0d0ac28c565be15fb}{FB19\+Ctrl\+\_\+submit}} (\mbox{\hyperlink{_f_b19_ctrl_8h_a71656cf0594ed91d50d0fa1a85d8a7d8}{FB19\+Ctrl\+\_\+inst\+\_\+t}} $\ast$instance, const \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$msg)
+\item 
+void \mbox{\hyperlink{_f_b19_ctrl_8h_a1463d1423f919dd9e8ba9534d2bb5747}{FB19\+Ctrl\+\_\+timer\+IRQHandler}} (\mbox{\hyperlink{_f_b19_ctrl_8h_a71656cf0594ed91d50d0fa1a85d8a7d8}{FB19\+Ctrl\+\_\+inst\+\_\+t}} $\ast$instance)
+\item 
+void \mbox{\hyperlink{_f_b19_ctrl_8h_af6416d1a259f9eeb481a8a6098d0eefc}{FB19\+Ctrl\+\_\+\+Uart\+IRQHandler}} (\mbox{\hyperlink{_f_b19_ctrl_8h_a71656cf0594ed91d50d0fa1a85d8a7d8}{FB19\+Ctrl\+\_\+inst\+\_\+t}} $\ast$instance)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file publishes the interface of the Field\+Bus19 Controller library. 
+
+
+\begin{DoxyItemize}
+\item Filename\+: \mbox{\hyperlink{_f_b19_ctrl_8h}{FB19\+Ctrl.\+h}}
+\item Platform(s)\+: All
+\item Project\+: FB19\+Ctrl\+Lib
+\item Created\+: May 23, 2023
+\item Description\+: This file publishes the interface of the Field\+Bus19 Controller library.
+
+A note on the parameter {\ttfamily instance\+:} The parameter {\ttfamily instance} can be thought of as a \textquotesingle{}handle\textquotesingle{} to the Controller instance. It is the start address of the memory area, where the instance stores its internal values (buffers, counters, pointers, ...).
+
+It doesn\textquotesingle{}t matter for this library if the memory has been allocated statically, dynamically or on the stack. Just make sure it\textquotesingle{}s not deallocated before the FB19 Controller is stopped by a call to \mbox{\hyperlink{_f_b19_ctrl_8h_a87ad65f1d9ef791983f31e591d85f11b}{FB19\+Ctrl\+\_\+stop()}}, or the behavior of the Controller will be undefined.~\newline
+ That way, this library doesn\textquotesingle{}t have to allocate memory internally; all required memory space is passed from the outside.
+
+Limitation of the bit rate\+:~\newline
+ This version of the FB19 Controller library is limited to a maximum bit rate of 250kbit/s, although many of STM\textquotesingle{}s microcontroller families could run the bus at considerably higher rates.
+
+Code size and stack requirements\+:~\newline
+ This library was designed with the economic use of resources in mind. It occupies little FLASH memory and uses the stack economically. Please consult the output of your linker and debugger for detailed and accurate information.
+\item Notes\+: DON\textquotesingle{}T CHANGE EXISTING CODE!
+\item Author\+: Andreas Isenegger
+\item Copyright\+: 2023, Bitcontrol GmbH, Switzerland. All rights reserved. 
+\end{DoxyItemize}
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_f_b19_ctrl_8h_a4b6bb0f7d201195d417dea2c50d53d61}\label{_f_b19_ctrl_8h_a4b6bb0f7d201195d417dea2c50d53d61}} 
+\index{FB19Ctrl.h@{FB19Ctrl.h}!FB19\_CTRL\_BIT\_RATE\_MAX@{FB19\_CTRL\_BIT\_RATE\_MAX}}
+\index{FB19\_CTRL\_BIT\_RATE\_MAX@{FB19\_CTRL\_BIT\_RATE\_MAX}!FB19Ctrl.h@{FB19Ctrl.h}}
+\doxysubsubsection{\texorpdfstring{FB19\_CTRL\_BIT\_RATE\_MAX}{FB19\_CTRL\_BIT\_RATE\_MAX}}
+{\footnotesize\ttfamily \#define FB19\+\_\+\+CTRL\+\_\+\+BIT\+\_\+\+RATE\+\_\+\+MAX~250000}
+
+Maximum bit rate in bit/s. \mbox{\Hypertarget{_f_b19_ctrl_8h_af634b4ce6333514a5f8452d88f01c7c6}\label{_f_b19_ctrl_8h_af634b4ce6333514a5f8452d88f01c7c6}} 
+\index{FB19Ctrl.h@{FB19Ctrl.h}!FB19\_CTRL\_BIT\_RATE\_MIN@{FB19\_CTRL\_BIT\_RATE\_MIN}}
+\index{FB19\_CTRL\_BIT\_RATE\_MIN@{FB19\_CTRL\_BIT\_RATE\_MIN}!FB19Ctrl.h@{FB19Ctrl.h}}
+\doxysubsubsection{\texorpdfstring{FB19\_CTRL\_BIT\_RATE\_MIN}{FB19\_CTRL\_BIT\_RATE\_MIN}}
+{\footnotesize\ttfamily \#define FB19\+\_\+\+CTRL\+\_\+\+BIT\+\_\+\+RATE\+\_\+\+MIN~2000}
+
+Minimum bit rate in bit/s. \mbox{\Hypertarget{_f_b19_ctrl_8h_a1814e3e159607dbf0e6997b9daba2c5f}\label{_f_b19_ctrl_8h_a1814e3e159607dbf0e6997b9daba2c5f}} 
+\index{FB19Ctrl.h@{FB19Ctrl.h}!FB19\_CTRL\_MEM\_SIZE@{FB19\_CTRL\_MEM\_SIZE}}
+\index{FB19\_CTRL\_MEM\_SIZE@{FB19\_CTRL\_MEM\_SIZE}!FB19Ctrl.h@{FB19Ctrl.h}}
+\doxysubsubsection{\texorpdfstring{FB19\_CTRL\_MEM\_SIZE}{FB19\_CTRL\_MEM\_SIZE}}
+{\footnotesize\ttfamily \#define FB19\+\_\+\+CTRL\+\_\+\+MEM\+\_\+\+SIZE~224}
+
+The size of the memory in bytes required to run an FB19 Controller instance.
+
+Note that this number doesn\textquotesingle{}t include the sizes of the four message queues that have to be allocated outside this library. They are passed via pointers in the {\ttfamily FB19\+Ctrl\+\_\+cfg\+\_\+t} configuration type. 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{_f_b19_ctrl_8h_a51308e1cc646727df81af12709b49ae1}\label{_f_b19_ctrl_8h_a51308e1cc646727df81af12709b49ae1}} 
+\index{FB19Ctrl.h@{FB19Ctrl.h}!FB19Ctrl\_cfg\_t@{FB19Ctrl\_cfg\_t}}
+\index{FB19Ctrl\_cfg\_t@{FB19Ctrl\_cfg\_t}!FB19Ctrl.h@{FB19Ctrl.h}}
+\doxysubsubsection{\texorpdfstring{FB19Ctrl\_cfg\_t}{FB19Ctrl\_cfg\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_f_b19_ctrl__cfg__struct}{FB19\+Ctrl\+\_\+cfg\+\_\+struct}} \mbox{\hyperlink{_f_b19_ctrl_8h_a51308e1cc646727df81af12709b49ae1}{FB19\+Ctrl\+\_\+cfg\+\_\+t}}}
+
+FB19 Controller configuration structure. \mbox{\Hypertarget{_f_b19_ctrl_8h_a71656cf0594ed91d50d0fa1a85d8a7d8}\label{_f_b19_ctrl_8h_a71656cf0594ed91d50d0fa1a85d8a7d8}} 
+\index{FB19Ctrl.h@{FB19Ctrl.h}!FB19Ctrl\_inst\_t@{FB19Ctrl\_inst\_t}}
+\index{FB19Ctrl\_inst\_t@{FB19Ctrl\_inst\_t}!FB19Ctrl.h@{FB19Ctrl.h}}
+\doxysubsubsection{\texorpdfstring{FB19Ctrl\_inst\_t}{FB19Ctrl\_inst\_t}}
+{\footnotesize\ttfamily typedef uint8\+\_\+t FB19\+Ctrl\+\_\+inst\+\_\+t\mbox{[}\mbox{\hyperlink{_f_b19_ctrl_8h_a1814e3e159607dbf0e6997b9daba2c5f}{FB19\+\_\+\+CTRL\+\_\+\+MEM\+\_\+\+SIZE}}\mbox{]}}
+
+FB19 Controller memory and instance type. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_f_b19_ctrl_8h_aa8066dd07666493294651dcd495b9d95}\label{_f_b19_ctrl_8h_aa8066dd07666493294651dcd495b9d95}} 
+\index{FB19Ctrl.h@{FB19Ctrl.h}!FB19Ctrl\_fetch@{FB19Ctrl\_fetch}}
+\index{FB19Ctrl\_fetch@{FB19Ctrl\_fetch}!FB19Ctrl.h@{FB19Ctrl.h}}
+\doxysubsubsection{\texorpdfstring{FB19Ctrl\_fetch()}{FB19Ctrl\_fetch()}}
+{\footnotesize\ttfamily int FB19\+Ctrl\+\_\+fetch (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_f_b19_ctrl_8h_a71656cf0594ed91d50d0fa1a85d8a7d8}{FB19\+Ctrl\+\_\+inst\+\_\+t}} $\ast$}]{instance,  }\item[{\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$}]{msg }\end{DoxyParamCaption})}
+
+Deep copies the oldest unread message that matches the passed destination address {\ttfamily dst\+Addr} and message identifier {\ttfamily msg\+Id} into the message the {\ttfamily msg} parameter points to.
+
+In the receive message queue, the message is thereby marked as consumed. It cannot be read a second time.
+
+When at the time the request message was sent to the subscriber its response has timed out, the error flag {\ttfamily FB19\+\_\+\+DRV\+\_\+\+ERR\+\_\+\+BUS\+\_\+\+RSP\+\_\+\+FRM\+\_\+\+TMO} inside the message will be set. Note that a timeout only occurs if the connection to the addressed subscriber is interrupted or the subscriber malfunctions. If the subscriber functions properly but had no response message ready when it received this request message, it simply returns the request message unchanged.
+
+When the function returns {\ttfamily R\+\_\+\+ERROR} because either no matching message could be found, or the parameter checks fail, the passed message {\ttfamily msg} points to won\textquotesingle{}t be changed.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em instance} & points to the memory resource used by this instance. \\
+\hline
+\mbox{\texttt{ out}}  & {\em msg} & points to the object that will hold the fetched message after this function has returned successfully. In case of an error, it won\textquotesingle{}t be changed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily R\+\_\+\+SUCCESS} if the parameter checks pass and an unread message that matches the destination address and message identifier in the descriptor of the message the {\ttfamily msg} parameter points to could be found, {\ttfamily R\+\_\+\+ERROR} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_f_b19_ctrl_8h_a53d83ad680bf16108ae11b70dbe7a5e1}\label{_f_b19_ctrl_8h_a53d83ad680bf16108ae11b70dbe7a5e1}} 
+\index{FB19Ctrl.h@{FB19Ctrl.h}!FB19Ctrl\_getNoiseFaultCount@{FB19Ctrl\_getNoiseFaultCount}}
+\index{FB19Ctrl\_getNoiseFaultCount@{FB19Ctrl\_getNoiseFaultCount}!FB19Ctrl.h@{FB19Ctrl.h}}
+\doxysubsubsection{\texorpdfstring{FB19Ctrl\_getNoiseFaultCount()}{FB19Ctrl\_getNoiseFaultCount()}}
+{\footnotesize\ttfamily int FB19\+Ctrl\+\_\+get\+Noise\+Fault\+Count (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_f_b19_ctrl_8h_a71656cf0594ed91d50d0fa1a85d8a7d8}{FB19\+Ctrl\+\_\+inst\+\_\+t}} $\ast$}]{instance,  }\item[{uint32\+\_\+t $\ast$}]{count }\end{DoxyParamCaption})}
+
+Returns the number of noise faults since the start of this Controller instance.
+
+Every noise detection error increases the fault count by one. If more than one noise spike occurred during the time of a character, it is stored as one fault (not several).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em instance} & points to the memory resource used by this instance. \\
+\hline
+\mbox{\texttt{ out}}  & {\em count} & points to the variable that will hold the number of noise faults since the start of this module. In case of an error, it won\textquotesingle{}t be changed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily R\+\_\+\+SUCCESS} if the parameter checks pass, {\ttfamily R\+\_\+\+ERROR} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_f_b19_ctrl_8h_adbd85b7215001c1b8093a778a319a6dc}\label{_f_b19_ctrl_8h_adbd85b7215001c1b8093a778a319a6dc}} 
+\index{FB19Ctrl.h@{FB19Ctrl.h}!FB19Ctrl\_getRxFaultCount@{FB19Ctrl\_getRxFaultCount}}
+\index{FB19Ctrl\_getRxFaultCount@{FB19Ctrl\_getRxFaultCount}!FB19Ctrl.h@{FB19Ctrl.h}}
+\doxysubsubsection{\texorpdfstring{FB19Ctrl\_getRxFaultCount()}{FB19Ctrl\_getRxFaultCount()}}
+{\footnotesize\ttfamily int FB19\+Ctrl\+\_\+get\+Rx\+Fault\+Count (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_f_b19_ctrl_8h_a71656cf0594ed91d50d0fa1a85d8a7d8}{FB19\+Ctrl\+\_\+inst\+\_\+t}} $\ast$}]{instance,  }\item[{uint32\+\_\+t $\ast$}]{count }\end{DoxyParamCaption})}
+
+Returns the number of receive faults since the start of this Controller instance.
+
+Every frame reception error increases the fault count by one. If more than one error occurred during the reception of a frame, it is stored as one fault (not several).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em instance} & points to the memory resource used by this instance. \\
+\hline
+\mbox{\texttt{ out}}  & {\em count} & points to the variable that will hold the number of receive faults since the start of this module. In case of an error, it won\textquotesingle{}t be changed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily R\+\_\+\+SUCCESS} if the parameter checks pass, {\ttfamily R\+\_\+\+ERROR} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_f_b19_ctrl_8h_a5565fb04c4b61ea517a240f7a42268ce}\label{_f_b19_ctrl_8h_a5565fb04c4b61ea517a240f7a42268ce}} 
+\index{FB19Ctrl.h@{FB19Ctrl.h}!FB19Ctrl\_getTxFaultCount@{FB19Ctrl\_getTxFaultCount}}
+\index{FB19Ctrl\_getTxFaultCount@{FB19Ctrl\_getTxFaultCount}!FB19Ctrl.h@{FB19Ctrl.h}}
+\doxysubsubsection{\texorpdfstring{FB19Ctrl\_getTxFaultCount()}{FB19Ctrl\_getTxFaultCount()}}
+{\footnotesize\ttfamily int FB19\+Ctrl\+\_\+get\+Tx\+Fault\+Count (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_f_b19_ctrl_8h_a71656cf0594ed91d50d0fa1a85d8a7d8}{FB19\+Ctrl\+\_\+inst\+\_\+t}} $\ast$}]{instance,  }\item[{uint32\+\_\+t $\ast$}]{count }\end{DoxyParamCaption})}
+
+Returns the number of transmit faults since the start of this Controller instance.
+
+Every frame transmission error increases the fault count by one. If more than one error occurred during the transmission of a frame, it is stored as one fault (not several).
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em instance} & points to the memory resource used by this instance. \\
+\hline
+\mbox{\texttt{ out}}  & {\em count} & points to the variable that will hold the number of transmit faults since the start of this module. In case of an error, it won\textquotesingle{}t be changed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily R\+\_\+\+SUCCESS} if the parameter checks pass, {\ttfamily R\+\_\+\+ERROR} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_f_b19_ctrl_8h_a7b1240a42fc2029421fdcd6d4fdee481}\label{_f_b19_ctrl_8h_a7b1240a42fc2029421fdcd6d4fdee481}} 
+\index{FB19Ctrl.h@{FB19Ctrl.h}!FB19Ctrl\_getVersion@{FB19Ctrl\_getVersion}}
+\index{FB19Ctrl\_getVersion@{FB19Ctrl\_getVersion}!FB19Ctrl.h@{FB19Ctrl.h}}
+\doxysubsubsection{\texorpdfstring{FB19Ctrl\_getVersion()}{FB19Ctrl\_getVersion()}}
+{\footnotesize\ttfamily const char $\ast$ FB19\+Ctrl\+\_\+get\+Version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the start address of the version string, which is a null-\/terminated C-\/string.
+
+This function may be called even if the instance hasn\textquotesingle{}t been started.
+
+\begin{DoxyReturn}{Returns}
+The version of this library as null-\/terminated C-\/string. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_f_b19_ctrl_8h_afc179f38f37b720ba085f52fcef72d5e}\label{_f_b19_ctrl_8h_afc179f38f37b720ba085f52fcef72d5e}} 
+\index{FB19Ctrl.h@{FB19Ctrl.h}!FB19Ctrl\_handler@{FB19Ctrl\_handler}}
+\index{FB19Ctrl\_handler@{FB19Ctrl\_handler}!FB19Ctrl.h@{FB19Ctrl.h}}
+\doxysubsubsection{\texorpdfstring{FB19Ctrl\_handler()}{FB19Ctrl\_handler()}}
+{\footnotesize\ttfamily void FB19\+Ctrl\+\_\+handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_f_b19_ctrl_8h_a71656cf0594ed91d50d0fa1a85d8a7d8}{FB19\+Ctrl\+\_\+inst\+\_\+t}} $\ast$}]{instance }\end{DoxyParamCaption})}
+
+Executes the periodic tasks of this library.
+
+It essentially moves unread messages that came in since the previous {\ttfamily \+\_\+handler()} call aside, fetches the received messages from the driver layer and copies them to the next higher layer. It finally copies the messages to be transmitted to the driver layer.
+
+Adjust the period between the calls to the number of messages to be sent and received between two calls, their average size and the bit rate the bus is operating on.~\newline
+ For example, if up to 8 messages should be sent and received, their average payload size is 16 bytes, and the bit rate is 100kbit/s, then the period should be at minimum\+:~\newline
+ T = 8 msg $\ast$ 2 $\ast$ (16 + 4 + 2) byte/msg $\ast$ 10 bit/byte $\ast$ (1 / 100\textquotesingle{}000 bit/s) = 35.\+2ms.~\newline
+ Explanation\+:~\newline
+
+\begin{DoxyItemize}
+\item 8 msg\+: 8 request messages between 2 {\ttfamily \+\_\+handler()} calls
+\item $\ast$ 2\+: 8 response messages to the request messages
+\item (16 + 4 + 2)\+: payload bytes + system bytes + inter frame spacing times
+\item 10 bit/byte\+: on the bus, a byte is a character with start and stop bits
+\item 1 / 100\textquotesingle{}1000 bit/s\+: the time it takes to transmit 1 bit
+\end{DoxyItemize}
+
+It is recommended to round this number up by 10\% for taking potential frame timeouts into account. Thus, in this example a handler period of T = 40ms or 25Hz is recommended.
+
+Moving unread messages to a different buffer prevents \textquotesingle{}message loss\textquotesingle{} when frequent message writer and reader objects (classes, modules, tasks) compete with infrequent writer and reader objects on the available space in the receive message queue. The frequent writers/readers would overwrite (delete) messages of the infrequent writers/readers, since the latter may pick up their response messages just every 2nd, 3rd or xth {\ttfamily \+\_\+handler()} call.
+
+It does nothing if {\ttfamily instance} is a NULL pointer or if the library hasn\textquotesingle{}t been started yet.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em instance} & points to the memory resource used by this instance. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_f_b19_ctrl_8h_ac0c1e53f005579096fcbb5e16dbcc02c}\label{_f_b19_ctrl_8h_ac0c1e53f005579096fcbb5e16dbcc02c}} 
+\index{FB19Ctrl.h@{FB19Ctrl.h}!FB19Ctrl\_start@{FB19Ctrl\_start}}
+\index{FB19Ctrl\_start@{FB19Ctrl\_start}!FB19Ctrl.h@{FB19Ctrl.h}}
+\doxysubsubsection{\texorpdfstring{FB19Ctrl\_start()}{FB19Ctrl\_start()}}
+{\footnotesize\ttfamily int FB19\+Ctrl\+\_\+start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_f_b19_ctrl_8h_a71656cf0594ed91d50d0fa1a85d8a7d8}{FB19\+Ctrl\+\_\+inst\+\_\+t}} $\ast$}]{instance,  }\item[{const \mbox{\hyperlink{_f_b19_ctrl_8h_a51308e1cc646727df81af12709b49ae1}{FB19\+Ctrl\+\_\+cfg\+\_\+t}} $\ast$}]{config,  }\item[{int}]{bit\+Rate }\end{DoxyParamCaption})}
+
+Starts an FB19 Controller instance.
+
+The parameter {\ttfamily config} contains system on chip configuration parameters as well as transmit and receive message buffers. It is left to the user to define how large the buffers shall be. Systems with high message rate peaks and low CPU power require larger buffers than those with steady data exchange.
+
+Starting an instance twice without stopping it in between returns an error and stops the already running instance.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em instance} & points to the memory resource used by this instance. \\
+\hline
+\mbox{\texttt{ in}}  & {\em config} & points to the structure that configures this instance. It contains system on chip configuration parameters as well as pointers to the transmit and receive message buffers. It is left to the user to define how large the buffers shall be. For example, systems with high message rate peaks and low CPU power require larger buffers than those with steady data exchange. \\
+\hline
+\mbox{\texttt{ in}}  & {\em bit\+Rate} & is the number of bits per second during character reception and transmission. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily R\+\_\+\+SUCCESS} if the parameter checks pass, the module instance hasn\textquotesingle{}t been started already and could be started with the passed configuration, {\ttfamily R\+\_\+\+ERROR} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_f_b19_ctrl_8h_a87ad65f1d9ef791983f31e591d85f11b}\label{_f_b19_ctrl_8h_a87ad65f1d9ef791983f31e591d85f11b}} 
+\index{FB19Ctrl.h@{FB19Ctrl.h}!FB19Ctrl\_stop@{FB19Ctrl\_stop}}
+\index{FB19Ctrl\_stop@{FB19Ctrl\_stop}!FB19Ctrl.h@{FB19Ctrl.h}}
+\doxysubsubsection{\texorpdfstring{FB19Ctrl\_stop()}{FB19Ctrl\_stop()}}
+{\footnotesize\ttfamily int FB19\+Ctrl\+\_\+stop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_f_b19_ctrl_8h_a71656cf0594ed91d50d0fa1a85d8a7d8}{FB19\+Ctrl\+\_\+inst\+\_\+t}} $\ast$}]{instance }\end{DoxyParamCaption})}
+
+Stops an FB19 Controller instance.
+
+Stopping an instance twice without starting it in between returns no error.
+
+Note that a call to this function will neither stop the clock to the configured GPIO nor CRC SoC modules. These modules could be used by other components of the application.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em instance} & points to the memory resource used by this instance. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily R\+\_\+\+SUCCESS} if the parameter checks pass, {\ttfamily R\+\_\+\+ERROR} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_f_b19_ctrl_8h_a6766d81c7b44fda0d0ac28c565be15fb}\label{_f_b19_ctrl_8h_a6766d81c7b44fda0d0ac28c565be15fb}} 
+\index{FB19Ctrl.h@{FB19Ctrl.h}!FB19Ctrl\_submit@{FB19Ctrl\_submit}}
+\index{FB19Ctrl\_submit@{FB19Ctrl\_submit}!FB19Ctrl.h@{FB19Ctrl.h}}
+\doxysubsubsection{\texorpdfstring{FB19Ctrl\_submit()}{FB19Ctrl\_submit()}}
+{\footnotesize\ttfamily int FB19\+Ctrl\+\_\+submit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_f_b19_ctrl_8h_a71656cf0594ed91d50d0fa1a85d8a7d8}{FB19\+Ctrl\+\_\+inst\+\_\+t}} $\ast$}]{instance,  }\item[{const \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$}]{msg }\end{DoxyParamCaption})}
+
+Deep copies the message {\ttfamily msg} points to into the transmit message queue of this library. After the next call to the {\ttfamily \+\_\+handler()} function, it is scheduled for transmission.
+
+The messages are transmitted in the order they have been added through the {\ttfamily \+\_\+submit()} calls.
+
+When the transmit message buffer is full before this function is called, it returns {\ttfamily R\+\_\+\+ERROR}. It also returns this value if the descriptor {\ttfamily desc} of the message {\ttfamily msg} points to contains implausible data. Its fields {\ttfamily dst\+Addr}, {\ttfamily msg\+Id} and {\ttfamily pld\+Size} are checked for their range when this function is called.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em instance} & points to the memory resource used by this instance. \\
+\hline
+\mbox{\texttt{ in}}  & {\em msg} & points to the message that will be added to the transmit queue if this function returns successfully. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily R\+\_\+\+SUCCESS} if the parameter checks pass, the message {\ttfamily msg} points to contains plausible data in the descriptor, and the transmit queue had the capacity to store this message, {\ttfamily R\+\_\+\+ERROR} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_f_b19_ctrl_8h_a1463d1423f919dd9e8ba9534d2bb5747}\label{_f_b19_ctrl_8h_a1463d1423f919dd9e8ba9534d2bb5747}} 
+\index{FB19Ctrl.h@{FB19Ctrl.h}!FB19Ctrl\_timerIRQHandler@{FB19Ctrl\_timerIRQHandler}}
+\index{FB19Ctrl\_timerIRQHandler@{FB19Ctrl\_timerIRQHandler}!FB19Ctrl.h@{FB19Ctrl.h}}
+\doxysubsubsection{\texorpdfstring{FB19Ctrl\_timerIRQHandler()}{FB19Ctrl\_timerIRQHandler()}}
+{\footnotesize\ttfamily void FB19\+Ctrl\+\_\+timer\+IRQHandler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_f_b19_ctrl_8h_a71656cf0594ed91d50d0fa1a85d8a7d8}{FB19\+Ctrl\+\_\+inst\+\_\+t}} $\ast$}]{instance }\end{DoxyParamCaption})}
+
+Handles the timer interrupts of the associated Timer SoC resource.
+
+Insert it into the TIM2\+\_\+\+IRQHandler() function in the stm32fxxx\+\_\+it.\+c file.
+
+Example\+:~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void} TIM2\_IRQHandler(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \mbox{\hyperlink{_f_b19_ctrl_8h_a1463d1423f919dd9e8ba9534d2bb5747}{FB19Ctrl\_timerIRQHandler}}((\mbox{\hyperlink{_f_b19_ctrl_8h_a71656cf0594ed91d50d0fa1a85d8a7d8}{FB19Ctrl\_inst\_t}}*)\mbox{\hyperlink{_f_b19_ctrl_cfg_8h_aaa6e0d9d96aa45d0f844bad987f42e42}{instFB19Ctrl}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em instance} & points to the memory resource used by this instance. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_f_b19_ctrl_8h_af6416d1a259f9eeb481a8a6098d0eefc}\label{_f_b19_ctrl_8h_af6416d1a259f9eeb481a8a6098d0eefc}} 
+\index{FB19Ctrl.h@{FB19Ctrl.h}!FB19Ctrl\_UartIRQHandler@{FB19Ctrl\_UartIRQHandler}}
+\index{FB19Ctrl\_UartIRQHandler@{FB19Ctrl\_UartIRQHandler}!FB19Ctrl.h@{FB19Ctrl.h}}
+\doxysubsubsection{\texorpdfstring{FB19Ctrl\_UartIRQHandler()}{FB19Ctrl\_UartIRQHandler()}}
+{\footnotesize\ttfamily void FB19\+Ctrl\+\_\+\+Uart\+IRQHandler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_f_b19_ctrl_8h_a71656cf0594ed91d50d0fa1a85d8a7d8}{FB19\+Ctrl\+\_\+inst\+\_\+t}} $\ast$}]{instance }\end{DoxyParamCaption})}
+
+Handles the USART interrupts of the associated USART SoC resource.
+
+Insert it into the USART2\+\_\+\+IRQHandler() function in the stm32fxxx\+\_\+it.\+c file.
+
+Example\+:~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void} USART2\_IRQHandler(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \mbox{\hyperlink{_f_b19_ctrl_8h_af6416d1a259f9eeb481a8a6098d0eefc}{FB19Ctrl\_UartIRQHandler}}((\mbox{\hyperlink{_f_b19_ctrl_8h_a71656cf0594ed91d50d0fa1a85d8a7d8}{FB19Ctrl\_inst\_t}}*)\mbox{\hyperlink{_f_b19_ctrl_cfg_8h_aaa6e0d9d96aa45d0f844bad987f42e42}{instFB19Ctrl}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em instance} & points to the memory resource used by this instance. \\
+\hline
+\end{DoxyParams}

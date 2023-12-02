@@ -1,14 +1,17 @@
 /**
- *  Filename:       FB19MsgQ.h
- *  Platform(s):    All
- *  Project:        FieldBus19
- *  Created:        Apr 21, 2023
- *  Description:    This file publishes the interface of the FieldBus19 message
+ *  - Filename:     FB19MsgQ.h
+ *  - Platform(s):  All
+ *  - Project:      FieldBus19
+ *  - Created:      Apr 21, 2023
+ *  - Description:  This file publishes the interface of the FieldBus19 message
  *                  queue.
- *  Notes:          DON'T CHANGE IT!
- *  Author:         Andreas Isenegger
- *  Copyright:      2023, Bitcontrol GmbH, Switzerland.
+ *  - Notes:        DON'T CHANGE IT!
+ *  - Author:       Andreas Isenegger
+ *  - Copyright:    2023, Bitcontrol GmbH, Switzerland.
  *                  All rights reserved.
+ *  @file
+ *  @brief          This file publishes the interface of the FieldBus19 message
+ *                  queue.
  */
 
 #ifndef FB19MSGQ_H_

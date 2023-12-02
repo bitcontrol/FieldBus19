@@ -1,0 +1,147 @@
+\hypertarget{subs_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_def_8h_source}{}\doxysection{FB19\+Def.\+h}
+\label{subs_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_def_8h_source}\index{subs/STM32CubeIDE/STM32F401/Inc/FB19Def.h@{subs/STM32CubeIDE/STM32F401/Inc/FB19Def.h}}
+\mbox{\hyperlink{subs_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_def_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#ifndef FB19DEF\_H\_}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define FB19DEF\_H\_}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{20 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{24 \textcolor{comment}{// Symbols and Macros}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{comment}{/* -\/-\/-\/ Booleans and Errors-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define BOOL                            int}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define FALSE                           0}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define TRUE                            1}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define R\_ERROR                         -\/1}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define R\_SUCCESS                       1}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{comment}{/* -\/-\/-\/ Bus Addresses and Nodes -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define FB19\_BUS\_ADDR\_CTRL                  0}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define FB19\_BUS\_ADDR\_SUBS\_LOWEST           1}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define FB19\_BUS\_ADDR\_SUBS\_HIGHEST          ((1 << FB19\_DST\_ADDR\_BITS) -\/ 1 -\/ 1)}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define FB19\_BUS\_ADDR\_BROADCAST             ((1 << FB19\_DST\_ADDR\_BITS) -\/ 1)}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define FB19\_BUS\_ADDR\_INVALID               (-\/1)}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define FB19\_NBR\_NODES\_MAX                  ((1 << FB19\_DST\_ADDR\_BITS) -\/ 1)}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define FB19\_NBR\_SUBSCRIBERS\_MAX            (FB19\_NBR\_NODES\_MAX -\/ 1)}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{comment}{/* -\/-\/-\/ Bus Driver's Error Bits -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define FB19\_DRV\_ERR\_NONE                   0}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define FB19\_DRV\_ERR\_BUS\_FRM\_TX             (1 << 0)}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#define FB19\_DRV\_ERR\_UART\_RX\_FRM            (1 << 1)}}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#define FB19\_DRV\_ERR\_UART\_RX\_NSE            (1 << 2)}}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#define FB19\_DRV\_ERR\_UART\_RX\_OVR            (1 << 3)}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#define FB19\_DRV\_ERR\_BUS\_UNS\_TRF            (1 << 4)}}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define FB19\_DRV\_ERR\_BUS\_FRM\_CKS            (1 << 5)}}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#define FB19\_DRV\_ERR\_BUS\_ITR\_CHR\_TMO        (1 << 6)}}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#define FB19\_DRV\_ERR\_BUS\_RSP\_FRM\_TMO        (1 << 7)}}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#define FB19\_DRV\_ERR\_HIGHEST                FB19\_DRV\_ERR\_BUS\_RSP\_FRM\_TMO}}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160 \textcolor{comment}{/* Throw a compile time error if the error symbols don't have the expected}}
+\DoxyCodeLine{161 \textcolor{comment}{ * values. Update the documentation if they change. */}}
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#if (\(\backslash\)}}
+\DoxyCodeLine{163 \textcolor{preprocessor}{    FB19\_DRV\_ERR\_NONE               != 0    || \(\backslash\)}}
+\DoxyCodeLine{164 \textcolor{preprocessor}{    FB19\_DRV\_ERR\_BUS\_FRM\_TX         != 0x01 || \(\backslash\)}}
+\DoxyCodeLine{165 \textcolor{preprocessor}{    FB19\_DRV\_ERR\_UART\_RX\_FRM        != 0x02 || \(\backslash\)}}
+\DoxyCodeLine{166 \textcolor{preprocessor}{    FB19\_DRV\_ERR\_UART\_RX\_NSE        != 0x04 || \(\backslash\)}}
+\DoxyCodeLine{167 \textcolor{preprocessor}{    FB19\_DRV\_ERR\_UART\_RX\_OVR        != 0x08 || \(\backslash\)}}
+\DoxyCodeLine{168 \textcolor{preprocessor}{    FB19\_DRV\_ERR\_BUS\_UNS\_TRF        != 0x10 || \(\backslash\)}}
+\DoxyCodeLine{169 \textcolor{preprocessor}{    FB19\_DRV\_ERR\_BUS\_FRM\_CKS        != 0x20 || \(\backslash\)}}
+\DoxyCodeLine{170 \textcolor{preprocessor}{    FB19\_DRV\_ERR\_BUS\_ITR\_CHR\_TMO    != 0x40 || \(\backslash\)}}
+\DoxyCodeLine{171 \textcolor{preprocessor}{    FB19\_DRV\_ERR\_BUS\_RSP\_FRM\_TMO    != 0x80 \(\backslash\)}}
+\DoxyCodeLine{172 \textcolor{preprocessor}{    )}}
+\DoxyCodeLine{173 \textcolor{preprocessor}{\#error}}
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176 \textcolor{comment}{/* Throw a compile time error if the error symbols exceed 8 bits. */}}
+\DoxyCodeLine{177 \textcolor{preprocessor}{\#if (FB19\_DRV\_ERR\_HIGHEST > (1 << 7))}}
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#error}}
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182 \textcolor{comment}{/* -\/-\/-\/ Data Sizes -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#define FB19\_DATA\_SIZE\_BITS                 5}}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#define FB19\_DST\_ADDR\_BITS                  5}}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{196 \textcolor{preprocessor}{\#define FB19\_MSG\_ID\_BITS                    6}}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199 \textcolor{comment}{/* -\/-\/-\/ Frame Components and their Sizes -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{203 \textcolor{preprocessor}{\#define FB19\_FRAME\_PAYLOAD\_SIZE\_MAX         ((1 << FB19\_DATA\_SIZE\_BITS) -\/ 1)}}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{212 \textcolor{preprocessor}{\#define FB19\_FRAME\_SIZE\_HEADER              2}}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{218 \textcolor{preprocessor}{\#define FB19\_FRAME\_SIZE\_TRAILER             2}}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{223 \textcolor{preprocessor}{\#define FB19\_FRAME\_SIZE\_MAX                 (FB19\_FRAME\_SIZE\_HEADER + \(\backslash\)}}
+\DoxyCodeLine{224 \textcolor{preprocessor}{                                             FB19\_FRAME\_PAYLOAD\_SIZE\_MAX + \(\backslash\)}}
+\DoxyCodeLine{225 \textcolor{preprocessor}{                                             FB19\_FRAME\_SIZE\_TRAILER)}}
+\DoxyCodeLine{229 \textcolor{preprocessor}{\#define FB19\_FRAME\_SIZE\_MIN                 (FB19\_FRAME\_SIZE\_HEADER + \(\backslash\)}}
+\DoxyCodeLine{230 \textcolor{preprocessor}{                                             FB19\_FRAME\_SIZE\_TRAILER)}}
+\DoxyCodeLine{238 \textcolor{preprocessor}{\#define FB19\_FRAME\_SIZE\_RAM                 (FB19\_FRAME\_SIZE\_MAX + 1)}}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241 \textcolor{comment}{/* -\/-\/-\/ Message Identifiers -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{245 \textcolor{preprocessor}{\#define FB19\_MSG\_ID\_SYS\_LOWEST              0}}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{250 \textcolor{preprocessor}{\#define FB19\_MSG\_ID\_SYS\_HIGHEST             ((1 << FB19\_MSG\_ID\_BITS) / 4 -\/ 1)}}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{255 \textcolor{preprocessor}{\#define FB19\_MSG\_ID\_USR\_LOWEST              (FB19\_MSG\_ID\_SYS\_HIGHEST + 1)}}
+\DoxyCodeLine{256 }
+\DoxyCodeLine{260 \textcolor{preprocessor}{\#define FB19\_MSG\_ID\_USR\_HIGHEST             ((1 << FB19\_MSG\_ID\_BITS) -\/ 1)}}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262 }
+\DoxyCodeLine{263 \textcolor{comment}{/* -\/-\/-\/ Timeout Values -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{272 \textcolor{preprocessor}{\#define FB19\_CHAR\_TIME\_US(bitRate)          ((unsigned int)(10500000.f / (bitRate) + 0.6f))}}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{286 \textcolor{preprocessor}{\#define FB19\_BUS\_RECO\_TIMEOUT\_CHAR\_CNT      3}}
+\DoxyCodeLine{287 }
+\DoxyCodeLine{294 \textcolor{preprocessor}{\#define FB19\_INTER\_CHAR\_TIMEOUT\_CHAR\_CNT    3}}
+\DoxyCodeLine{295 }
+\DoxyCodeLine{300 \textcolor{preprocessor}{\#define FB19\_INTER\_FRAME\_TIME\_CHAR\_CNT      1}}
+\DoxyCodeLine{301 }
+\DoxyCodeLine{309 \textcolor{preprocessor}{\#define FB19\_RESPONSE\_TIMEOUT\_CHAR\_CNT      4}}
+\DoxyCodeLine{310 }
+\DoxyCodeLine{311 }
+\DoxyCodeLine{312 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{313 \textcolor{comment}{// Types}}
+\DoxyCodeLine{314 }
+\DoxyCodeLine{315 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{316 \textcolor{comment}{// Constants and Variables}}
+\DoxyCodeLine{317 }
+\DoxyCodeLine{318 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{319 \textcolor{comment}{// Functions}}
+\DoxyCodeLine{320 }
+\DoxyCodeLine{321 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{322 \}}
+\DoxyCodeLine{323 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{324 }
+\DoxyCodeLine{325 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// FB19DEF\_H\_}}
+
+\end{DoxyCode}

@@ -1,0 +1,461 @@
+\hypertarget{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h}{}\doxysection{ctrl/\+STM32\+Cube\+IDE/\+STM32\+F401/\+Inc/\+FB19\+Lib\+Msg.h File Reference}
+\label{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h}\index{ctrl/STM32CubeIDE/STM32F401/Inc/FB19LibMsg.h@{ctrl/STM32CubeIDE/STM32F401/Inc/FB19LibMsg.h}}
+
+
+This file publishes the interface of the Field\+Bus19 message library module.  
+
+
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}FB19\+Msg.\+h\char`\"{}}\newline
+Include dependency graph for FB19\+Lib\+Msg.\+h\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a14ed0f554dc07cac0d7edd88d24b8d61}{FB19\+Lib\+Msg\+\_\+append\+Char}} (\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$msg, char value)
+\item 
+int \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a75909964a99e2c8034abb1df7405b6a3}{FB19\+Lib\+Msg\+\_\+append\+Data}} (\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$msg, const void $\ast$buffer, size\+\_\+t size)
+\item 
+int \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_ab9cba09fc583b0ff902d08ecf835501a}{FB19\+Lib\+Msg\+\_\+append\+Double}} (\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$msg, double value)
+\item 
+int \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a90988ef14663bf940a1e493f15c88d01}{FB19\+Lib\+Msg\+\_\+append\+Float}} (\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$msg, float value)
+\item 
+int \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a3bff2cee470b253d23a3f68e7ada9852}{FB19\+Lib\+Msg\+\_\+append\+Int8}} (\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$msg, int8\+\_\+t value)
+\item 
+int \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_ae37c6dc3ec7e2b68be6e2d262737e5f7}{FB19\+Lib\+Msg\+\_\+append\+Int16}} (\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$msg, int16\+\_\+t value)
+\item 
+int \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a30ec7a696f5ee3d6c07b1954a66d189b}{FB19\+Lib\+Msg\+\_\+append\+Int32}} (\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$msg, int32\+\_\+t value)
+\item 
+int \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a96c0e8a6a4b0b48e4807a8109f305a4d}{FB19\+Lib\+Msg\+\_\+append\+Int64}} (\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$msg, int64\+\_\+t value)
+\item 
+int \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a869a3afcbedbe0d40506bbad62bccb61}{FB19\+Lib\+Msg\+\_\+append\+String}} (\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$msg, const char $\ast$str)
+\item 
+int \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a9bfffd6a16b97657bcf286b78e1b6dde}{FB19\+Lib\+Msg\+\_\+remove\+Char}} (\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$msg, char $\ast$value)
+\item 
+int \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a20247c9feb4a7f726822de01e6e0224c}{FB19\+Lib\+Msg\+\_\+remove\+Data}} (\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$msg, void $\ast$buffer, size\+\_\+t size)
+\item 
+int \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_abcc64159b035d44f5c15d62fe40463b8}{FB19\+Lib\+Msg\+\_\+remove\+Double}} (\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$msg, double $\ast$value)
+\item 
+int \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a485ecbe414e9af629575ed1f3079dd4d}{FB19\+Lib\+Msg\+\_\+remove\+Float}} (\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$msg, float $\ast$value)
+\item 
+int \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_af0d3964d348210cef48c08278b7904b5}{FB19\+Lib\+Msg\+\_\+remove\+Int8}} (\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$msg, int8\+\_\+t $\ast$value)
+\item 
+int \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_acb6cfeca5d48790f1d578d3926b1e534}{FB19\+Lib\+Msg\+\_\+remove\+Int16}} (\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$msg, int16\+\_\+t $\ast$value)
+\item 
+int \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a99806f6feac1d672bbb4f9e92a67283e}{FB19\+Lib\+Msg\+\_\+remove\+Int32}} (\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$msg, int32\+\_\+t $\ast$value)
+\item 
+int \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_aa31c274b313dfa5d9f3ba52846f47388}{FB19\+Lib\+Msg\+\_\+remove\+Int64}} (\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$msg, int64\+\_\+t $\ast$value)
+\item 
+int \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_ada1903b766dc8e4225d0377d7711ef41}{FB19\+Lib\+Msg\+\_\+remove\+String}} (\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$msg, char $\ast$str, size\+\_\+t buf\+Len)
+\item 
+int \mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_aaf5d221e5a2da97adb5388a48713a6ef}{FB19\+Lib\+Msg\+\_\+reset}} (\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$msg)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file publishes the interface of the Field\+Bus19 message library module. 
+
+
+\begin{DoxyItemize}
+\item Filename\+: FB19\+Lib\+Msg.\+h
+\item Platform(s)\+: All
+\item Project\+: Field\+Bus19
+\item Created\+: May 17, 2022
+\item Description\+: This file publishes the interface of the Field\+Bus19 message library module.
+
+How to use the FB19\+Lib\+Msg\+\_\+append...() and FB19\+Lib\+Msg\+\_\+remove...() functions effectively\+:
+\begin{DoxyItemize}
+\item Write data into the messages using the \+\_\+append() functions
+\item Read data in the reverse order it has been written to the messages
+\item That way, no indexes that keep track of the writes and reads are required
+\end{DoxyItemize}
+\item Notes\+:
+\item Author\+: Andreas Isenegger
+\item Copyright\+: 2022-\/2023, Bitcontrol GmbH, Switzerland. All rights reserved. 
+\end{DoxyItemize}
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a14ed0f554dc07cac0d7edd88d24b8d61}\label{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a14ed0f554dc07cac0d7edd88d24b8d61}} 
+\index{FB19LibMsg.h@{FB19LibMsg.h}!FB19LibMsg\_appendChar@{FB19LibMsg\_appendChar}}
+\index{FB19LibMsg\_appendChar@{FB19LibMsg\_appendChar}!FB19LibMsg.h@{FB19LibMsg.h}}
+\doxysubsubsection{\texorpdfstring{FB19LibMsg\_appendChar()}{FB19LibMsg\_appendChar()}}
+{\footnotesize\ttfamily int FB19\+Lib\+Msg\+\_\+append\+Char (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$}]{msg,  }\item[{char}]{value }\end{DoxyParamCaption})}
+
+Appends an 8 bit character to the payload of the message and increments its payload size by the size of the argument in bytes.
+
+If the data doesn\textquotesingle{}t fit into the message because its end would exceed the end of the payload section, it won\textquotesingle{}t be added and {\ttfamily R\+\_\+\+ERROR} is returned.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \mbox{[}in/out\mbox{]}} & msg points to the message that will store the passed argument when this function has returned successfully. In case of an error, it won\textquotesingle{}t be changed. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & is the {\ttfamily char} value to be appended to the message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily R\+\_\+\+SUCCESS} if the parameter checks pass and the value could be appended, {\ttfamily R\+\_\+\+ERROR} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a75909964a99e2c8034abb1df7405b6a3}\label{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a75909964a99e2c8034abb1df7405b6a3}} 
+\index{FB19LibMsg.h@{FB19LibMsg.h}!FB19LibMsg\_appendData@{FB19LibMsg\_appendData}}
+\index{FB19LibMsg\_appendData@{FB19LibMsg\_appendData}!FB19LibMsg.h@{FB19LibMsg.h}}
+\doxysubsubsection{\texorpdfstring{FB19LibMsg\_appendData()}{FB19LibMsg\_appendData()}}
+{\footnotesize\ttfamily int FB19\+Lib\+Msg\+\_\+append\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$}]{msg,  }\item[{const void $\ast$}]{buffer,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+Appends arbitrary data stored in the passed buffer to the payload of the message and increments its payload size by the size of the data in bytes.
+
+If the data doesn\textquotesingle{}t fit into the message because its end would exceed the end of the payload section, it won\textquotesingle{}t be added and {\ttfamily R\+\_\+\+ERROR} is returned.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \mbox{[}in/out\mbox{]}} & msg points to the message that will store the passed argument when this function has returned successfully. In case of an error, it won\textquotesingle{}t be changed. \\
+\hline
+\mbox{\texttt{ in}}  & {\em buffer} & points to the buffer that holds the data that shall be appended to the message. \\
+\hline
+\mbox{\texttt{ in}}  & {\em size} & is the size of the data in the buffer in bytes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily R\+\_\+\+SUCCESS} if the parameter checks pass and the data could be appended, {\ttfamily R\+\_\+\+ERROR} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_ab9cba09fc583b0ff902d08ecf835501a}\label{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_ab9cba09fc583b0ff902d08ecf835501a}} 
+\index{FB19LibMsg.h@{FB19LibMsg.h}!FB19LibMsg\_appendDouble@{FB19LibMsg\_appendDouble}}
+\index{FB19LibMsg\_appendDouble@{FB19LibMsg\_appendDouble}!FB19LibMsg.h@{FB19LibMsg.h}}
+\doxysubsubsection{\texorpdfstring{FB19LibMsg\_appendDouble()}{FB19LibMsg\_appendDouble()}}
+{\footnotesize\ttfamily int FB19\+Lib\+Msg\+\_\+append\+Double (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$}]{msg,  }\item[{double}]{value }\end{DoxyParamCaption})}
+
+Appends the passed 64 bit wide double precision floating point number to the payload of the message and increments its payload size by the size of the argument in bytes.
+
+If the data doesn\textquotesingle{}t fit into the message because its end would exceed the end of the payload section, it won\textquotesingle{}t be added and {\ttfamily R\+\_\+\+ERROR} is returned.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \mbox{[}in/out\mbox{]}} & msg points to the message that will store the passed argument when this function has returned successfully. In case of an error, it won\textquotesingle{}t be changed. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & is the {\ttfamily double} value to be appended to the message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily R\+\_\+\+SUCCESS} if the parameter checks pass and the value could be appended, {\ttfamily R\+\_\+\+ERROR} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a90988ef14663bf940a1e493f15c88d01}\label{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a90988ef14663bf940a1e493f15c88d01}} 
+\index{FB19LibMsg.h@{FB19LibMsg.h}!FB19LibMsg\_appendFloat@{FB19LibMsg\_appendFloat}}
+\index{FB19LibMsg\_appendFloat@{FB19LibMsg\_appendFloat}!FB19LibMsg.h@{FB19LibMsg.h}}
+\doxysubsubsection{\texorpdfstring{FB19LibMsg\_appendFloat()}{FB19LibMsg\_appendFloat()}}
+{\footnotesize\ttfamily int FB19\+Lib\+Msg\+\_\+append\+Float (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$}]{msg,  }\item[{float}]{value }\end{DoxyParamCaption})}
+
+Appends the passed 32 bit wide single precision floating point number to the payload of the message and increments its payload size by the size of the argument in bytes.
+
+If the data doesn\textquotesingle{}t fit into the message because its end would exceed the end of the payload section, it won\textquotesingle{}t be added and {\ttfamily R\+\_\+\+ERROR} is returned.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \mbox{[}in/out\mbox{]}} & msg points to the message that will store the passed argument when this function has returned successfully. In case of an error, it won\textquotesingle{}t be changed. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & is the {\ttfamily float} value to be appended to the message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily R\+\_\+\+SUCCESS} if the parameter checks pass and the value could be appended, {\ttfamily R\+\_\+\+ERROR} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_ae37c6dc3ec7e2b68be6e2d262737e5f7}\label{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_ae37c6dc3ec7e2b68be6e2d262737e5f7}} 
+\index{FB19LibMsg.h@{FB19LibMsg.h}!FB19LibMsg\_appendInt16@{FB19LibMsg\_appendInt16}}
+\index{FB19LibMsg\_appendInt16@{FB19LibMsg\_appendInt16}!FB19LibMsg.h@{FB19LibMsg.h}}
+\doxysubsubsection{\texorpdfstring{FB19LibMsg\_appendInt16()}{FB19LibMsg\_appendInt16()}}
+{\footnotesize\ttfamily int FB19\+Lib\+Msg\+\_\+append\+Int16 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$}]{msg,  }\item[{int16\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+Appends the passed 16 bit signed integer number to the payload of the message and increments its payload size by the size of the argument in bytes.
+
+If the data doesn\textquotesingle{}t fit into the message because its end would exceed the end of the payload section, it won\textquotesingle{}t be added and {\ttfamily R\+\_\+\+ERROR} is returned.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \mbox{[}in/out\mbox{]}} & msg points to the message that will store the passed argument when this function has returned successfully. In case of an error, it won\textquotesingle{}t be changed. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & is the {\ttfamily int16\+\_\+t} value to be appended to the message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily R\+\_\+\+SUCCESS} if the parameter checks pass and the value could be appended, {\ttfamily R\+\_\+\+ERROR} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a30ec7a696f5ee3d6c07b1954a66d189b}\label{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a30ec7a696f5ee3d6c07b1954a66d189b}} 
+\index{FB19LibMsg.h@{FB19LibMsg.h}!FB19LibMsg\_appendInt32@{FB19LibMsg\_appendInt32}}
+\index{FB19LibMsg\_appendInt32@{FB19LibMsg\_appendInt32}!FB19LibMsg.h@{FB19LibMsg.h}}
+\doxysubsubsection{\texorpdfstring{FB19LibMsg\_appendInt32()}{FB19LibMsg\_appendInt32()}}
+{\footnotesize\ttfamily int FB19\+Lib\+Msg\+\_\+append\+Int32 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$}]{msg,  }\item[{int32\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+Appends the passed 32 bit signed integer number to the payload of the message and increments its payload size by the size of the argument in bytes.
+
+If the data doesn\textquotesingle{}t fit into the message because its end would exceed the end of the payload section, it won\textquotesingle{}t be added and {\ttfamily R\+\_\+\+ERROR} is returned.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \mbox{[}in/out\mbox{]}} & msg points to the message that will store the passed argument when this function has returned successfully. In case of an error, it won\textquotesingle{}t be changed. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & is the {\ttfamily int32\+\_\+t} value to be appended to the message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily R\+\_\+\+SUCCESS} if the parameter checks pass and the value could be appended, {\ttfamily R\+\_\+\+ERROR} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a96c0e8a6a4b0b48e4807a8109f305a4d}\label{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a96c0e8a6a4b0b48e4807a8109f305a4d}} 
+\index{FB19LibMsg.h@{FB19LibMsg.h}!FB19LibMsg\_appendInt64@{FB19LibMsg\_appendInt64}}
+\index{FB19LibMsg\_appendInt64@{FB19LibMsg\_appendInt64}!FB19LibMsg.h@{FB19LibMsg.h}}
+\doxysubsubsection{\texorpdfstring{FB19LibMsg\_appendInt64()}{FB19LibMsg\_appendInt64()}}
+{\footnotesize\ttfamily int FB19\+Lib\+Msg\+\_\+append\+Int64 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$}]{msg,  }\item[{int64\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+Appends the passed 64 bit signed integer number to the payload of the message and increments its payload size by the size of the argument in bytes.
+
+If the data doesn\textquotesingle{}t fit into the message because its end would exceed the end of the payload section, it won\textquotesingle{}t be added and {\ttfamily R\+\_\+\+ERROR} is returned.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \mbox{[}in/out\mbox{]}} & msg points to the message that will store the passed argument when this function has returned successfully. In case of an error, it won\textquotesingle{}t be changed. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & is the {\ttfamily int64\+\_\+t} value to be appended to the message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily R\+\_\+\+SUCCESS} if the parameter checks pass and the value could be appended, {\ttfamily R\+\_\+\+ERROR} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a3bff2cee470b253d23a3f68e7ada9852}\label{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a3bff2cee470b253d23a3f68e7ada9852}} 
+\index{FB19LibMsg.h@{FB19LibMsg.h}!FB19LibMsg\_appendInt8@{FB19LibMsg\_appendInt8}}
+\index{FB19LibMsg\_appendInt8@{FB19LibMsg\_appendInt8}!FB19LibMsg.h@{FB19LibMsg.h}}
+\doxysubsubsection{\texorpdfstring{FB19LibMsg\_appendInt8()}{FB19LibMsg\_appendInt8()}}
+{\footnotesize\ttfamily int FB19\+Lib\+Msg\+\_\+append\+Int8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$}]{msg,  }\item[{int8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+Appends the passed 8 bit signed integer number to the payload of the message and increments its payload size by the size of the argument in bytes.
+
+If the data doesn\textquotesingle{}t fit into the message because its end would exceed the end of the payload section, it won\textquotesingle{}t be added and {\ttfamily R\+\_\+\+ERROR} is returned.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \mbox{[}in/out\mbox{]}} & msg points to the message that will store the passed argument when this function has returned successfully. In case of an error, it won\textquotesingle{}t be changed. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & is the {\ttfamily int8\+\_\+t} value to be appended to the message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily R\+\_\+\+SUCCESS} if the parameter checks pass and the value could be appended, {\ttfamily R\+\_\+\+ERROR} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a869a3afcbedbe0d40506bbad62bccb61}\label{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a869a3afcbedbe0d40506bbad62bccb61}} 
+\index{FB19LibMsg.h@{FB19LibMsg.h}!FB19LibMsg\_appendString@{FB19LibMsg\_appendString}}
+\index{FB19LibMsg\_appendString@{FB19LibMsg\_appendString}!FB19LibMsg.h@{FB19LibMsg.h}}
+\doxysubsubsection{\texorpdfstring{FB19LibMsg\_appendString()}{FB19LibMsg\_appendString()}}
+{\footnotesize\ttfamily int FB19\+Lib\+Msg\+\_\+append\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$}]{msg,  }\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
+
+Appends the passed string terminated by a \textquotesingle{}\textbackslash{}0\textquotesingle{} character to the payload of the message including the \textquotesingle{}\textbackslash{}0\textquotesingle{} character and increments its payload size by the size of the string including its terminating \textquotesingle{}\textbackslash{}0\textquotesingle{} character.
+
+If the data doesn\textquotesingle{}t fit into the message because its end would exceed the end of the payload section, it won\textquotesingle{}t be added and {\ttfamily R\+\_\+\+ERROR} is returned.
+
+The string is appended in reverse byte order to the payload buffer (\textquotesingle{}\textbackslash{}0\textquotesingle{} character is inserted first). That way it can be removed from the payload later (see \+\_\+remove\+String()) without having to specify its length.
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em \mbox{[}in/out\mbox{]}} & msg points to the message that will store the passed argument when this function has returned successfully. In case of an error, it won\textquotesingle{}t be changed. \\
+\hline
+\mbox{\texttt{ in}}  & {\em str} & is the string to be appended to the message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily R\+\_\+\+SUCCESS} if the parameter checks pass and the string could be appended, {\ttfamily R\+\_\+\+ERROR} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a9bfffd6a16b97657bcf286b78e1b6dde}\label{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a9bfffd6a16b97657bcf286b78e1b6dde}} 
+\index{FB19LibMsg.h@{FB19LibMsg.h}!FB19LibMsg\_removeChar@{FB19LibMsg\_removeChar}}
+\index{FB19LibMsg\_removeChar@{FB19LibMsg\_removeChar}!FB19LibMsg.h@{FB19LibMsg.h}}
+\doxysubsubsection{\texorpdfstring{FB19LibMsg\_removeChar()}{FB19LibMsg\_removeChar()}}
+{\footnotesize\ttfamily int FB19\+Lib\+Msg\+\_\+remove\+Char (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$}]{msg,  }\item[{char $\ast$}]{value }\end{DoxyParamCaption})}
+
+Removes an 8 bit character from the end of the payload and decreases its size by the size of the returned value in bytes.
+
+If the data couldn\textquotesingle{}t be retrieved because its beginning would exceed the beginning of the payload section, it won\textquotesingle{}t be removed and {\ttfamily R\+\_\+\+ERROR} is returned.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em msg} & points to the message from which the {\ttfamily char} value will be removed. \\
+\hline
+\mbox{\texttt{ out}}  & {\em value} & points to the variable that will hold the {\ttfamily char} value when this function has returned successfully. In case of an error, it won\textquotesingle{}t be changed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily R\+\_\+\+SUCCESS} if the parameter checks pass and the argument could be removed, {\ttfamily R\+\_\+\+ERROR} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a20247c9feb4a7f726822de01e6e0224c}\label{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a20247c9feb4a7f726822de01e6e0224c}} 
+\index{FB19LibMsg.h@{FB19LibMsg.h}!FB19LibMsg\_removeData@{FB19LibMsg\_removeData}}
+\index{FB19LibMsg\_removeData@{FB19LibMsg\_removeData}!FB19LibMsg.h@{FB19LibMsg.h}}
+\doxysubsubsection{\texorpdfstring{FB19LibMsg\_removeData()}{FB19LibMsg\_removeData()}}
+{\footnotesize\ttfamily int FB19\+Lib\+Msg\+\_\+remove\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$}]{msg,  }\item[{void $\ast$}]{buffer,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+Removes arbitrary data from the end of the payload and decreases its size by the size of the returned data in bytes.
+
+If the data couldn\textquotesingle{}t be removed because its beginning would exceed the beginning of the payload section, it won\textquotesingle{}t be removed and {\ttfamily R\+\_\+\+ERROR} is returned. The caller has to make sure the passed buffer is large enough to store the returned data. This is exactly {\ttfamily size} number of bytes, or 0 bytes in case of an error.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em msg} & points to the message from which the {\ttfamily data} will be removed. \\
+\hline
+\mbox{\texttt{ out}}  & {\em buffer} & points to the variable that will hold the data when this function has returned successfully. In case of an error, it won\textquotesingle{}t be changed. \\
+\hline
+\mbox{\texttt{ in}}  & {\em size} & is the number of bytes that shall be removed from the message. If it doesn\textquotesingle{}t contain the requested amount of payload data, the output variable won\textquotesingle{}t be changed and the function returns {\ttfamily R\+\_\+\+ERROR}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily R\+\_\+\+SUCCESS} if the parameter checks pass and the argument could be removed, {\ttfamily R\+\_\+\+ERROR} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_abcc64159b035d44f5c15d62fe40463b8}\label{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_abcc64159b035d44f5c15d62fe40463b8}} 
+\index{FB19LibMsg.h@{FB19LibMsg.h}!FB19LibMsg\_removeDouble@{FB19LibMsg\_removeDouble}}
+\index{FB19LibMsg\_removeDouble@{FB19LibMsg\_removeDouble}!FB19LibMsg.h@{FB19LibMsg.h}}
+\doxysubsubsection{\texorpdfstring{FB19LibMsg\_removeDouble()}{FB19LibMsg\_removeDouble()}}
+{\footnotesize\ttfamily int FB19\+Lib\+Msg\+\_\+remove\+Double (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$}]{msg,  }\item[{double $\ast$}]{value }\end{DoxyParamCaption})}
+
+Removes a 64 bit wide double precision floating point number from the end of the payload and decreases its size by the size of the returned value in bytes.
+
+If the data couldn\textquotesingle{}t be retrieved because its beginning would exceed the beginning of the payload section, it won\textquotesingle{}t be removed and {\ttfamily R\+\_\+\+ERROR} is returned.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em msg} & points to the message from which the {\ttfamily double} value will be removed. \\
+\hline
+\mbox{\texttt{ out}}  & {\em value} & points to the variable that will hold the {\ttfamily double} value when this function has returned successfully. In case of an error, it won\textquotesingle{}t be changed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily R\+\_\+\+SUCCESS} if the parameter checks pass and the argument could be removed, {\ttfamily R\+\_\+\+ERROR} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a485ecbe414e9af629575ed1f3079dd4d}\label{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a485ecbe414e9af629575ed1f3079dd4d}} 
+\index{FB19LibMsg.h@{FB19LibMsg.h}!FB19LibMsg\_removeFloat@{FB19LibMsg\_removeFloat}}
+\index{FB19LibMsg\_removeFloat@{FB19LibMsg\_removeFloat}!FB19LibMsg.h@{FB19LibMsg.h}}
+\doxysubsubsection{\texorpdfstring{FB19LibMsg\_removeFloat()}{FB19LibMsg\_removeFloat()}}
+{\footnotesize\ttfamily int FB19\+Lib\+Msg\+\_\+remove\+Float (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$}]{msg,  }\item[{float $\ast$}]{value }\end{DoxyParamCaption})}
+
+Removes a 32 bit wide single precision floating point number from the end of the payload and decreases its size by the size of the returned value in bytes.
+
+If the data couldn\textquotesingle{}t be retrieved because its beginning would exceed the beginning of the payload section, it won\textquotesingle{}t be removed and {\ttfamily R\+\_\+\+ERROR} is returned.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em msg} & points to the message from which the {\ttfamily float} value will be removed. \\
+\hline
+\mbox{\texttt{ out}}  & {\em value} & points to the variable that will hold the {\ttfamily float} value when this function has returned successfully. In case of an error, it won\textquotesingle{}t be changed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily R\+\_\+\+SUCCESS} if the parameter checks pass and the argument could be removed, {\ttfamily R\+\_\+\+ERROR} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_acb6cfeca5d48790f1d578d3926b1e534}\label{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_acb6cfeca5d48790f1d578d3926b1e534}} 
+\index{FB19LibMsg.h@{FB19LibMsg.h}!FB19LibMsg\_removeInt16@{FB19LibMsg\_removeInt16}}
+\index{FB19LibMsg\_removeInt16@{FB19LibMsg\_removeInt16}!FB19LibMsg.h@{FB19LibMsg.h}}
+\doxysubsubsection{\texorpdfstring{FB19LibMsg\_removeInt16()}{FB19LibMsg\_removeInt16()}}
+{\footnotesize\ttfamily int FB19\+Lib\+Msg\+\_\+remove\+Int16 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$}]{msg,  }\item[{int16\+\_\+t $\ast$}]{value }\end{DoxyParamCaption})}
+
+Removes a signed 16 bit integer number from the end of the payload and decreases its size by the size of the returned value in bytes.
+
+If the data couldn\textquotesingle{}t be removed because its beginning would exceed the beginning of the payload section, it won\textquotesingle{}t be removed and {\ttfamily R\+\_\+\+ERROR} is returned.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em msg} & points to the message from which the {\ttfamily int16\+\_\+t} value will be removed. \\
+\hline
+\mbox{\texttt{ out}}  & {\em value} & points to the variable that will hold the {\ttfamily int16\+\_\+t} value when this function has returned successfully. In case of an error, it won\textquotesingle{}t be changed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily R\+\_\+\+SUCCESS} if the parameter checks pass and the argument could be removed, {\ttfamily R\+\_\+\+ERROR} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a99806f6feac1d672bbb4f9e92a67283e}\label{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_a99806f6feac1d672bbb4f9e92a67283e}} 
+\index{FB19LibMsg.h@{FB19LibMsg.h}!FB19LibMsg\_removeInt32@{FB19LibMsg\_removeInt32}}
+\index{FB19LibMsg\_removeInt32@{FB19LibMsg\_removeInt32}!FB19LibMsg.h@{FB19LibMsg.h}}
+\doxysubsubsection{\texorpdfstring{FB19LibMsg\_removeInt32()}{FB19LibMsg\_removeInt32()}}
+{\footnotesize\ttfamily int FB19\+Lib\+Msg\+\_\+remove\+Int32 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$}]{msg,  }\item[{int32\+\_\+t $\ast$}]{value }\end{DoxyParamCaption})}
+
+Removes a signed 32 bit integer number from the end of the payload and decreases its size by the size of the returned value in bytes.
+
+If the data couldn\textquotesingle{}t be removed because its beginning would exceed the beginning of the payload section, it won\textquotesingle{}t be removed and {\ttfamily R\+\_\+\+ERROR} is returned.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em msg} & points to the message from which the {\ttfamily int32\+\_\+t} value will be removed. \\
+\hline
+\mbox{\texttt{ out}}  & {\em value} & points to the variable that will hold the {\ttfamily int32\+\_\+t} value when this function has returned successfully. In case of an error, it won\textquotesingle{}t be changed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily R\+\_\+\+SUCCESS} if the parameter checks pass and the argument could be removed, {\ttfamily R\+\_\+\+ERROR} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_aa31c274b313dfa5d9f3ba52846f47388}\label{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_aa31c274b313dfa5d9f3ba52846f47388}} 
+\index{FB19LibMsg.h@{FB19LibMsg.h}!FB19LibMsg\_removeInt64@{FB19LibMsg\_removeInt64}}
+\index{FB19LibMsg\_removeInt64@{FB19LibMsg\_removeInt64}!FB19LibMsg.h@{FB19LibMsg.h}}
+\doxysubsubsection{\texorpdfstring{FB19LibMsg\_removeInt64()}{FB19LibMsg\_removeInt64()}}
+{\footnotesize\ttfamily int FB19\+Lib\+Msg\+\_\+remove\+Int64 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$}]{msg,  }\item[{int64\+\_\+t $\ast$}]{value }\end{DoxyParamCaption})}
+
+Removes a signed 64 bit integer number from the end of the payload and decreases its size by the size of the returned value in bytes.
+
+If the data couldn\textquotesingle{}t be removed because its beginning would exceed the beginning of the payload section, it won\textquotesingle{}t be removed and {\ttfamily R\+\_\+\+ERROR} is returned.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em msg} & points to the message from which the {\ttfamily int64\+\_\+t} value will be removed. \\
+\hline
+\mbox{\texttt{ out}}  & {\em value} & points to the variable that will hold the {\ttfamily int64\+\_\+t} value when this function has returned successfully. In case of an error, it won\textquotesingle{}t be changed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily R\+\_\+\+SUCCESS} if the parameter checks pass and the argument could be removed, {\ttfamily R\+\_\+\+ERROR} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_af0d3964d348210cef48c08278b7904b5}\label{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_af0d3964d348210cef48c08278b7904b5}} 
+\index{FB19LibMsg.h@{FB19LibMsg.h}!FB19LibMsg\_removeInt8@{FB19LibMsg\_removeInt8}}
+\index{FB19LibMsg\_removeInt8@{FB19LibMsg\_removeInt8}!FB19LibMsg.h@{FB19LibMsg.h}}
+\doxysubsubsection{\texorpdfstring{FB19LibMsg\_removeInt8()}{FB19LibMsg\_removeInt8()}}
+{\footnotesize\ttfamily int FB19\+Lib\+Msg\+\_\+remove\+Int8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$}]{msg,  }\item[{int8\+\_\+t $\ast$}]{value }\end{DoxyParamCaption})}
+
+Removes a signed 8 bit integer number from the end of the payload and decreases its size by the size of the returned value in bytes.
+
+If the data couldn\textquotesingle{}t be removed because its beginning would exceed the beginning of the payload section, it won\textquotesingle{}t be removed and {\ttfamily R\+\_\+\+ERROR} is returned.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em msg} & points to the message from which the {\ttfamily int8\+\_\+t} value will be removed. \\
+\hline
+\mbox{\texttt{ out}}  & {\em value} & points to the variable that will hold the {\ttfamily int8\+\_\+t} value when this function has returned successfully. In case of an error, it won\textquotesingle{}t be changed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily R\+\_\+\+SUCCESS} if the parameter checks pass and the argument could be removed, {\ttfamily R\+\_\+\+ERROR} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_ada1903b766dc8e4225d0377d7711ef41}\label{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_ada1903b766dc8e4225d0377d7711ef41}} 
+\index{FB19LibMsg.h@{FB19LibMsg.h}!FB19LibMsg\_removeString@{FB19LibMsg\_removeString}}
+\index{FB19LibMsg\_removeString@{FB19LibMsg\_removeString}!FB19LibMsg.h@{FB19LibMsg.h}}
+\doxysubsubsection{\texorpdfstring{FB19LibMsg\_removeString()}{FB19LibMsg\_removeString()}}
+{\footnotesize\ttfamily int FB19\+Lib\+Msg\+\_\+remove\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$}]{msg,  }\item[{char $\ast$}]{str,  }\item[{size\+\_\+t}]{buf\+Len }\end{DoxyParamCaption})}
+
+Removes a string terminated by a \textquotesingle{}\textbackslash{}0\textquotesingle{} character from the end of the payload and decreases its size by the size of the returned string (including its \textquotesingle{}\textbackslash{}0\textquotesingle{} character) in bytes.
+
+If the data couldn\textquotesingle{}t be removed because its beginning would exceed the beginning of the payload section, it won\textquotesingle{}t be removed and {\ttfamily R\+\_\+\+ERROR} is returned.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em msg} & points to the message from which the string will be removed. \\
+\hline
+\mbox{\texttt{ out}}  & {\em str} & points to the variable that will hold the null-\/terminated string when this function has returned successfully. In case of an error, it won\textquotesingle{}t be changed. \\
+\hline
+\mbox{\texttt{ in}}  & {\em buf\+Len} & is the length of the buffer in bytes that will hold the null-\/terminated string. If it is too small, the output variable won\textquotesingle{}t be changed and the function returns {\ttfamily R\+\_\+\+ERROR}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily R\+\_\+\+SUCCESS} if the parameter checks pass and the argument could be removed, {\ttfamily R\+\_\+\+ERROR} otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_aaf5d221e5a2da97adb5388a48713a6ef}\label{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_lib_msg_8h_aaf5d221e5a2da97adb5388a48713a6ef}} 
+\index{FB19LibMsg.h@{FB19LibMsg.h}!FB19LibMsg\_reset@{FB19LibMsg\_reset}}
+\index{FB19LibMsg\_reset@{FB19LibMsg\_reset}!FB19LibMsg.h@{FB19LibMsg.h}}
+\doxysubsubsection{\texorpdfstring{FB19LibMsg\_reset()}{FB19LibMsg\_reset()}}
+{\footnotesize\ttfamily int FB19\+Lib\+Msg\+\_\+reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ctrl_2_s_t_m32_cube_i_d_e_2_s_t_m32_f401_2_inc_2_f_b19_msg_8h_afa89bd818747be891ceba5148c1b5304}{FB19\+Msg\+\_\+t}} $\ast$}]{msg }\end{DoxyParamCaption})}
+
+Resets the internal elements of the message to an empty message. Note that the data in the frame (header, payload, trailer) is NOT set to 0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}in/out\mbox{]}} & msg points to the message that will be reset. In case of an error, it won\textquotesingle{}t be changed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily R\+\_\+\+SUCCESS} if the parameter checks pass, {\ttfamily R\+\_\+\+ERROR} otherwise. 
+\end{DoxyReturn}
