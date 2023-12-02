@@ -5,6 +5,7 @@
  *  - Created:      May 17, 2022
  *  - Description:  This file publishes the interface of the FieldBus19
  *                  message library module.
+ *
  *                  How to use the FB19LibMsg_append...() and
  *                  FB19LibMsg_remove...() functions effectively:
  *                  - Write data into the messages using the _append() functions
