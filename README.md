@@ -1,6 +1,6 @@
 # FieldBus19
 
-**This is a no-cost field bus library with a simple C API for STM32 microcontrollers.**
+**This is a no-cost field bus software library with a simple C API for STM32 microcontrollers.**
 
 ## Features
 The library supports **2 to 5 bus participants** (nodes) per bus segment (1). The required microcontroller **resources are just 3 GPIO pins, 1 UART and 1 Timer** per node.
@@ -15,7 +15,7 @@ For each **supported microcontroller family**, a **reference implementation and 
 
 **The major differences to other field buses like CAN, Modbus or ProfiBus are:**
 * No proprietary hardware required (silicon, connectors, cables)
-* Configurable bit rate from 2kbit/s to 125kbit/s (2)
+* Configurable bit rate from 2kbit/s to 250kbit/s (2)
 * Physical bus length is only limited by RS-485 specifications
 * Variable message/frame size for high throughput
 * Operating system independent implementation, works with any OS/RTK or on bare metal
@@ -24,7 +24,7 @@ For each **supported microcontroller family**, a **reference implementation and 
 
 **Notes:**
 * (1): The technical limit is 31 nodes per segment. In the no-cost version this number has been limited to 5 nodes.
-* (2): The technical limit is around 1Mbit/s on a STM32F401 controller, depending on the system clock frequency, interrupt activities and priorities on the controller. In the no-cost version this number has been limited to 125kbit/s.
+* (2): The technical limit is around 1Mbit/s on a STM32F401 controller, depending on the system clock frequency, interrupt activities and priorities on the controller. In the no-cost version this number has been limited to 250kbit/s.
 
 ## Hardware
 This library doesn't require specific hardware to run on. Although currently only the STM32F401 microcontrollers are supported, the port to different STM controllers is simple. They will be made available as soon as users request them.
