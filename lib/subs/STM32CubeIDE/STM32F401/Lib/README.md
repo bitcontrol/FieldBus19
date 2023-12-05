@@ -1,5 +1,7 @@
 # Subscriber Library Release Build
 
+Link this library to your project.
+
 **MCU GCC Assembler Options**<br>
 ```
 -mcpu=cortex-m4
