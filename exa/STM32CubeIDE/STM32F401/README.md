@@ -12,10 +12,11 @@ Follow these steps in order to run a specific example application:
 * Press the black reset button on the Nucleo board if you like; this restarts the application
 * Repeat above steps if more than one Nucleo board is involved
 
-
 **Subdirectories:**
-* 1node/            This folder contains one subfolder. It contains a project/application, that sends itself FB19 messages forth an back by the means of a loopback cable.
-* 2nodes/           This folder contains two subfolders, each containing a project/application. One folder contains a FB19 Bus Controller project, the other a FB19 Bus Subscriber project.
-* 3+nodes/          This folder contains three subfolders, each containing a project/application. One folder contains a FB19 Bus Controller project, the two other folders contain a FB19 Bus Subscriber project each. See their containing folders in what they do and differ.
-* FB19LibFT/        This folder contains a functional test project/application.
+* **1node/**<br>
+This folder contains one subfolder. It contains a project/application, that sends itself FB19 messages forth an back by the means of a loopback cable.
+* **2nodes/**<br>
+This folder contains two subfolders, each containing a project/application. One folder contains a FB19 Bus Controller project, the other a FB19 Bus Subscriber project.
+* **3+nodes/**<br>
+This folder contains three subfolders, each containing a project/application. One folder contains a FB19 Bus Controller project, the two other folders contain a FB19 Bus Subscriber project each. See their containing folders in what they do and differ.
 * More examples on request
