@@ -14,13 +14,14 @@ Layer 1 is **an RS-485 bus**, but **if only two boards** are to be connected, **
 For each **supported microcontroller family**, a **reference implementation and application examples are published** in this repo.
 
 **The major differences to other field buses like CAN, Modbus or ProfiBus are:**
-* No proprietary hardware required (silicon, connectors, cables)
+* 2 to 5 bus participants per bus segments (1)
 * Configurable bit rate from 2kbit/s to 250kbit/s (2)
 * Physical bus length is only limited by RS-485 specifications
 * Variable message/frame size for high throughput
 * Operating system independent implementation, works with any OS/RTK or on bare metal
 * Supported OSI layers go from layer 1 (physical) up to layer 7 (application)
 * The library guarantees fully deterministic behavior
+* No proprietary hardware required (silicon, connectors, cables)
 
 **Notes:**
 * (1): The technical limit is 31 nodes per segment. In the no-cost version this number has been limited to 5 nodes.
