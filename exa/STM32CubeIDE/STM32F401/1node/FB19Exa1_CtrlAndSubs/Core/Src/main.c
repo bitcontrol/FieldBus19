@@ -72,7 +72,7 @@
  *
  *                  - JP4 and JP5 for USART2 (Bus Controller):
  *                    - JP4 (Rx) is removed, JP5 stays inserted (disconnect
- *                      Bus Ctrl UART Rx signalfrom transceiver data output
+ *                      Bus Ctrl UART Rx signal from transceiver data output
  *                      pin):
  *                      The PB1 -> LED1 functionality works. Reason:
  *                      The messages are successfully submitted to the Bus
@@ -264,7 +264,11 @@ int main(void)
     int rel_time_ms = 0;
     while (1)
     {
-        if (rel_time_ms == 0) // Full second?
+        /* Call the FB19 handler functions periodically. */
+        FB19Ctrl_handler(&instFB19Ctrl);
+        FB19Subs_handler(&instFB19Subs);
+
+        if (rel_time_ms == 0)
         {
             /* Perform domain specific tasks. */
             buttonStatus = GPIOC->IDR & (1 << 11);
@@ -272,10 +276,6 @@ int main(void)
         }
         mySubsProcessMsg(); // Fetch msg from Rx queue, process it, submit result to Tx queue
         myCtrlDisplayResponseMsg();
-
-        /* Call the FB19 handler functions periodically. */
-        FB19Ctrl_handler(&instFB19Ctrl);
-        FB19Subs_handler(&instFB19Subs);
 
         /* Slow this loop down as desired. */
         myWaitForTick(); // Tick frequency is 100Hz; see HAL_SetTickFreq() above
