@@ -14,8 +14,8 @@
 * Import this project into STM32CubeIDE by navigating to _Menu > File > Open Projects from File System..._
 * Build the project
 * Download the project to the Nucleo Board
-* Use a cable to connect J1 of this NEB to J2 of the FB19 Subscriber's NEB board: connect pin 2 with pin 2,pin 3 with pin 3 and pin 6 with pin 6
-* If you push the push button PB1 on this NEB, LED1 on the FB19 Subscriber's NEB board will light up **(3)**; note that the push button is intentionally just polled twice per second
+* Use a cable to connect J1 of this NEB to J2 of the FB19 Subscriber's NEB: connect pin 2 with pin 2, pin 3 with pin 3 and pin 6 with pin 6
+* If you push the push button PB1 on this NEB, LED1 on the FB19 Subscriber's NEB will light up **(3)**; note that the push button is intentionally just polled twice per second
 
 If you encounter any problems, please contact us at info@bitcontrol.ch.
 
