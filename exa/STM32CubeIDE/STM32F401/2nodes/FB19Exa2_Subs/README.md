@@ -22,4 +22,4 @@ If you encounter any problems, please contact us at info@bitcontrol.ch.
 **Notes:**
 * **(1)** If you prefer using your own RS-485 interface board, adjust the configurations in the files FB19CtrlCfg.c according to the design of your board.
 * **(2)** These steps are optional; the serial console displays some information when messages are sent over the bus
-* **(3)** Assuming the FB19Exa2_Subs example is running on the connected Nucleo STM32F401 board
+* **(3)** Assuming the FB19Exa2_Ctrl example is running on the connected Nucleo STM32F401 board
