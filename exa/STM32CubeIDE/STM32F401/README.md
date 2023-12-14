@@ -1,16 +1,16 @@
 # STM32F401
 
-This folder contains example projects that work with the ST Microelectronics IDE version 1.12.0 and above.
+This folder contains example projects that work with the ST Microelectronics IDE version 1.12.0 and above and have been tested on a STM32F401RE Nucleo Board.
 
 Follow these steps in order to run a specific example application:
-* Connect an STM32F401RE Nucleo Board with an USB connector of your computer
+* Connect a STM32F401RE Nucleo Board to an USB connector of your computer
 * Open the STM32CubeIDE application
 * Import the project to the STM32CubeIDE application
 * Build the project
 * Download the application to the Nucleo board
 * It starts automatically after a successful download
-* Press the black reset button on the Nucleo board if you like; this restarts the application
-* Repeat above steps if more than one Nucleo board is involved
+* Press the black reset button on the Nucleo board if you yet like to restart the application
+* Repeat the steps above if more than one Nucleo board is involved
 
 **Subdirectories:**
 * **1node/**<br>
