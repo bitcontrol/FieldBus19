@@ -3,7 +3,7 @@
 **This is a field bus software library with a simple C API for STM32 microcontrollers.**
 
 ## Features
-The library supports **2 to 5 bus participants** (nodes) per bus segment (1) and **up to 250kbit/s bit rate** in the basic version. The required microcontroller **resources are just 3 GPIO pins, 1 UART and 1 Timer** per node.
+The library supports **2 to 5 bus participants** (nodes) per bus segment (1) and **up to 250kbit/s bit rate** (2) in the basic version. The required microcontroller **resources are just 3 GPIO pins, 1 UART and 1 Timer** per node.
 
 Should you **require higher performance or additional features, please contact us** at [Bitcontrol GmbH, Switzerland](https://bitcontrol.ch).
 
