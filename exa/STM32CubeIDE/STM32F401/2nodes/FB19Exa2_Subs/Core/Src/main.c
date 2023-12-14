@@ -2,7 +2,7 @@
 /*
  *  Filename:       main.c
  *  Platform(s):    STM32F401x
- *  Project:        FB19Exa1_Subs
+ *  Project:        FB19Exa2_Subs
  *  Created:        December 06, 2023
  *  Description:    This file implements the main() function of this application.
  *

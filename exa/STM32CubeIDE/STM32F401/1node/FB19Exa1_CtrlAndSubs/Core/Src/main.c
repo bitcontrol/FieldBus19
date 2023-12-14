@@ -65,7 +65,7 @@
  *                  If the assumptions above are met, the removal of one or
  *                  more jumpers has the effects as described below.
  *                  When the jumpers are re-inserted, the bus system will
- *                  resume proper operation immediately.
+ *                  resume normal operation immediately.
  *                  For details of the jumper wiring see the electrical
  *                  diagram.
  *                  Jumper removal:
