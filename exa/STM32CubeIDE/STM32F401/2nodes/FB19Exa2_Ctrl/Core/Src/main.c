@@ -12,17 +12,17 @@
  *
  *                  Responsibilities
  *                  ================
- *                  This application transmits messages containing the status of
- *                  a single digital input (PB1 on FieldBus19 NEB) as FB19
- *                  Controller using USART2.
- *                  If a STM32 node running the FB19Exa2_Subs application is
- *                  connected to this node, it will switch a single digital
- *                  output on or off (LED1 on the FieldBus19 NEB) depending on
- *                  the state of the digital input. It then returns the state of
- *                  the LED in response messages to this Controller.
+ *                  This application transmits messages as FB19 Controller
+ *                  containing a 32bit number representing the status of a
+ *                  single digital input (PB1 on FieldBus19 NEB).
+ *                  If the button PB1 is not pressed, the number is 0. If the
+ *                  button is pressed, the number corresponds to the value of
+ *                  the corresponding GPIO port register (not zero).
+ *                  This node expects the same number as response message from
+ *                  the FB19 Subscriber.
  *                  This ping-pong schema is repeated periodically twice per
- *                  second. USART1 is used to display this process on the
- *                  console.
+ *                  second.
+ *                  USART1 is used to display this process on the console.
  *
  *                  FB19 Libraries
  *                  ==============
@@ -31,25 +31,29 @@
  *                  Configuration
  *                  =============
  *                  FB19 Bitrate: 100kbit/s
- *                  FB19 Subscriber bus address: 1
+ *                  FB19 Controller bus address: 0 (fix per specification)
  *                  FB19 Bus: RS-485 (not RS-232!)
  *                  USART1 RS-232 parameters: 115200/8/N/1
  *                  Used SoC resources:
- *                  - GPIOA, bit 8: FB19Ctrl RS-485 driver Data Output Enable
+ *                  - GPIOA, bit 7: FB19Subs RS-485 driver Data Output Enable
  *                  - GPIOC, bit 11: Digital input for sensing PB1 state
- *                  - TIM2: FB19Ctrl
- *                  - USART1: RS-232 Terminal
- *                  - USART2: FB19Ctrl
+ *                  - TIM3: FB19Ctrl
+ *                  - USART1 (UART1): RS-232 Terminal
+ *                  - USART2 (UART2): Unused
+ *                  - USART6 (UART3): FB19Ctrl
  *                  Hardware:
  *                  - Nucleo Board: Nucleo-64 STM32F401
+ *                    - Factory default settings
  *                  - Nucleo Expansion Board for FieldBus19, v2.2 or higher
  *                    - This board contains jumpers that relate to the bus
  *                      system:
- *                      - JP4, JP5, JP6, JP7: connect pins 1 and 2 (RS-485 mode)
- *                      - JP8, JP9: connect pins 2 and 3 (J2 is connected to
- *                        USART6)
- *                    - The board contains furthermore a user push button and a
- *                      user LED
+ *                      - JP4, JP5: Don't care
+ *                        If pins 2 & 3 are connected, UART2 can be used as
+ *                        RS-232 interface on J3
+ *                      - JP6, JP7: Connect pins 1 & 2
+ *                        This selects RS-485 for UART3
+ *                      - JP8, JP9: connect pins 2 & 3
+ *                        This connects UART3 to J2
  *
  *  Notes:          The initial version of this file was generated using
  *                  STMicroelectronics STM32CubeMX, v6.8.0.
@@ -259,7 +263,7 @@ static void MX_USART1_UART_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN USART1_Init 2 */
-    setvbuf( stdin, NULL, _IONBF, 0); // Disable console input buffering
+    setvbuf(stdin, NULL, _IONBF, 0); // Disable console input buffering
   /* USER CODE END USART1_Init 2 */
 
 }

@@ -202,23 +202,23 @@ void SysTick_Handler(void)
 /* USER CODE BEGIN 1 */
 
 /**
- * Interrupt handler of the TIM2 peripheral.
- * The function TIM2_IRQHandler is weakly defined in the file
+ * Interrupt handler of the TIM3 peripheral.
+ * The function TIM3_IRQHandler is weakly defined in the file
  * startup_stm32f401retx.s.<br>
- * Overwrite it with this function if TIM2 is used by the FB19DrvTimer module.
+ * Overwrite it with this function if TIM3 is used by the FB19DrvTimer module.
  */
-void TIM2_IRQHandler(void)
+void TIM3_IRQHandler(void)
 {
     FB19Ctrl_timerIRQHandler((FB19Ctrl_inst_t*)instFB19Ctrl);
 }
 
 /**
- * Interrupt handler of the USART2 peripheral.
- * The function USART2_IRQHandler is weakly defined in the file
+ * Interrupt handler of the USART6 peripheral.
+ * The function USART6_IRQHandler is weakly defined in the file
  * startup_stm32f401retx.s.<br>
- * Overwrite it with this function if USART2 is used by the FB19DrvUART module.
+ * Overwrite it with this function if USART6 is used by the FB19DrvUART module.
  */
-void USART2_IRQHandler(void)
+void USART6_IRQHandler(void)
 {
     FB19Ctrl_UartIRQHandler((FB19Ctrl_inst_t*)instFB19Ctrl);
 }

@@ -13,11 +13,12 @@
  *                  Responsibilities
  *                  ================
  *                  This application receives messages containing a single
- *                  32bit number. If it is 0, the application switches a
- *                  single digital output (LED1 on the FieldBus19 NEB) off,
- *                  if it is not equal to zero, it switches it on. It then
- *                  returns this number as response message to the Controller.
- *                  USART6 is used for communication with the FB19 Controller.
+ *                  32bit number as FB19 Subscriber. If the number is 0,
+ *                  the application switches a single digital output (LED1
+ *                  on the FieldBus19 NEB) off, if it is not equal to zero,
+ *                  it switches it on.
+ *                  It then returns the number as response message to the
+ *                  FB19 Controller.
  *                  USART1 is used to display this process on the console.
  *
  *                  FB19 Libraries
@@ -34,18 +35,22 @@
  *                  - GPIOA, bit 7: FB19Subs RS-485 driver Data Output Enable
  *                  - GPIOC, bit 10: Digital output for setting LED1 state
  *                  - TIM3: FB19Subs
- *                  - USART1: RS-232 Terminal
- *                  - USART6: FB19Subs
+ *                  - USART1 (UART1): RS-232 Terminal
+ *                  - USART2 (UART2): Unused
+ *                  - USART6 (UART3): FB19Subs
  *                  Hardware:
  *                  - Nucleo Board: Nucleo-64 STM32F401
+ *                    - Factory default settings
  *                  - Nucleo Expansion Board for FieldBus19, v2.2 or higher
  *                    - This board contains jumpers that relate to the bus
  *                      system:
- *                      - JP4, JP5, JP6, JP7: connect pins 1 and 2 (RS-485 mode)
- *                      - JP8, JP9: connect pins 2 and 3 (J2 is connected to
- *                        USART6)
- *                    - The board contains furthermore a user push button and a
- *                      user LED
+ *                      - JP4, JP5: Don't care
+ *                        If pins 2 & 3 are connected, UART2 can be used as
+ *                        RS-232 interface on J3
+ *                      - JP6, JP7: Connect pins 1 & 2
+ *                        This selects RS-485 for UART3
+ *                      - JP8, JP9: connect pins 2 & 3
+ *                        This connects UART3 to J2
  *
  *  Notes:          The initial version of this file was generated using
  *                  STMicroelectronics STM32CubeMX, v6.8.0.
@@ -245,7 +250,7 @@ static void MX_USART1_UART_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN USART1_Init 2 */
-    setvbuf( stdin, NULL, _IONBF, 0); // Disable console input buffering
+    setvbuf(stdin, NULL, _IONBF, 0); // Disable console input buffering
   /* USER CODE END USART1_Init 2 */
 
 }

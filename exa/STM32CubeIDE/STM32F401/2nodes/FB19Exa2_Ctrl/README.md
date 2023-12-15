@@ -9,8 +9,7 @@
     If pins 2 & 3 are connected, UART2 can be used as RS-232 interface on J3 **(2)**
   * JP6, JP7: Connect pins 1 & 2<br>
     This selects RS-485 for UART3
-  * JP8, JP9: Connect pins 1 & 2<br>
-    This allows daisy chaining the boards via J1 and J2
+  * JP8, JP9: Connect pins 2 & 3<br>
 * Connect the Nucleo board's USB connector to your computer
 * Connect the serial console I/O on JP3 to an RS-232 to USB converter, then connect the USB side of the converter to your computer **(3)**
 * Open a serial terminal program on your computer, configure these settings: 115200/8/N/1 **(3)**
@@ -20,11 +19,11 @@
 * Import this project into STM32CubeIDE by navigating to _Menu > File > Open Projects from File System..._
 * Build the project
 * Download the project to the Nucleo Board
-* Use a cable to connect J1 of this NEB to J2 of the FB19 Subscriber's NEB: connect pin 2 with pin 2, pin 3 with pin 3 and pin 6 with pin 6
+* Use a cable to connect J2 of this NEB to J2 of the FB19 Subscriber's NEB: connect pin 2 with pin 2, pin 3 with pin 3 and pin 4 with pin 4
 
 **Functionality:**
 * If you push the push button PB1 on this NEB, LED1 on the FB19 Subscriber's NEB will light up **(4)**
-* Note that the push button is intentionally just polled twice per second
+* Note that the push button is just polled twice per second
 
 **Notes:**
 * **(1)** If you prefer using your own RS-485 interface board, adjust the configurations in the files FB19CtrlCfg.c according to the design of your board.

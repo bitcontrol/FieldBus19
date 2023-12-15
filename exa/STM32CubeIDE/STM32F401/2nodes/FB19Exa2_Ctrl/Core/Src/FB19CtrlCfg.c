@@ -63,35 +63,35 @@ FB19Ctrl_cfg_t cfgFB19Ctrl =        // FB19 Controller configuration
     /* FB19 Controller Driver Module. *****************************************/
     {
         GPIOA,                      // CMSIS GPIO base address
-        8,                          // GPIO_portBitDOE
+        7,                          // GPIO_portBitDOE
         &sDrvCtrlTxRxMsgQ,          // Transmit/receive message queue
     },
 
     /* Timer Driver Module. ***************************************************/
     {
-        TIM2_IRQn,                  // NVIC_IRQ_channel
+        TIM3_IRQn,                  // NVIC_IRQ_channel
         2,                          // NVIC_IRQ_groupPriority
         3,                          // NVIC_IRQ_subPriority
-        1UL << 0,                   // RCC_clockEnableBitMask
+        1UL << 1,                   // RCC_clockEnableBitMask
         &(RCC->APB1ENR),            // RCC_clockEnableRegister
-        1UL << 0,                   // RCC_resetBitMask
+        1UL << 1,                   // RCC_resetBitMask
         &(RCC->APB1RSTR),           // RCC_resetRegister
-        32,                         // registerWidth [bit]
-        TIM2,                       // TIMx
+        16,                         // registerWidth
+        TIM3,                       // TIMx
     },
 
     /* UART Driver Module. ****************************************************/
     {
         GPIOA,                      // CMSIS GPIO base address
-        7,                          // GPIO_alternateFunctionSelection
-        3,                          // GPIO_portBitNumberRx
-        2,                          // GPIO_portBitNumberTx
-        USART2_IRQn,                // NVIC_IRQ_channel
+        8,                          // GPIO_alternateFunctionSelection
+        12,                         // GPIO_portBitNumberRx
+        11,                         // GPIO_portBitNumberTx
+        USART6_IRQn,                // NVIC_IRQ_channel
         2,                          // NVIC_IRQ_groupPriority
         3,                          // NVIC_IRQ_subPriority
-        RCC_APB1ENR_USART2EN,       // RCC_clockEnableBitMask
-        &(RCC->APB1ENR),            // RCC_clockEnableRegister
-        USART2,                     // CMSIS USART base address
+        RCC_APB2ENR_USART6EN,       // RCC_clockEnableBitMask
+        &(RCC->APB2ENR),            // RCC_clockEnableRegister
+        USART6,                     // USARTx
     },
 };
 

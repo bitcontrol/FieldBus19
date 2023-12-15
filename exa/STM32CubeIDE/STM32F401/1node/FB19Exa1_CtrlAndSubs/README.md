@@ -18,7 +18,7 @@
 
 **Functionality:**
 * If you push the push button PB1 on this node's NEB, its LED1 will light up
-* Note that the push button is intentionally just polled twice per second
+* Note that the push button is just polled twice per second
 
 **Notes:**
 * **(1)** If you prefer using your own RS-485 interface board, adjust the configurations in the files FB19CtrlCfg.c and FB19SubsCfg.c according to the design of your board.

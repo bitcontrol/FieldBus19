@@ -18,11 +18,12 @@
  *                  using USART6.
  *                  The Subscriber switches a single digital output on or off
  *                  (LED1 on the FieldBus19 NEB) depending on the state of the
- *                  digital input. It then returns the state of the LED in
- *                  response messages to the Controller.
+ *                  digital input. If the number is 0, the LED is switched off,
+ *                  otherwise it is switched on.
+ *                  It then returns the number to the FB19 Controller.
  *                  This ping-pong schema is repeated periodically twice per
- *                  second. USART1 is used to display this process on the
- *                  console.
+ *                  second.
+ *                  USART1 is used to display this process on the console.
  *
  *                  FB19 Libraries
  *                  ==============
@@ -32,29 +33,31 @@
  *                  Configuration
  *                  =============
  *                  FB19 Bitrate: 100kbit/s
+ *                  FB19 Controller bus address: 0 (fix per specification)
  *                  FB19 Subscriber bus address: 1
  *                  FB19 Bus: RS-485 (not RS-232!)
  *                  USART1 RS-232 parameters: 115200/8/N/1
  *                  Used SoC resources:
  *                  - GPIOA, bit 7: FB19Subs RS-485 driver Data Output Enable
  *                  - GPIOA, bit 8: FB19Ctrl RS-485 driver Data Output Enable
- *                  - GPIOC, bit 11: Digital input for sensing PB1 state
  *                  - GPIOC, bit 10: Digital output for setting LED1 state
+ *                  - GPIOC, bit 11: Digital input for sensing PB1 state
  *                  - TIM2: FB19Ctrl
  *                  - TIM3: FB19Subs
- *                  - USART1: RS-232 Terminal
- *                  - USART2: FB19Ctrl
- *                  - USART6: FB19Subs
+ *                  - USART1 (UART1): RS-232 Terminal
+ *                  - USART2 (UART2): FB19Ctrl (observe required solder bridge
+ *                    changes on Nucleo board!)
+ *                  - USART6 (UART3): FB19Subs
  *                  Hardware:
  *                  - Nucleo Board: Nucleo-64 STM32F401
+ *                    - Solder bridge settings different from default:
+ *                      SB13: Off, SB14: Off, SB61: Off, SB62: On, SB63: On
  *                  - Nucleo Expansion Board for FieldBus19, v2.2 or higher
  *                    - This board contains jumpers that relate to the bus
  *                      system:
- *                      - JP4, JP5, JP6, JP7: connect pins 1 and 2 (RS-485 mode)
- *                      - JP8, JP9: connect pins 2 and 3 (J2 is connected to
- *                        USART6)
- *                    - The board contains furthermore a user push button and a
- *                      user LED
+ *                      - JP4, JP5, JP6, JP7: connect pins 1 & 2 (RS-485 mode)
+ *                      - JP8, JP9: connect pins 2 & 3 (UART3 is connected to
+ *                        J2)
  *
  *                  Fault Behavior
  *                  ==============
@@ -363,7 +366,7 @@ static void MX_USART1_UART_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN USART1_Init 2 */
-    setvbuf( stdin, NULL, _IONBF, 0); // Disable console input buffering
+    setvbuf(stdin, NULL, _IONBF, 0); // Disable console input buffering
   /* USER CODE END USART1_Init 2 */
 
 }
