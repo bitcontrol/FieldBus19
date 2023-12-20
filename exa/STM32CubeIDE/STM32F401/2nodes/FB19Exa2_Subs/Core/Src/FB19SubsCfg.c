@@ -54,7 +54,7 @@ static FB19LibMsgQ_element_t sDrvSubsLfrArray[8];
 static FB19LibMsgQ_queue_t sDrvSubsTxMsgQ =
     { array: sDrvSubsLfrArray, capacity: sizeof(sDrvSubsLfrArray) / sizeof(FB19LibMsgQ_element_t) };
 
-FB19Subs_cfg_t cfgFB19Subs =        // FB19 Subscriber configuration
+FB19Subs_cfg_t myCfgFB19Subs =      // FB19 Subscriber configuration
 {
     /* FB19 Subscriber Data Preparation Module. *******************************/
     {
@@ -100,7 +100,7 @@ FB19Subs_cfg_t cfgFB19Subs =        // FB19 Subscriber configuration
     },
 };
 
-FB19Subs_inst_t instFB19Subs;       // FB19 Subscriber memory and instance
+FB19Subs_inst_t myInstFB19Subs;     // FB19 Subscriber memory and instance
 
 //------------------------------------------------------------------------------
 // Local Functions

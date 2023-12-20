@@ -34,8 +34,8 @@ extern "C" {
 
 //------------------------------------------------------------------------------
 // Constants and Variables
-extern FB19Subs_cfg_t  cfgFB19Subs;     /**< FB19 Subscriber configuration. */
-extern FB19Subs_inst_t instFB19Subs;    /**< FB19 Subscriber memory and instance. */
+extern FB19Subs_cfg_t  myCfgFB19Subs;   /**< FB19 Subscriber configuration. */
+extern FB19Subs_inst_t myInstFB19Subs;  /**< FB19 Subscriber memory and instance. */
 
 //------------------------------------------------------------------------------
 // Functions

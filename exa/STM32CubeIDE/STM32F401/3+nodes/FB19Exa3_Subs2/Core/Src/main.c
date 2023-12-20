@@ -176,7 +176,7 @@ int main(void)
     while (1)
     {
         /* Call the FB19 handler function periodically. */
-        FB19Subs_handler(&instFB19Subs);
+        FB19Subs_handler(&myInstFB19Subs);
 
         buttonPressedLocal = GPIOC->IDR & (1 << 11) ? FALSE : TRUE; // 3.3V when NOT pressed
         mySubsProcessMsg(buttonPressedLocal);
@@ -343,12 +343,12 @@ static void mySubsProcessMsg(BOOL buttonPressedLocal)
     int status;
     uint32_t tmp;
 
-    status = FB19Subs_fetch(&instFB19Subs, &msg);
+    status = FB19Subs_fetch(&myInstFB19Subs, &msg);
     // status equals R_ERROR unless there is a message with a matching
     // identifier in the receive queue.
     if (status == R_SUCCESS) // Message received?
     {
-        FB19Subs_getBusAddress(&instFB19Subs, &addr);
+        FB19Subs_getBusAddress(&myInstFB19Subs, &addr);
         printf("\nFB19Subs with BA=%i processing msg\n", addr);
         if (msg.dscr.errSts == FB19_DRV_ERR_NONE)
         {
@@ -367,7 +367,7 @@ static void mySubsProcessMsg(BOOL buttonPressedLocal)
 
                 msg.dscr.dstAddr = FB19_BUS_ADDR_CTRL;
                 FB19LibMsg_appendInt32(&msg, buttonPressedLocal); // Assume success, ignore return value
-                status = FB19Subs_submit(&instFB19Subs, &msg);
+                status = FB19Subs_submit(&myInstFB19Subs, &msg);
                 if (status == R_SUCCESS)
                 {
                     printf("Txd msg with val=%i\n", buttonPressedLocal);
@@ -390,19 +390,19 @@ static void mySubsProcessMsg(BOOL buttonPressedLocal)
     }
 
     /* Display error counts if they have changed. */
-    FB19Subs_getNoiseFaultCount(&instFB19Subs, &tmp); // Processing return value is optional
+    FB19Subs_getNoiseFaultCount(&myInstFB19Subs, &tmp); // Processing return value is optional
     if (noiseFaultCount != tmp)
     {
         noiseFaultCount = tmp;
         printf("Noise fault count=%lu\n", noiseFaultCount);
     }
-    FB19Subs_getRxFaultCount(&instFB19Subs, &tmp); // Processing return value is optional
+    FB19Subs_getRxFaultCount(&myInstFB19Subs, &tmp); // Processing return value is optional
     if (rxFaultCount != tmp)
     {
         rxFaultCount = tmp;
         printf("Rx fault count=%lu\n", rxFaultCount);
     }
-    FB19Subs_getTxFaultCount(&instFB19Subs, &tmp); // Processing return value is optional
+    FB19Subs_getTxFaultCount(&myInstFB19Subs, &tmp); // Processing return value is optional
     if (txFaultCount != tmp)
     {
         txFaultCount = tmp;
@@ -415,7 +415,7 @@ static int myStartFB19(void)
     int status;
 
     printf("FB19Subs version: %s\n", FB19Subs_getVersion());
-    status = FB19Subs_start(&instFB19Subs, &cfgFB19Subs, MY_BIT_RATE);
+    status = FB19Subs_start(&myInstFB19Subs, &myCfgFB19Subs, MY_BIT_RATE);
     if (status == R_SUCCESS)
     {
         printf("FB19Subs_start() succeeded\n");

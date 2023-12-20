@@ -33,8 +33,8 @@ extern "C" {
 
 //------------------------------------------------------------------------------
 // Constants and Variables
-extern FB19Ctrl_cfg_t  cfgFB19Ctrl;     /**< FB19 Controller configuration. */
-extern FB19Ctrl_inst_t instFB19Ctrl;    /**< FB19 Controller memory and instance. */
+extern FB19Ctrl_cfg_t  myCfgFB19Ctrl;   /**< FB19 Controller configuration. */
+extern FB19Ctrl_inst_t myInstFB19Ctrl;  /**< FB19 Controller memory and instance. */
 
 //------------------------------------------------------------------------------
 // Functions

@@ -209,7 +209,7 @@ void SysTick_Handler(void)
  */
 void TIM3_IRQHandler(void)
 {
-    FB19Ctrl_timerIRQHandler((FB19Ctrl_inst_t*)instFB19Ctrl);
+    FB19Ctrl_timerIRQHandler((FB19Ctrl_inst_t*)myInstFB19Ctrl);
 }
 
 /**
@@ -220,7 +220,7 @@ void TIM3_IRQHandler(void)
  */
 void USART6_IRQHandler(void)
 {
-    FB19Ctrl_UartIRQHandler((FB19Ctrl_inst_t*)instFB19Ctrl);
+    FB19Ctrl_UartIRQHandler((FB19Ctrl_inst_t*)myInstFB19Ctrl);
 }
 
 /* USER CODE END 1 */

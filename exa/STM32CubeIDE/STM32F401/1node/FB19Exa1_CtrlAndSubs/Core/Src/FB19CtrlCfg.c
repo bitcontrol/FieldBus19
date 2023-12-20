@@ -49,7 +49,7 @@ static FB19Msg_t sDrvCtrlTxRxArray[8];
 static FB19MsgQ_t sDrvCtrlTxRxMsgQ =
     { array: sDrvCtrlTxRxArray, capacity: sizeof(sDrvCtrlTxRxArray) / sizeof(FB19Msg_t) };
 
-FB19Ctrl_cfg_t cfgFB19Ctrl =        // FB19 Controller configuration
+FB19Ctrl_cfg_t myCfgFB19Ctrl =      // FB19 Controller configuration
 {
     /* FB19 Controller Data Preparation Module. *******************************/
     {
@@ -93,7 +93,7 @@ FB19Ctrl_cfg_t cfgFB19Ctrl =        // FB19 Controller configuration
     },
 };
 
-FB19Ctrl_inst_t instFB19Ctrl;       // FB19 Controller memory and instance
+FB19Ctrl_inst_t myInstFB19Ctrl;     // FB19 Controller memory and instance
 
 //------------------------------------------------------------------------------
 // Local Functions

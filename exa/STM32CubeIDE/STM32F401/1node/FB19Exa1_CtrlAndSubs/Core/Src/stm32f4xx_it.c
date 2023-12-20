@@ -210,7 +210,7 @@ void SysTick_Handler(void)
  */
 void TIM2_IRQHandler(void)
 {
-    FB19Ctrl_timerIRQHandler((FB19Ctrl_inst_t*)instFB19Ctrl);
+    FB19Ctrl_timerIRQHandler((FB19Ctrl_inst_t*)myInstFB19Ctrl);
 }
 
 /**
@@ -221,7 +221,7 @@ void TIM2_IRQHandler(void)
  */
 void TIM3_IRQHandler(void)
 {
-    FB19Subs_timerIRQHandler((FB19Subs_inst_t*)instFB19Subs);
+    FB19Subs_timerIRQHandler((FB19Subs_inst_t*)myInstFB19Subs);
 }
 
 /**
@@ -232,7 +232,7 @@ void TIM3_IRQHandler(void)
  */
 void USART2_IRQHandler(void)
 {
-    FB19Ctrl_UartIRQHandler((FB19Ctrl_inst_t*)instFB19Ctrl);
+    FB19Ctrl_UartIRQHandler((FB19Ctrl_inst_t*)myInstFB19Ctrl);
 }
 
 /**
@@ -243,7 +243,7 @@ void USART2_IRQHandler(void)
  */
 void USART6_IRQHandler(void)
 {
-    FB19Subs_UartIRQHandler((FB19Subs_inst_t*)instFB19Subs);
+    FB19Subs_UartIRQHandler((FB19Subs_inst_t*)myInstFB19Subs);
 }
 
 /* USER CODE END 1 */

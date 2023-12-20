@@ -438,7 +438,7 @@ int FB19Subs_submit(FB19Subs_inst_t* instance, const FB19Msg_t* msg);
  * \code
  *  void TIM2_IRQHandler(void)
  *  {
- *      FB19Subs_timerIRQHandler((FB19Subs_inst_t*)instFB19Subs);
+ *      FB19Subs_timerIRQHandler((FB19Subs_inst_t*)myInstFB19Subs);
  *  }
  * \endcode
  *
@@ -455,7 +455,7 @@ void FB19Subs_timerIRQHandler(FB19Subs_inst_t* instance);
  * \code
  *  void USART2_IRQHandler(void)
  *  {
- *      FB19Subs_UartIRQHandler((FB19Subs_inst_t*)instFB19Subs);
+ *      FB19Subs_UartIRQHandler((FB19Subs_inst_t*)myInstFB19Subs);
  *  }
  * \endcode
  *

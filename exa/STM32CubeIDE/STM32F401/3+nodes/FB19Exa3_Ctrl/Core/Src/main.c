@@ -187,7 +187,7 @@ int main(void)
     while (1)
     {
         /* Call the FB19 handler function periodically. */
-        FB19Ctrl_handler(&instFB19Ctrl);
+        FB19Ctrl_handler(&myInstFB19Ctrl);
 
         myCtrlProcRespMsg(&buttonPressedSubs1, &buttonPressedSubs2);
 
@@ -367,7 +367,7 @@ static void myCtrlProcRespMsg(BOOL* btn1Pressed, BOOL* btn2Pressed)
     int status;
     uint32_t tmp;
 
-    status = FB19Ctrl_fetch(&instFB19Ctrl, &msg);
+    status = FB19Ctrl_fetch(&myInstFB19Ctrl, &msg);
     // status equals R_SUCCESS if a response has been received or the response
     // has timed out. In the latter case, the error FB19_DRV_ERR_BUS_RSP_FRM_TMO
     // is set inside the message.
@@ -400,19 +400,19 @@ static void myCtrlProcRespMsg(BOOL* btn1Pressed, BOOL* btn2Pressed)
     }
 
     /* Display error counts if they have changed. */
-    FB19Ctrl_getNoiseFaultCount(&instFB19Ctrl, &tmp); // Processing return value optional
+    FB19Ctrl_getNoiseFaultCount(&myInstFB19Ctrl, &tmp); // Processing return value optional
     if (noiseCharFaultCount != tmp)
     {
         noiseCharFaultCount = tmp;
         printf("FB19Ctrl noise char fault count=%lu\n", noiseCharFaultCount);
     }
-    FB19Ctrl_getRxFaultCount(&instFB19Ctrl, &tmp); // Processing return value optional
+    FB19Ctrl_getRxFaultCount(&myInstFB19Ctrl, &tmp); // Processing return value optional
     if (rxFaultCount != tmp)
     {
         rxFaultCount = tmp;
         printf("FB19Ctrl Rx fault count=%lu\n", rxFaultCount);
     }
-    FB19Ctrl_getTxFaultCount(&instFB19Ctrl, &tmp); // Processing return value optional
+    FB19Ctrl_getTxFaultCount(&myInstFB19Ctrl, &tmp); // Processing return value optional
     if (txFaultCount != tmp)
     {
         txFaultCount = tmp;
@@ -434,7 +434,7 @@ static void myCtrlSendToSubs(BOOL payload, int busAddress)
     int status;
 
     FB19LibMsg_appendInt32(&msg, payload); // Assume success, ignore return value
-    status = FB19Ctrl_submit(&instFB19Ctrl, &msg);
+    status = FB19Ctrl_submit(&myInstFB19Ctrl, &msg);
     printf("FB19Ctrl_submit() to BA %i ", busAddress);
     if (status == R_SUCCESS)
     {
@@ -451,7 +451,7 @@ static int myStartFB19(void)
     int status;
 
     printf("FB19Ctrl version: %s\n", FB19Ctrl_getVersion());
-    status = FB19Ctrl_start(&instFB19Ctrl, &cfgFB19Ctrl, MY_BIT_RATE);
+    status = FB19Ctrl_start(&myInstFB19Ctrl, &myCfgFB19Ctrl, MY_BIT_RATE);
     if (status == R_SUCCESS)
     {
         printf("FB19Ctrl_start() succeeded\n");
