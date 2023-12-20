@@ -10,6 +10,7 @@
   * JP6, JP7: Connect pins 1 & 2<br>
     This selects RS-485 for UART3
   * JP8, JP9: Connect pins 2 & 3<br>
+    This connects UART3 to J2    
 * Connect the Nucleo board's USB connector to your computer
 * Connect the serial console I/O on JP3 to an RS-232 to USB converter, then connect the USB side of the converter to your computer **(3)**
 * Open a serial terminal program on your computer, configure these settings: 115200/8/N/1 **(3)**
@@ -23,7 +24,6 @@
 
 **Functionality:**
 * If you push the push button PB1 on the FB19 Controller's NEB, LED1 on this NEB will light up **(4)**
-* Note that the push button is just polled twice per second
 
 **Notes:**
 * **(1)** If you prefer using your own RS-485 interface board, adjust the configurations in the files FB19CtrlCfg.c according to the design of your board.
