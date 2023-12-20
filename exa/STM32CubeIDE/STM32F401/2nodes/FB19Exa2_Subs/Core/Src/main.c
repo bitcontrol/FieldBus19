@@ -7,7 +7,9 @@
  *  Description:    This file implements the main() function of this application.
  *
  *  Glossary:       LED:    Light Emitting Diode
- *                  NEB:    Nucleo Expansion Board
+ *                  NEB:    Nucleo Expansion Board for RS-232 & RS-485
+ *                          communication by Bitcontrol GmbH, Switzerland,
+ *                          v2.2 or higher
  *                  PB:     Push Button
  *
  *                  Responsibilities
@@ -15,11 +17,13 @@
  *                  This application receives messages containing a single
  *                  32bit number as FB19 Subscriber. If the number is 0,
  *                  the application switches a single digital output (LED1
- *                  on the FieldBus19 NEB) off, if it is not equal to zero,
- *                  it switches it on.
+ *                  on the NEB) off, if it is not equal to zero, it switches it
+ *                  on.
+ *
  *                  It then returns the number as response message to the
  *                  FB19 Controller.
- *                  USART1 is used to display this process on the console.
+ *
+ *                  USART1 is used to display this process on a serial terminal.
  *
  *                  FB19 Libraries
  *                  ==============
@@ -41,7 +45,8 @@
  *                  Hardware:
  *                  - Nucleo Board: Nucleo-64 STM32F401
  *                    - Factory default settings
- *                  - Nucleo Expansion Board for FieldBus19, v2.2 or higher
+ *                  - Nucleo Expansion Board for RS-232 & RS-485 communication
+ *                    by Bitcontrol GmbH, Switzerland, v2.2 or higher
  *                    - This board contains jumpers that relate to the bus
  *                      system:
  *                      - JP4, JP5: Don't care
@@ -49,7 +54,7 @@
  *                        RS-232 interface on J3
  *                      - JP6, JP7: Connect pins 1 & 2
  *                        This selects RS-485 for UART3
- *                      - JP8, JP9: connect pins 2 & 3
+ *                      - JP8, JP9: Connect pins 2 & 3
  *                        This connects UART3 to J2
  *
  *  Notes:          The initial version of this file was generated using
@@ -125,55 +130,55 @@ static void myWaitForTick(void);
   */
 int main(void)
 {
-  /* USER CODE BEGIN 1 */
+    /* USER CODE BEGIN 1 */
 
-  /* USER CODE END 1 */
+    /* USER CODE END 1 */
 
-  /* MCU Configuration--------------------------------------------------------*/
+    /* MCU Configuration--------------------------------------------------------*/
 
-  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  HAL_Init();
+    /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+    HAL_Init();
 
-  /* USER CODE BEGIN Init */
-  __HAL_DBGMCU_FREEZE_TIM2();
-  __HAL_DBGMCU_FREEZE_TIM3();
-  /* USER CODE END Init */
+    /* USER CODE BEGIN Init */
+    __HAL_DBGMCU_FREEZE_TIM2();
+    __HAL_DBGMCU_FREEZE_TIM3();
+    /* USER CODE END Init */
 
-  /* Configure the system clock */
-  SystemClock_Config();
+    /* Configure the system clock */
+    SystemClock_Config();
 
-  /* USER CODE BEGIN SysInit */
+    /* USER CODE BEGIN SysInit */
     HAL_SetTickFreq(HAL_TICK_FREQ_100HZ);
-  /* USER CODE END SysInit */
+    /* USER CODE END SysInit */
 
-  /* Initialize all configured peripherals */
-  MX_GPIO_Init();
-  MX_USART1_UART_Init();
-  /* USER CODE BEGIN 2 */
+    /* Initialize all configured peripherals */
+    MX_GPIO_Init();
+    MX_USART1_UART_Init();
+    /* USER CODE BEGIN 2 */
     int status = myStartFB19(); // Start Controller and Subscriber instances
     if (status != R_SUCCESS)
     {
         return 1; // Terminate application, return error value
     }
-  /* USER CODE END 2 */
+    /* USER CODE END 2 */
 
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
+    /* Infinite loop */
+    /* USER CODE BEGIN WHILE */
     while (1)
     {
-        /* Call the FB19 handler functions periodically. */
+        /* Call the FB19 handler function periodically. */
         FB19Subs_handler(&instFB19Subs);
 
         mySubsProcessMsg(); // Fetch msg from Rx queue, process it, submit result to Tx queue
 
         /* Slow this loop down as desired. */
         myWaitForTick(); // Tick frequency is 100Hz; see HAL_SetTickFreq() above
-    /* USER CODE END WHILE */
+        /* USER CODE END WHILE */
 
-    /* USER CODE BEGIN 3 */
+        /* USER CODE BEGIN 3 */
     }
     return 0; // If ever reached
-  /* USER CODE END 3 */
+    /* USER CODE END 3 */
 }
 
 /**
@@ -310,9 +315,9 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 /*
- * FB19 Subscriber related: Fetch a message from the Rx queue if available,
- * switch the LED1 on or off depending on the message contents, and return
- * a response message with the LED1 status to the FB19 Controller.
+ * FB19 Subscriber related: Fetches a message from the Rx queue if available,
+ * switches LED1 on or off depending on the message contents, and returns
+ * a response message with the received button status to the FB19 Controller.
  */
 static void mySubsProcessMsg(void)
 {
@@ -320,6 +325,7 @@ static void mySubsProcessMsg(void)
     static uint32_t rxFaultCount;
     static uint32_t txFaultCount;
 
+    int32_t buttonPressed;
     FB19Msg_t msg;
     msg.dscr.msgId = MY_MESSAGE_IDENTIFIER;
     int status;
@@ -330,13 +336,12 @@ static void mySubsProcessMsg(void)
     // identifier in the receive queue.
     if (status == R_SUCCESS) // Message received?
     {
-        int32_t buttonStatus;
         if (msg.dscr.errSts == FB19_DRV_ERR_NONE)
         {
-            status = FB19LibMsg_removeInt32(&msg, &buttonStatus);
+            status = FB19LibMsg_removeInt32(&msg, &buttonPressed);
             if (status == R_SUCCESS)
             {
-                if (buttonStatus)
+                if (buttonPressed)
                 {
                     GPIOC->ODR &= ~(1 << 10); // Switch LED1 on
                 }
@@ -345,13 +350,13 @@ static void mySubsProcessMsg(void)
                     GPIOC->ODR |= (1 << 10); // Switch LED1 off
                 }
 
-                printf("FB19Subs rxd msg with val=%li\n", buttonStatus);
+                printf("FB19Subs rxd msg with val=%li\n", buttonPressed);
                 msg.dscr.dstAddr = FB19_BUS_ADDR_CTRL;
-                FB19LibMsg_appendInt32(&msg, buttonStatus); // Assume success, ignore return value
+                FB19LibMsg_appendInt32(&msg, buttonPressed); // Assume success, ignore return value
                 status = FB19Subs_submit(&instFB19Subs, &msg);
                 if (status == R_SUCCESS)
                 {
-                    printf("FB19Subs txd msg with val=%li\n", buttonStatus);
+                    printf("FB19Subs txd msg with val=%li\n", buttonPressed);
                 }
                 else
                 {

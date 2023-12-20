@@ -7,18 +7,29 @@
  *  Description:    This file implements the main() function of this application.
  *
  *  Glossary:       LED:    Light Emitting Diode
- *                  NEB:    Nucleo Expansion Board
+ *                  NEB:    Nucleo Expansion Board for RS-232 & RS-485
+ *                          communication by Bitcontrol GmbH, Switzerland,
+ *                          v2.2 or higher
  *                  PB:     Push Button
  *
  *                  Responsibilities
  *                  ================
- *                  This application receives messages containing a single
- *                  32bit number. If it is 0, the application switches a
- *                  single digital output (LED1 on the FieldBus19 NEB) off,
- *                  if it is not equal to zero, it switches it on. It then
- *                  returns this number as response message to the Controller.
- *                  USART6 is used for communication with the FB19 Controller.
- *                  USART1 is used to display this process on the console.
+ *                  This application transmits and receives messages as FB19
+ *                  Subscriber containing a 32bit number representing the
+ *                  status of a single digital input (PB1 on the NEB).
+ *
+ *                  Depending on the value of the number in the received
+ *                  message, it switches a single digital output (LED1 on the
+ *                  NEB) on or off. If the number is not equal to zero, it
+ *                  switches its output on, or off otherwise.
+ *
+ *                  The application then returns the status of its digital
+ *                  input to the FB19 Controller. If the button PB1 is not
+ *                  pressed, the number in the returned message is 0. If the
+ *                  button is pressed, the number corresponds to the value of
+ *                  the corresponding GPIO port register (not zero).
+ *
+ *                  USART1 is used to display this process on a serial terminal.
  *
  *                  FB19 Libraries
  *                  ==============
@@ -35,11 +46,13 @@
  *                  - GPIOC, bit 10: Digital output for setting LED1 state
  *                  - GPIOC, bit 11: Digital input for sensing PB1 state
  *                  - TIM3: FB19Subs
- *                  - USART1: RS-232 Terminal
- *                  - USART6: FB19Subs
+ *                  - USART1 (UART1): RS-232 Terminal
+ *                  - USART2 (UART2): Unused
+ *                  - USART6 (UART3): FB19Subs
  *                  Hardware:
  *                  - Nucleo Board: Nucleo-64 STM32F401
- *                  - Nucleo Expansion Board for FieldBus19, v2.2 or higher
+ *                  - Nucleo Expansion Board for RS-232 & RS-485 communication
+ *                    by Bitcontrol GmbH, Switzerland, v2.2 or higher
  *                    - This board contains jumpers that relate to the bus
  *                      system:
  *                      - JP4, JP5: Don't care
@@ -47,8 +60,8 @@
  *                        RS-232 interface on J3
  *                      - JP6, JP7: Connect pins 1 & 2
  *                        This selects RS-485 for UART3
- *                      - JP8, JP9: Connect pins 1 & 2
- *                        This allows daisy chaining the boards via J1 and J2
+ *                      - JP8, JP9: Connect pins 2 & 3
+ *                        This connects UART3 to J2
  *                    - The board contains furthermore a user push button and a
  *                      user LED
  *
@@ -88,7 +101,6 @@
 #define MY_BIT_RATE                     100000 // [bit/s]
 #define MY_MAIN_LOOP_PERIOD_MS          500    // [ms]
 #define MY_MESSAGE_IDENTIFIER           FB19_MSG_ID_USR_LOWEST
-#define MY_SUBSCRIBER_BUS_ADDRESS       FB19_BUS_ADDR_SUBS_LOWEST
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -110,7 +122,7 @@ static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
 /* These convenience functions capture the different actions. */
 static int myStartFB19(void);
-static void mySubsProcessMsg(void); // Comprises fetch, process, submit
+static void mySubsProcessMsg(BOOL buttonPressedLocal);
 static void myWaitForTick(void);
 /* USER CODE END PFP */
 
@@ -159,12 +171,15 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+    printf("FB19Exa3_Subs1 application started.\n");
+    BOOL buttonPressedLocal;
     while (1)
     {
-        /* Call the FB19 handler functions periodically. */
+        /* Call the FB19 handler function periodically. */
         FB19Subs_handler(&instFB19Subs);
 
-        mySubsProcessMsg(); // Fetch msg from Rx queue, process it, submit result to Tx queue
+        buttonPressedLocal = GPIOC->IDR & (1 << 11) ? FALSE : TRUE; // 3.3V when NOT pressed
+        mySubsProcessMsg(buttonPressedLocal);
 
         /* Slow this loop down as desired. */
         myWaitForTick(); // Tick frequency is 100Hz; see HAL_SetTickFreq() above
@@ -250,7 +265,7 @@ static void MX_USART1_UART_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN USART1_Init 2 */
-    setvbuf( stdin, NULL, _IONBF, 0); // Disable console input buffering
+    setvbuf(stdin, NULL, _IONBF, 0); // Disable console input buffering
   /* USER CODE END USART1_Init 2 */
 
 }
@@ -310,16 +325,19 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 /*
- * FB19 Subscriber related: Fetch a message from the Rx queue if available,
- * switch the LED1 on or off depending on the message contents, and return
- * a response message with the LED1 status to the FB19 Controller.
+ * FB19 Subscriber related: Fetches a message from the Rx queue if available,
+ * switches LED1 on or off depending on the message contents and
+ * buttonStatusLocal, and returns a response message with the buttonStatusLocal
+ * value to the FB19 Controller.
  */
-static void mySubsProcessMsg(void)
+static void mySubsProcessMsg(BOOL buttonPressedLocal)
 {
     static uint32_t noiseFaultCount;
     static uint32_t rxFaultCount;
     static uint32_t txFaultCount;
 
+    int16_t addr;
+    int32_t buttonPressedRemote;
     FB19Msg_t msg;
     msg.dscr.msgId = MY_MESSAGE_IDENTIFIER;
     int status;
@@ -330,13 +348,14 @@ static void mySubsProcessMsg(void)
     // identifier in the receive queue.
     if (status == R_SUCCESS) // Message received?
     {
-        int32_t buttonStatus;
+        FB19Subs_getBusAddress(&instFB19Subs, &addr);
+        printf("\nFB19Subs with BA=%i processing msg\n", addr);
         if (msg.dscr.errSts == FB19_DRV_ERR_NONE)
         {
-            status = FB19LibMsg_removeInt32(&msg, &buttonStatus);
+            status = FB19LibMsg_removeInt32(&msg, &buttonPressedRemote);
             if (status == R_SUCCESS)
             {
-                if (buttonStatus)
+                if (buttonPressedRemote)
                 {
                     GPIOC->ODR &= ~(1 << 10); // Switch LED1 on
                 }
@@ -344,14 +363,14 @@ static void mySubsProcessMsg(void)
                 {
                     GPIOC->ODR |= (1 << 10); // Switch LED1 off
                 }
+                printf("Rxd msg with val=%li\n", buttonPressedRemote);
 
-                printf("FB19Subs rxd msg with val=%li\n", buttonStatus);
                 msg.dscr.dstAddr = FB19_BUS_ADDR_CTRL;
-                FB19LibMsg_appendInt32(&msg, buttonStatus); // Assume success, ignore return value
+                FB19LibMsg_appendInt32(&msg, buttonPressedLocal); // Assume success, ignore return value
                 status = FB19Subs_submit(&instFB19Subs, &msg);
                 if (status == R_SUCCESS)
                 {
-                    printf("FB19Subs txd msg with val=%li\n", buttonStatus);
+                    printf("Txd msg with val=%i\n", buttonPressedLocal);
                 }
                 else
                 {
@@ -365,8 +384,9 @@ static void mySubsProcessMsg(void)
         }
         else
         {
-            printf("FB19Subs rxd msg with error=%i\n", msg.dscr.errSts);
+            printf("Rxd msg with error=%i\n", msg.dscr.errSts);
         }
+        printf("FB19Subs with BA=%i processing msg DONE\n", addr);
     }
 
     /* Display error counts if they have changed. */
@@ -374,19 +394,19 @@ static void mySubsProcessMsg(void)
     if (noiseFaultCount != tmp)
     {
         noiseFaultCount = tmp;
-        printf("FB19Subs noise fault count=%lu\n", noiseFaultCount);
+        printf("Noise fault count=%lu\n", noiseFaultCount);
     }
     FB19Subs_getRxFaultCount(&instFB19Subs, &tmp); // Processing return value is optional
     if (rxFaultCount != tmp)
     {
         rxFaultCount = tmp;
-        printf("FB19Subs Rx fault count=%lu\n", rxFaultCount);
+        printf("Rx fault count=%lu\n", rxFaultCount);
     }
     FB19Subs_getTxFaultCount(&instFB19Subs, &tmp); // Processing return value is optional
     if (txFaultCount != tmp)
     {
         txFaultCount = tmp;
-        printf("FB19Subs Tx fault count=%lu\n", txFaultCount);
+        printf("Tx fault count=%lu\n", txFaultCount);
     }
 }
 

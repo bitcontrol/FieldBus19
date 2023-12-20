@@ -7,22 +7,34 @@
  *  Description:    This file implements the main() function of this application.
  *
  *  Glossary:       LED:    Light Emitting Diode
- *                  NEB:    Nucleo Expansion Board
+ *                  NEB:    Nucleo Expansion Board for RS-232 & RS-485
+ *                          communication by Bitcontrol GmbH, Switzerland,
+ *                          v2.2 or higher
  *                  PB:     Push Button
  *
  *                  Responsibilities
  *                  ================
- *                  This application transmits messages containing the status of
- *                  a single digital input (PB1 on FieldBus19 NEB) as FB19
- *                  Controller using USART2.
- *                  If a STM32 node running the FB19Exa2_Subs application is
- *                  connected to this node, it will switch a single digital
- *                  output on or off (LED1 on the FieldBus19 NEB) depending on
- *                  the state of the digital input. It then returns the state of
- *                  the LED in response messages to this Controller.
+ *                  This application transmits and receives messages as FB19
+ *                  Controller containing a 32bit number representing the
+ *                  status of a single digital input (PB1 on the NEB).
+ *
+ *                  It transmits messages containing the status of a single
+ *                  digital input (PB1 on the NEB) as FB19 Controller to both
+ *                  its FB19 Subscribers.
+ *
+ *                  Thereafter it queries the response messages of its FB19
+ *                  Subscribers for the status of their single digital input
+ *                  (PB1 on the NEB). It then passes this information along
+ *                  from one subscriber to the other.
+ *
+ *                  In addition, the application switches a single digital
+ *                  output (LED1 on the NEB) on or off, depending on the value
+ *                  of the number in the received messages. If it is not equal
+ *                  to zero, it switches its output on, or off otherwise.
+ *
  *                  This ping-pong schema is repeated periodically twice per
- *                  second. USART1 is used to display this process on the
- *                  console.
+ *                  second.
+ *                  USART1 is used to display this process on a serial terminal.
  *
  *                  FB19 Libraries
  *                  ==============
@@ -31,22 +43,27 @@
  *                  Configuration
  *                  =============
  *                  FB19 Bitrate: 100kbit/s
- *                  FB19 Subscriber bus address: 1
+ *                  FB19 Controller bus address: 0 (fix per specification)
  *                  FB19 Bus: RS-485 (not RS-232!)
  *                  USART1 RS-232 parameters: 115200/8/N/1
  *                  Used SoC resources:
- *                  - GPIOA, bit 8: FB19Ctrl RS-485 driver Data Output Enable
+ *                  - GPIOA, bit 8: FB19Subs RS-485 driver Data Output Enable
+ *                  - GPIOC, bit 10: Digital output for setting LED1 state
  *                  - GPIOC, bit 11: Digital input for sensing PB1 state
  *                  - TIM2: FB19Ctrl
- *                  - USART1: RS-232 Terminal
- *                  - USART2: FB19Ctrl
+ *                  - USART1 (UART1): RS-232 Terminal
+ *                  - USART2 (UART2): FB19Ctrl
+ *                  - USART6 (UART3): Unused
  *                  Hardware:
  *                  - Nucleo Board: Nucleo-64 STM32F401
- *                  - Nucleo Expansion Board for FieldBus19, v2.2 or higher
+ *                    - Solder bridge settings different from default:
+ *                      SB13: Off, SB14: Off, SB61: Off, SB62: On, SB63: On
+ *                  - Nucleo Expansion Board for RS-232 & RS-485 communication
+ *                    by Bitcontrol GmbH, Switzerland, v2.2 or higher
  *                    - This board contains jumpers that relate to the bus
  *                      system:
  *                      - JP4, JP5: Connect pins 1 & 2
- *                        This selects RS-485 for UART2
+ *                        This selects RS-485 for UART2 on J2
  *                      - JP6, JP7: Don't care
  *                        If pins 2 & 3 are connected, UART3 can be used as
  *                        RS-232 interface on J4
@@ -91,7 +108,8 @@
 #define MY_BIT_RATE                     100000 // [bit/s]
 #define MY_MAIN_LOOP_PERIOD_MS          500    // [ms]
 #define MY_MESSAGE_IDENTIFIER           FB19_MSG_ID_USR_LOWEST
-#define MY_SUBSCRIBER_BUS_ADDRESS       FB19_BUS_ADDR_SUBS_LOWEST
+#define MY_SUBSCRIBER1_BUS_ADDRESS      FB19_BUS_ADDR_SUBS_LOWEST
+#define MY_SUBSCRIBER2_BUS_ADDRESS      (FB19_BUS_ADDR_SUBS_LOWEST + 1)
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -113,8 +131,8 @@ static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
 /* These convenience functions capture the different actions. */
 static int myStartFB19(void);
-static void myCtrlDisplayResponseMsg(void);
-static void myCtrlSendToSubs(int payload);
+static void myCtrlProcRespMsg(BOOL* btn1Pressed, BOOL* btn2Pressed);
+static void myCtrlSendToSubs(BOOL payload, int busAddress);
 static void myWaitForTick(void);
 /* USER CODE END PFP */
 
@@ -129,64 +147,76 @@ static void myWaitForTick(void);
   */
 int main(void)
 {
-  /* USER CODE BEGIN 1 */
+    /* USER CODE BEGIN 1 */
+    /* USER CODE END 1 */
 
-  /* USER CODE END 1 */
+    /* MCU Configuration--------------------------------------------------------*/
 
-  /* MCU Configuration--------------------------------------------------------*/
+    /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+    HAL_Init();
 
-  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  HAL_Init();
+    /* USER CODE BEGIN Init */
+    __HAL_DBGMCU_FREEZE_TIM2();
+    /* USER CODE END Init */
 
-  /* USER CODE BEGIN Init */
-  __HAL_DBGMCU_FREEZE_TIM2();
-  /* USER CODE END Init */
+    /* Configure the system clock */
+    SystemClock_Config();
 
-  /* Configure the system clock */
-  SystemClock_Config();
-
-  /* USER CODE BEGIN SysInit */
+    /* USER CODE BEGIN SysInit */
     HAL_SetTickFreq(HAL_TICK_FREQ_100HZ);
-  /* USER CODE END SysInit */
+    /* USER CODE END SysInit */
 
-  /* Initialize all configured peripherals */
-  MX_GPIO_Init();
-  MX_USART1_UART_Init();
-  /* USER CODE BEGIN 2 */
+    /* Initialize all configured peripherals */
+    MX_GPIO_Init();
+    MX_USART1_UART_Init();
+    /* USER CODE BEGIN 2 */
     int status = myStartFB19(); // Start Controller and Subscriber instances
     if (status != R_SUCCESS)
     {
         return 1; // Terminate application, return error value
     }
-  /* USER CODE END 2 */
+    /* USER CODE END 2 */
 
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
-    int buttonStatus = 0;
+    /* Infinite loop */
+    /* USER CODE BEGIN WHILE */
+    printf("FB19Exa3_Ctrl application started.\n");
+    BOOL buttonPressedLocal = FALSE;
+    BOOL buttonPressedSubs1 = FALSE;
+    BOOL buttonPressedSubs2 = FALSE;
     int rel_time_ms = 0;
     while (1)
     {
-        /* Call the FB19 handler functions periodically. */
+        /* Call the FB19 handler function periodically. */
         FB19Ctrl_handler(&instFB19Ctrl);
+
+        myCtrlProcRespMsg(&buttonPressedSubs1, &buttonPressedSubs2);
 
         if (rel_time_ms == 0)
         {
             /* Perform domain specific tasks. */
-            buttonStatus = GPIOC->IDR & (1 << 11);
-            myCtrlSendToSubs(buttonStatus);
+            buttonPressedLocal = GPIOC->IDR & (1 << 11) ? FALSE : TRUE; // 3.3V when NOT pressed
+            if (buttonPressedSubs1 || buttonPressedSubs2)
+            {
+                GPIOC->ODR &= ~(1 << 10); // Switch LED1 on
+            }
+            else
+            {
+                GPIOC->ODR |= (1 << 10); // Switch LED1 off
+            }
+            myCtrlSendToSubs(buttonPressedLocal || buttonPressedSubs2, MY_SUBSCRIBER1_BUS_ADDRESS);
+            myCtrlSendToSubs(buttonPressedLocal || buttonPressedSubs1, MY_SUBSCRIBER2_BUS_ADDRESS);
         }
-        myCtrlDisplayResponseMsg();
 
         /* Slow this loop down as desired. */
         myWaitForTick(); // Tick frequency is 100Hz; see HAL_SetTickFreq() above
         rel_time_ms += uwTickFreq; // It's actually the period, not the frequency
         rel_time_ms %= MY_MAIN_LOOP_PERIOD_MS;
-    /* USER CODE END WHILE */
+        /* USER CODE END WHILE */
 
-    /* USER CODE BEGIN 3 */
+        /* USER CODE BEGIN 3 */
     }
     return 0; // If ever reached
-  /* USER CODE END 3 */
+    /* USER CODE END 3 */
 }
 
 /**
@@ -263,7 +293,7 @@ static void MX_USART1_UART_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN USART1_Init 2 */
-    setvbuf( stdin, NULL, _IONBF, 0); // Disable console input buffering
+    setvbuf(stdin, NULL, _IONBF, 0); // Disable console input buffering
   /* USER CODE END USART1_Init 2 */
 
 }
@@ -323,44 +353,53 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 /*
- * FB19 Controller related: Display the response message from the Subscriber if
- * available.
+ * FB19 Controller related: Process the response messages from the Subscribers.
  */
-static void myCtrlDisplayResponseMsg(void)
+static void myCtrlProcRespMsg(BOOL* btn1Pressed, BOOL* btn2Pressed)
 {
     static uint32_t noiseCharFaultCount;
     static uint32_t rxFaultCount;
     static uint32_t txFaultCount;
 
+    int32_t buttonPressed;
     FB19Msg_t msg;
     msg.dscr.msgId = MY_MESSAGE_IDENTIFIER;
-    int32_t ii;
     int status;
     uint32_t tmp;
 
     status = FB19Ctrl_fetch(&instFB19Ctrl, &msg);
     // status equals R_SUCCESS if a response has been received or the response
-    // has timed out. In the latter case, the function will also return
-    // R_SUCCESS with the error FB19_DRV_ERR_BUS_RSP_FRM_TMO set inside the
-    // message.
+    // has timed out. In the latter case, the error FB19_DRV_ERR_BUS_RSP_FRM_TMO
+    // is set inside the message.
     if (status == R_SUCCESS)
     {
         switch (msg.dscr.errSts)
         {
         case FB19_DRV_ERR_NONE: // Message received?
-            FB19LibMsg_removeInt32(&msg, &ii); // Assume success, ignore return value
-            printf("FB19Ctrl rxd msg with val=%li\n", ii);
+            FB19LibMsg_removeInt32(&msg, &buttonPressed); // Assume success, ignore return value
+            printf("FB19Ctrl rxd msg from BA %i with val=%li\n",
+                msg.dscr.dstAddr, buttonPressed);
+            if (msg.dscr.dstAddr == MY_SUBSCRIBER1_BUS_ADDRESS)
+            {
+                *btn1Pressed = buttonPressed;
+            }
+            else
+            {
+                *btn2Pressed = buttonPressed;
+            }
             break;
         case FB19_DRV_ERR_BUS_RSP_FRM_TMO:
-            printf("FB19Ctrl response message timed out\n");
+            printf("FB19Ctrl response message from BA %i timed out\n",
+                msg.dscr.dstAddr);
             break;
         default:
-            printf("FB19Ctrl rxd msg with error=%i\n", msg.dscr.errSts);
+            printf("FB19Ctrl rxd msg from BA %i with error=%i\n",
+                msg.dscr.dstAddr, msg.dscr.errSts);
             break;
         }
-        printf("\n");
     }
 
+    /* Display error counts if they have changed. */
     FB19Ctrl_getNoiseFaultCount(&instFB19Ctrl, &tmp); // Processing return value optional
     if (noiseCharFaultCount != tmp)
     {
@@ -383,12 +422,12 @@ static void myCtrlDisplayResponseMsg(void)
 
 /*
  * FB19 Controller related: Submit a request message with the provided payload
- * value for transmission to the Subscriber.
+ * value for transmission to a Subscriber.
  */
-static void myCtrlSendToSubs(int payload)
+static void myCtrlSendToSubs(BOOL payload, int busAddress)
 {
     FB19Msg_t msg; // Initialize these fields for avoiding side effects
-    msg.dscr.dstAddr = MY_SUBSCRIBER_BUS_ADDRESS;
+    msg.dscr.dstAddr = busAddress;
     msg.dscr.msgId = MY_MESSAGE_IDENTIFIER;
     msg.dscr.pldSize = 0;
 
@@ -396,13 +435,14 @@ static void myCtrlSendToSubs(int payload)
 
     FB19LibMsg_appendInt32(&msg, payload); // Assume success, ignore return value
     status = FB19Ctrl_submit(&instFB19Ctrl, &msg);
+    printf("FB19Ctrl_submit() to BA %i ", busAddress);
     if (status == R_SUCCESS)
     {
-        printf("FB19Ctrl_submit() succeeded with val=%i\n", payload);
+        printf("succeeded with val=%i\n", payload);
     }
     else
     {
-        printf("FB19Ctrl_submit() failed\n");
+        printf("failed\n");
     }
 }
 
