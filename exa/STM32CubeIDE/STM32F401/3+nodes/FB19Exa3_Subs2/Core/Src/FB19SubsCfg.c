@@ -1,12 +1,10 @@
 /*
  *  Filename:       FB19SubsCfg.c
  *  Platform(s):    STM32F401x
- *  Project:        <Your project name>
+ *  Project:        FB19Exa3_Subs2
  *  Created:        November 29, 2023
  *  Description:    This file implements the interface of the FieldBus19
  *                  Subscriber configuration module.
- *                  Add it to the project directory and adjust it to the
- *                  requirements of the application.
  *  Notes:
  *  Author:         Andreas Isenegger
  *  Copyright:      2023, Bitcontrol GmbH, Switzerland.
@@ -67,7 +65,7 @@ FB19Subs_cfg_t cfgFB19Subs =        // FB19 Subscriber configuration
 
     /* FB19 Subscriber Driver Module. *****************************************/
     {
-        FB19_BUS_ADDR_SUBS_LOWEST,  // Bus address
+        MY_SUBSCRIBER_BUS_ADDRESS,  // Bus address
         GPIOA,                      // CMSIS GPIO base address
         7,                          // GPIO_portBitDOE
         &sDrvSubsRxMsgQ,            // Receive message queue
