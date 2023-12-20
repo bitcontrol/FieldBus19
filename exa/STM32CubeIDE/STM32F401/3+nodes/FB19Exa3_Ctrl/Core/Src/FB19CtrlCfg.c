@@ -1,12 +1,10 @@
 /*
  *  Filename:       FB19CtrlCfg.c
  *  Platform(s):    STM32F401x
- *  Project:        <Your project name>
+ *  Project:        FB19Exa3_Ctrl
  *  Created:        November 29, 2023
  *  Description:    This file implements the interface of the FieldBus19
  *                  Controller configuration module.
- *                  Add it to the project directory and adjust it to the
- *                  requirements of the application.
  *  Notes:
  *  Author:         Andreas Isenegger
  *  Copyright:      2023, Bitcontrol GmbH, Switzerland.

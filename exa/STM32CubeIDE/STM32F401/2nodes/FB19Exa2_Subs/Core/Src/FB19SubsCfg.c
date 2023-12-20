@@ -1,12 +1,10 @@
 /*
  *  Filename:       FB19SubsCfg.c
  *  Platform(s):    STM32F401x
- *  Project:        <Your project name>
+ *  Project:        FB19Exa2_Subs
  *  Created:        November 29, 2023
  *  Description:    This file implements the interface of the FieldBus19
  *                  Subscriber configuration module.
- *                  Add it to the project directory and adjust it to the
- *                  requirements of the application.
  *  Notes:
  *  Author:         Andreas Isenegger
  *  Copyright:      2023, Bitcontrol GmbH, Switzerland.
